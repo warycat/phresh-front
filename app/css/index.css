@@ -1,0 +1,911 @@
+/***********************************************************
+*********************TABLE OF CONTENTS**********************
+************************************************************
+1. ABSTRACTS
+2. SPLASH
+3. MAIN
+4. ANIMATION
+5. SIGNUP
+************************************************************
+********************END TABLE OF CONTENTS*******************/
+
+/********************1. START ABSTRACTS*********************/
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+
+@font-face {
+  font-family: 'Montserrat Alternates';
+  font-style: normal;
+  font-weight: 400;
+  src: local('MontserratAlternates-Regular'), url(../fonts/titleFont.woff) format('woff');
+}
+
+.phreshFont{
+	font-family: "Montserrat Alternates";
+	font-weight: lighter;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	-webkit-padding-start: 0;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+input{
+	font-size: 100%;	
+}
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    margin:0px;
+    padding:0px;
+	font-size: 16px;
+}
+
+h1 {
+    font-size:5em;
+	font-weight:200;
+}
+h2{
+	font-size: 450%;
+	font-weight:200;	
+}
+h3{
+	font-size: 300%;
+	font-weight:200;	
+}
+h4{
+	font-size: 150%;
+	font-weight:200;	
+}
+h5{
+	font-size: 250%;
+	font-weight:200;
+}
+div[data-role=page]{
+	width:100%;
+	height:100%;
+}
+.centerHeader{
+	width: 100%;
+	text-align:center;
+}
+.phreshColor{
+	color: #FFD75B;	
+}
+.phreshBGColor{
+	background-color: #FFD75B;
+}
+fieldset{
+	-webkit-padding-before: 0;
+	-webkit-padding-start: 0;
+	-webkit-padding-end: 0;
+	-webkit-padding-after: 0;	
+}
+h3.otherTitle{
+	margin-top: 2%;
+}
+.backIcon{
+	position: absolute;
+	top: 3%;
+	left: 3%;
+	width: 3em;
+}
+hr{
+	display: block;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	border: none;	
+}
+/*******************1. END ABSTRACTS*********************************/
+/********************2. START SPLASH**********************************/
+#splash{
+	background-image:url(../img/female_splash_darker.PNG);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+#splashTitle{
+	font-size: 7.5em;
+}
+#homeTitleCont{
+	position: absolute;
+	top: 20%;
+	width: 100%;
+	transition: top .3s ease-in;
+	-webkit-transition: top .3s ease-in;
+}
+#homeTitleCont.signIn{
+	top: 10%;
+}
+#homeTitleCont.signIn > #signInForm{
+	display: block;
+}
+#homeTitle{
+	margin-bottom: 1%;
+}
+#homeTagline{
+	color: #FFF;
+	font-size: 200%;
+}
+#homeButtonCont{
+	position: absolute;
+	bottom: 4%;
+	width: 100%;
+	text-align:center;
+}
+#homeButtonCont > div{
+	padding: 3%;
+	font-size: 220%;
+	margin: 0 auto;
+	border-radius: .1em;
+}
+#signupEmail, #signupFacebook{
+	opacity: .7;
+	width: 70%;
+}
+div#signupEmail{
+	background-color: #111;
+	color: #FFF;
+	margin-top: 5%;
+	transition: opacity .5s;
+	-webkit-transform: opacity .5s;	
+}
+div#signupFacebook{
+	background-color: #FFF;
+	color: #3b579d;
+	background-image: url(../img/icons/fbSignUp.png);
+	background-repeat:no-repeat;
+	background-size: auto 70%;
+	background-position: 7%;
+	margin-top: 5%;
+}
+#signIn{
+	background-color: rgba(255,207,77,.9);
+	color: #FFF;
+	width: 70%;
+}
+#signInForm{
+	display:none;
+	font-size: 2em;
+	padding: 1%;
+	color: #CCC;
+	margin-top: 6%;
+	background-color: #333;
+	width: 80%;
+	opacity: .7;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 5%;
+}
+#signInForm > input{
+	width: 80%;
+	margin: 0 auto;
+}
+#signInForm > input:focus{
+	color: #FFF;
+}
+#signInError{
+	color: #F00;
+	font-size: 1.5em;
+	display: none;
+}
+#splashSpinner{
+	display: none;	
+}
+#signupEmail.remove {
+	opacity: 0;
+}
+#backSplash{
+	position: absolute;
+	bottom: 2.5%;
+	left: 2.5%;
+	width: 10%;	
+	display: none;
+}
+#termsAndConditionsSplash{
+	display: none;
+	position: absolute;
+	bottom: 1em;
+	left: 15%;
+	width: 70%;
+	text-align: center;
+	color: #FFF;
+	font-size: 1.2em;
+}
+#termsAndConditionsSplash.show{
+	display:block;	
+}
+#termsAndConditionsSplash > a{
+	color: #FC0;	
+}
+/******************2. END SPLASH*************************************/
+
+/******************3. START MAIN CSS**********************/
+html,body, #main{
+		width: 100%;
+		height: 100%;
+}
+#main{
+	background-image: url(http://subtlepatterns.com/patterns/cream_pixels.png);
+	background-repeat:repeat;
+}
+#mainTitle{
+	position: absolute;
+	top: 4.5%;
+	width: 100%;
+	text-align:center;
+	z-index: 9;
+}
+.productCard{
+	width: 80%;
+	height: 70%;
+	border: 1px solid #999;
+	background-color:#FFF;
+	position: absolute;
+	/*-webkit-box-shadow: 4px 3px 5px #ccc;*/
+	/*box-shadow: 4px 3px 5px #ccc;*/
+}
+.top.tap .flipCont{
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+.frontSide, .flipCont{
+	width: 100%;
+	height: 100%;
+}
+/***this is the flipped element***/
+.flipCont{
+	-webkit-transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+.frontSide, .backSide{
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.frontSide{
+	z-index: 2;	
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+.backSide{
+	position: relative;
+	width: 90%;
+	height: 95%;
+	padding: 3% 5%;
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+	color: #666;
+	font-size: 170%;
+}
+.backSideDescription{
+	position: relative;
+	height: calc(90% - 2em);	
+	overflow-y: scroll;
+}
+.backSideBottomCont{
+	font-family:Verdana, Geneva, sans-serif;
+	position: absolute;
+	bottom: 0;
+	left: 5%;
+	width: 90%;
+	border-top: 1px solid #AAA;
+	color: #FC0;
+	padding: 2% 0;
+}
+.backSideBottomCont > li{
+	float: left;
+	width: calc(50% - 1px);	
+	text-align:center;
+	padding: 1.5% 0;
+}
+.backSideBottomCont > li.first{
+	border-right: 1px solid #AAA;	
+}
+
+.top{
+	z-index: 6;
+	left: 10%;
+	top: 15%;
+}
+.middle{
+	z-index: 5;
+	left: 11%;
+	top: 15.5%;
+}
+.bottom{
+	z-index: 4;
+	left: 12%;
+	top: 16%;
+	transition: box-shadow .2s ease-in-out;
+	-webkit-transition: box-shadow .2s ease-in-out;
+}
+#cardInfo{
+	width: 100%;
+	position: absolute;
+	top: 89.5%;
+}
+#productTitle{
+	color:#333;
+	text-overflow: ellipsis;
+}
+#productPrice{
+	color: #666;
+	text-overflow: ellipsis;
+}
+.fadeIndicator{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity .2s ease-in-out;
+	-webkit-transition: opacity .2s ease-in-out;
+	z-index: -1;
+}
+.fadeShow{
+	opacity: .7;	
+}
+.bottom.like{
+	box-shadow: 0 0 2em .5em #0C0;	
+}
+.bottom.dislike{
+	box-shadow: 0 0 2em .5em #F00;
+}
+#navBar{
+	position:absolute;
+	top:4.5%;
+	width:100%;
+	text-align:center;
+	z-index: 10;
+}
+img.icon{
+	z-index: 100;
+	width:10%;
+	height:auto;
+}
+#toCloset{
+	margin-left:15%;
+	transition: background .5s;
+	-webkit-transition: background .5s;
+	/*box-shadow: -1em -1em 4em rgba(255,215,91,.9);*/
+}
+#toCloset.glow{
+	background: -webkit-radial-gradient(rgba(255,215,91,.9), rgba(0,0,0,0) 80%);
+	background: radial-gradient(rgba(255,215,91,.9), rgba(0,0,0,0) 80%);
+}
+#notificationsLink{
+	margin-left:15%;
+	margin-right:15%;
+}
+#toSettings{
+	margin-right:15%
+}
+#mainTutorialCont{
+	height: 100%;
+	width: 100%;
+	opacity: .75;
+	background-color: #000;
+	z-index: 7;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.tutorialArrowRight {
+	position: absolute;
+	top: calc(50% - 4em);
+	left: 70%;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 3em 0 3em 4em;
+	border-color: transparent transparent transparent #ffcb2d;
+	/*animation: arrowTransform 5s linear .5s infinite;
+	-webkit-animation: arrowTransform 5s linear .5s infinite;*/
+}
+.tutorialArrowRight:before{
+	content: '';
+	height: 2em;
+	width: 5em;
+	background-color: #ffcb2d;
+	position: absolute;
+	top:-1em;
+	left: -8em;
+}
+.tutorialArrowLeft{
+	position: absolute;
+	top: calc(50% - 4em);
+	left: 20%;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 3em 4em 3em 0;
+	border-color: transparent #ffcb2d transparent transparent;
+}
+.tutorialArrowLeft:before{
+	content: '';
+	height: 2em;
+	width: 5em;
+	background-color: #ffcb2d;
+	position: absolute;
+	top:-1em;
+	left: 3em;
+}
+@keyframes arrowTransform{
+	0% {transform: scaleX(1.5); left: 60%;}
+	50%{transform: scaleX(1); left: 55%;}
+	100% {transform: scaleX(1.5); left: 60%;}
+}
+@-webkit-keyframes arrowTransform{
+	0% {-webkit-transform: scaleX(1.5); left: 60%;}
+	50%{-webkit-transform: scaleX(1); left: 55%;}
+	100% {-webkit-transform: scaleX(1.5); left: 60%;}
+}
+.tutNext{
+	right: 2%;
+}
+.tutSkip{
+	left: 2%;
+	color: #FFF;
+}
+.tutNext, .tutSkip{
+	position: absolute;
+	bottom: 2%;
+	font-size: 3em;
+}
+#swipeRightTut, #swipeLeftTut{
+	color: #FFF;
+	font-size: 1.5em;
+	position: absolute;
+	top: 60%;
+	width: 30%;
+}
+#swipeRightTut{
+	left: 60%;
+}
+#swipeLeftTut{
+	left: 10%;	
+}
+/***************3. END MAIN CSS************************/
+
+/***************4. START LOADING ANIMATION CSS*******************/
+.spinner {
+  position:absolute;
+  top: 48%;
+  left: 40%;
+  z-index: 7;
+  width: 20%;
+  text-align: center;
+}
+/*REPLACE WITH @media query based on screen size*/
+.spinner > div {
+  width: 25px;
+  height: 25px;
+  background-color: #FCD03A;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+@keyframes bouncedelay {
+  0%, 80%, 100% { 
+	transform: scale(0.0);
+	-webkit-transform: scale(0.0);
+  } 40% { 
+	transform: scale(1.0);
+	-webkit-transform: scale(1.0);
+  }
+}
+/***************4. END LOADING ANIMATION CSS*********************/
+
+/***************5. START SIGNUP CSS******************************/
+#signUp{
+	background-color: #F7F7F7;
+}
+#signUpHeaderCont{
+	margin-top: 3%;	
+}
+#addPhotoButton{
+	width: 8em;
+	height: 3em;
+	margin: 4% auto 6% auto;
+	border-radius: 50%;
+	border: .4em solid;
+	border-bottom-color: #AAA;
+	border-top-color: #AAA;
+	border-right-color: #F39B23;
+	border-left-color: #F39B23;
+	background-image:url(../img/formIcons/cameraIcon.png);
+	background-repeat:no-repeat;
+	background-size: 4em 4em;
+	background-position: 50% 30%;
+	opacity: .5;
+	text-align:center;
+	padding-top: 5em;
+	background-color: #EEE;
+	
+}
+#addPhotoButton.imageAdded{
+	background-size:cover;
+	background-position:center;
+	opacity: .9;
+}
+ul.signUpForm{
+	background-color: #FFF;
+	width: 100%;
+}
+ul.signUpForm > li{
+	height: 100%;
+	width: 100%;
+	border-color: #DDD;
+	border-width: 2px;
+	font-size: 2em;
+}
+ul.signUpForm > li.focused:before{
+	opacity: .6;
+}
+ul.signUpForm > li:before{
+	content: '';
+	opacity: .3;
+	background-repeat:no-repeat;
+	background-size:cover;
+	height: 2em;
+	width: 2em;
+	display: block;
+	float:left;
+	margin-top: .8em;
+	margin-left: 1em;
+}
+.username-li:before{
+	background-image:url(../img/formIcons/userIcon.png);
+}
+.email-li:before{
+	background-image:url(../img/formIcons/emailIcon.png);
+}
+.password-li:before{
+	background-image:url(../img/formIcons/lockIcon.png);
+}
+.confirm-li:before{
+	background-image:url(../img/formIcons/confirmIcon.png);
+}
+.firstName-li:before, .lastName-li:before{
+	background-image:url(../img/formIcons/nameIcon.png);
+}
+.birthday-li:before{
+	background-image:url(../img/formIcons/calendarIcon.png);
+}
+ul.signUpForm > li input:focus{
+	color: #222;
+}
+ul.signUpForm > li input{
+	color: #888;
+	float:left;
+	width: 100%;
+}
+div.ui-input-text{
+	border: none;
+	box-shadow: none;
+}
+.signUpForm div.ui-input-text{
+	float: left;
+	margin-left: 5%;
+	width: calc(95% - 4em);
+}
+#signUpTag{
+	color: #888;	
+}
+#signUpError{
+	display:none;
+	color: #FFF;
+	font-size: 1.8em;
+	padding: .5em;
+	text-align:center;
+	box-shadow: 0 -.15em .25em #CCC;
+	border-top: 1px solid #AAA;
+	background: #ffae00; /* Old browsers */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffae00), color-stop(100%,#f78a1d)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffae00 0%,#f78a1d 100%); /* Chrome10+,Safari5.1+ */
+	background: linear-gradient(to bottom,  #ffae00 0%,#f78a1d 100%); /* W3C */
+	clear:both;
+}
+#bottomSignUpCont{
+	width: 100%;
+	position: absolute;
+	bottom:0;
+	left:0;
+}
+#nextSignUp, #backSignUp{
+	font-size: 3em;
+	margin: 2% 3%;
+}
+#nextSignUp{
+	float:right;
+}
+#backSignUp{
+	color: #666;
+	float:left;	
+}
+#signUpDetails{
+	width: 100%;
+	text-align:center;
+	color: #666;
+	margin: 1em 0;
+	font-size: 1.6em;
+}
+#signUpFormCont{
+	width: 500%;
+	position: relative;
+	top:0;
+	left:0;
+	transition: left .5s ease-in-out;
+	-webkit-transition: left .5s ease-in-out;
+}
+#signUpFormCont.page1{
+	left: 0;	
+}
+#signUpFormCont.page2{
+	left: -100%;
+}
+#signUpFormCont.page3{
+	left: -200%;	
+}
+#signUpFormCont.page4{
+	left: -300%;	
+}
+#signUpFormCont.page5{
+	left: -400%;	
+}
+div.signUpPage{
+	width: 20%;
+	float: left;
+	background-color:#FFF;
+}
+#genderList{
+	width: 90%;
+	margin: 2% auto;
+	height: 100%;
+	text-align: justify;
+}
+#genderList:after{
+	content: '';
+	display: inline-block;
+	width: 100%;
+}
+#genderList > li{
+	display: inline-block;
+	height: 60%;
+	background-size:contain;
+	background-repeat:no-repeat;
+	width: 25%;
+	opacity: .7;
+}
+#genderList > li > img{
+	width: 100%;
+	background-color: #666;
+	margin-bottom: 1em;
+}
+#genderList > li.selectedGender > img{
+	background-color: #FEC041;
+	opacity: 1;
+}
+.signInHeader{
+	font-size: 3em;
+	text-align:center;
+	width: 80%;
+	margin: 4% auto;
+}
+#signUpPage1{
+	background-color: #F7F7F7;
+}
+#signUpPage4 > .signInHeader, #signUpPage5 > .signInHeader{
+	font-size: 200%;
+}
+#signUpSpinner{
+	display: none;	
+}
+/****************5. END SIGNUP CSS*****************************/
+/****************6. START SETTINGS CSS*************************/
+#settings{
+	overflow: scroll;
+}
+#settingsBar{
+	z-index: 5;
+	width: 100%;
+	margin-top: 3%;
+	float:left;
+}
+#settingsBar > li{
+	font-size: 1.7em;
+	color: #999;
+	float:left;
+	width: 50%;
+	border-bottom: 3px solid #CCC;
+	text-align:center;
+	padding: 1% 0;
+	transition: all .25s ease-in-out;
+	-webkit-transition: all .25s ease-in-out;
+}
+#settingsBar > li:active{
+	outline: none;
+	border: none;
+}
+#settingsBar > li.selected{
+	color: #ffcb2d;
+	border-bottom: 3px solid #ffcb2d;	
+}
+#settingsSlideCont{
+	position: relative;
+	left: 0;
+	top:0;
+	clear:both;
+	z-index: 1;
+	width: 100%;
+	transition: left .5s ease-in-out;
+	-webkit-transition: left .5s ease-in-out;
+}
+#settingsSlideCont.page2{
+	left: -100%;
+}
+#settingsSlideCont > div{
+	width: 100%;
+	float:left;
+	margin-top: 3%;
+}
+.username-li:before{
+	background-image:url(../img/formIcons/userIcon.png);
+}
+#settingsBack{
+	top: 2%;
+	left: 2%;
+}
+.settingsDone{
+	text-align: center;
+	padding: .7em 0;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 4%;
+	background-color: #FEBE47;
+	color: #FFF;
+	font-size: 2em;
+	border-bottom: 3px solid #F2711A;
+	clear: both;
+}
+#personalSettings{
+	position: absolute;
+	left: 100%;	
+}
+ul.personalSettings{
+	font-size: 1.5em;	
+}
+ul.personalSettings > li:before{
+	content: '';
+	opacity: .3;
+	background-repeat:no-repeat;
+	background-size:cover;
+	height: 2em;
+	width: 2em;
+	display: block;
+	float:left;
+	margin-top: .8em;
+	margin-left: 1em;
+}
+ul.personalSettings > li p{
+	height: 100%;
+	padding-top: .5em;
+	padding-left: 4%;
+}
+#logout{
+	text-align: center;
+	padding: .7em 0;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 10%;
+	background-color: #FEBE47;
+	color: #FFF;
+	font-size: 2em;
+	border-bottom: 3px solid #F2711A;
+}
+.settingsSection{
+	width: 100%;
+}
+#shoppingSettings h3{
+	text-align: center;
+	margin: .5em 0;
+	clear: both;
+	width: 100%;
+}
+.settingsSection > li{
+	width: 20%;
+	padding: 1em 0;
+	border-radius: .2em;
+	float:left;
+	margin: 1em 2%;
+	text-align: center;
+	outline: 1px solid #CCC;
+	font-size: 1.5em;
+}
+ul.settingsSection > li:nth-child(4n+1){
+	margin-left: 4%;
+}
+ul.settingsSection > li:nth-child(4n){
+	margin-right: 4%;
+}
+.settingsSection > li.selected{
+	background-color: rgb(255,215,91);
+	color: #FFF;
+	outline: none;
+}
+.settingsSection:after{
+	content: " ";
+	display: table;
+	clear: both;	
+}
+/****************6. END SETTINGS CSS***************************/

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.mvp3.phresh" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>phresh</name>
+    <description>
+        Debug phresh app
+    </description>
+    <author email="mahir.shah1@gmail.com" href="http://cordova.io">
+        phresh
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+	<preference name="fullscreen" value="true" />
+    <preference name="webviewbounce" value="true" />
+	<preference name="Orientation" value="portrait" />
+</widget>

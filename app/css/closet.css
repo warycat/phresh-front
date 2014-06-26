@@ -1,0 +1,360 @@
+@charset "utf-8";
+/* CSS Document */
+#closet{
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+#pageCont{
+	width: 100%;
+	margin: 0 auto;
+	
+}
+#closetHeader, #checkOutHeader{
+	padding: 1.5em 0 1em 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	background-color: rgba(255, 255, 255, .95);
+	border-bottom: 2px solid #CCC;
+}
+#closetHeader > div, #checkOutHeader > div{
+	height: 3em;
+	width: 3em;
+	position: absolute;
+	top: 50%;
+	margin-top: -1.5em;
+	background-size:contain;
+}
+#closetHeaderLeft, #checkOutHeaderLeft{
+	left: 5%;
+	background-image:url(../img/closet/back2Icon.png);
+}
+#closetHeaderRight{
+	right: 5%;
+	background-image:url(../img/closet/basketAdded.png);
+}
+.hr75{
+	width: 75%;
+	margin: 3% auto;
+	border-bottom: 1px solid #CCC;
+}
+#closetProfileCont{
+	background-image:url(../img/closet/profileBG.png);
+	background-size: cover;
+	background-position:center;
+	width: 100%;
+	margin-top: 5.5em;
+	height: 26em;
+	position:relative;
+	top: 0;
+	left: 0;
+}
+#closetProfileBottom{
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	height: 4.5em;
+	background-color: rgba(255, 255, 255, .47);
+}
+#closetProfileBottom > li{
+	float: left;
+	height: 100%;
+	width: 33.33333%;
+	text-align:center;		
+}
+.closetProfileStat{
+	font-size: 2.2em;
+	color: #FFDC51;
+	width: 100%;
+}
+.closetProfileStatCaption{
+	color: #333;
+	
+}
+#closetProfileName{
+	white-space:nowrap;
+	overflow: hidden;
+	display: inline-block;
+	color: #FFF;
+	text-align:center;
+	font-size: 2.1em;
+	width: 80%;
+	margin: 1.1em 10% 1em 10%;
+}
+#closetProfileImage{
+	border-radius: 100%;
+	border: 3px solid #CCC;
+	height: 10em;
+	width: 10em;
+	opacity: .6;
+	background-image:url(../img/formIcons/cameraIcon.png);
+	background-size: 50%;
+	background-repeat:no-repeat;
+	background-position: center;
+	margin: 0 auto 1.5em auto;	
+}
+#closetProfileImage.isSet{
+	background-size:cover;	
+}
+#grid{
+	position: relative;
+	left: 0;
+	top: 0;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 2px;
+    column-count: 2;
+    column-gap: 2px;
+    width: 100%;
+	column-rule: 1px solid #CCC;
+	-webkit-column-rule: 2px solid #CCC;
+}
+#grid > li{
+	position: relative;
+	left: 0;
+	top: 0;	
+	margin-bottom: -.25em;
+	outline: 2px solid #CCC;
+}
+#grid > li > img{
+	width: 100%;
+}
+
+#grid > li:after{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, .8);
+	background-image: url(../img/closet/basketAdded.png);
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: 25%;
+
+}
+
+#grid > li.selected:after {
+	opacity: .8;
+}
+
+#tapImageCont{
+	position: relative;
+	background-color: #FFF;
+	width: 90%;
+	height: 90%;
+	margin: 5% auto;
+	top: 2%;
+}
+#tapImageBG{
+	display: none;
+	z-index: 21;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.7);
+	z-index: 21;
+}
+#tapImageCont > h3{
+	width: 80%;
+	padding: 2%% 2%;
+	margin: 1% auto;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 1.8em;
+	color: #666;
+	text-align:center;
+	white-space: nowrap;
+	overflow: hidden;
+	border-bottom: 1px solid #CCC;
+}
+#tapImageCloseBtn{
+	color: #FFF;
+	font-family:Verdana, Geneva, sans-serif;
+	text-align:center;
+	padding-top: .5em;
+	position: absolute;
+	top: -1em;
+	right: -1em;
+	width: 2em;
+	height: 1.5em;
+	background-color: rgba(0,0,0, .7);	
+	border-radius: 2em;
+	border: 2px solid #CCC;
+	cursor:pointer;
+}
+#tapImage{
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: calc(74% - 1.8em);
+	-webkit-transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+}
+#tapImage > div{
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#tapImage > .image{
+	width: 100%;
+	height: 100%;
+	z-index: 2;	
+	background-size: contain;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+#tapImage > .desc{
+	width: 90%;
+	height: 90%;
+	padding: 5%;
+	color: #333;
+	font-size: 1.2em;
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+#tapImage.tap{
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);	
+}
+#bottomGrid{
+	font-family:Verdana, Geneva, sans-serif;
+	position: absolute;
+	bottom: 0;
+	left: 5%;
+	width: 90%;
+	border-top: 1px solid #AAA;
+	color: #FC0;
+	font-size: 1.3em;
+	padding: 2% 0;
+}
+#bottomGrid > li{
+	float: left;
+	width: calc(50% - 1px);	
+	text-align:center;
+	padding: 1.5% 0;
+}
+#bottomGrid > li.first{
+	border-right: 1px solid #AAA;	
+}
+#checkOut{
+	display: none;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	padding: 2% 1em;
+	font-size: 2.5em;
+	background-color: rgba(0, 0, 0, .8);
+	border-radius: .25em 0 0 0;
+}
+#checkOut.show{
+	display: block;	
+}
+@-webkit-keyframes intro
+{
+0% {-webkit-transform:scale(1.5,1.5); box-shadow: 0 0 4em 1em rgba(0,0,0,.5);}
+100% {-webkit-transform: scale(1,1); box-shadow:none;}
+}
+@keyframes intro
+{
+0% {transform:scale(1.5,1.5); box-shadow: 0 0 4em 1em rgba(0,0,0,.5);}
+100% {transform:none); box-shadow:none;}
+}
+/**********************START CHECKOUT CSS*********************/
+#checkOutList{
+	margin-top: 5.5em;
+	width: 100%;	
+}
+#checkOutList > li{
+	margin: 0 auto;
+	width: 80%;
+	border-bottom: 1px solid #BBB;
+	height: 13em;
+}
+.checkOutImages{
+	background-size:cover;
+	background-position:center;
+	height: 10em;
+	margin: 1.5em 10% 1.5em -5%;
+	outline: 2px solid #CCC;
+	width: 30%;
+	float: left;
+}
+#checkOutList > li > .right{
+	position: relative;
+	left: 0;
+	top: 0;
+	float: left;
+	width: 65%;
+	height: 85%;
+}
+.checkOutListTitle{
+	color: #666;
+	width: 100%;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	margin: .5em 0;
+	white-space:nowrap;
+}
+.checkOutDescription{
+	text-overflow: hidden;
+	text-overflow: 
+	color: #333;
+	overflow: hidden;
+	line-height: 1.5em;
+	height: 4.8em;
+}
+.checkOutAfterDescription{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 1.4em;	
+}
+div.checkOutQuantity > label{
+	margin-top: .5em;
+	float: left;	
+}
+.checkOutQuantity input{
+	float: left;
+	width: 3em;
+	margin: 0;
+}
+.checkOutItemPrice{
+	font-size: 1.5em;
+	float: right;	
+}
+#checkOutDetails{
+	font-size: 1.5em;
+	width: 80%;
+	margin: 1.5% auto;
+}
+#checkOutDetails:after{
+	content: " ";
+	display: table;
+	clear: both;	
+}
+#checkOutItemCount{
+	float: left;
+}
+#checkOutSubtotal{
+	float: right;
+	color: #666;
+}
+#checkOutButton{
+	margin: 1em auto 1em auto;
+	border: 3px solid #AAA;
+	border-radius: .2em;
+	width: 90%;
+	text-align: center;
+	padding: .5em 0;
+	font-size: 2em;
+}
+/**********************END CHECKOUT CSS***********************/
