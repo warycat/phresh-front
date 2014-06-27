@@ -1,3 +1,38 @@
+/******** new **********/
+
+#splashFBImg{
+	width:30px;
+	margin-right:15px;
+	padding-top:15px;
+	padding-bottom:15px;
+	vertical-align:middle;
+}
+
+#splashFBText{
+	background-color: #FFF;
+	color: #3b579d;
+	padding-top:5px;
+	padding-bottom:5px;
+	width:80%;
+	opacity: .7;
+	vertical-align:middle
+}
+.primary-button{
+	position: absolute;
+	bottom: 4%;
+	width: 100%;
+	text-align:center;
+}
+
+.primary-button > div{
+	padding: 3%;
+	font-size: 220%;
+	margin: 0 auto;
+	border-radius: .1em;
+}
+
+
+
 /***********************************************************
 *********************TABLE OF CONTENTS**********************
 ************************************************************
@@ -13,7 +48,6 @@
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
-
 
 @font-face {
   font-family: 'Montserrat Alternates';
@@ -145,11 +179,12 @@ hr{
 }
 /*******************1. END ABSTRACTS*********************************/
 /********************2. START SPLASH**********************************/
-#splash{
-	background-image:url(../img/female_splash_darker.PNG);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+#splashBackground{
+	width:100%;
+	height:100%;
 }
+
 #splashTitle{
 	font-size: 7.5em;
 }
@@ -173,37 +208,17 @@ hr{
 	color: #FFF;
 	font-size: 200%;
 }
-#homeButtonCont{
-	position: absolute;
-	bottom: 4%;
-	width: 100%;
-	text-align:center;
-}
-#homeButtonCont > div{
-	padding: 3%;
-	font-size: 220%;
-	margin: 0 auto;
-	border-radius: .1em;
-}
-#signupEmail, #signupFacebook{
+
+#signupEmail{
 	opacity: .7;
 	width: 70%;
 }
-div#signupEmail{
+#signupEmail{
 	background-color: #111;
 	color: #FFF;
 	margin-top: 5%;
 	transition: opacity .5s;
 	-webkit-transform: opacity .5s;	
-}
-div#signupFacebook{
-	background-color: #FFF;
-	color: #3b579d;
-	background-image: url(../img/icons/fbSignUp.png);
-	background-repeat:no-repeat;
-	background-size: auto 70%;
-	background-position: 7%;
-	margin-top: 5%;
 }
 #signIn{
 	background-color: rgba(255,207,77,.9);
@@ -211,7 +226,6 @@ div#signupFacebook{
 	width: 70%;
 }
 #signInForm{
-	display:none;
 	font-size: 2em;
 	padding: 1%;
 	color: #CCC;
@@ -233,7 +247,6 @@ div#signupFacebook{
 #signInError{
 	color: #F00;
 	font-size: 1.5em;
-	display: none;
 }
 #splashSpinner{
 	display: none;	
@@ -246,7 +259,6 @@ div#signupFacebook{
 	bottom: 2.5%;
 	left: 2.5%;
 	width: 10%;	
-	display: none;
 }
 #termsAndConditionsSplash{
 	display: none;
@@ -663,7 +675,6 @@ div.ui-input-text{
 	color: #888;	
 }
 #signUpError{
-	display:none;
 	color: #FFF;
 	font-size: 1.8em;
 	padding: .5em;
