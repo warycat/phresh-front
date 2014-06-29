@@ -31,6 +31,10 @@
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
+  <script type="text/x-handlebars" id="index">
+  <h1>index</h1>
+  </script>
+
 
   <script type="text/x-handlebars" id="splash">
     <div data-role="page" id="splash">
@@ -39,9 +43,9 @@
         <h1 id="splashTitle" class="phreshColor phreshFont">phresh</h1>
         <h4 id="homeTagline">the simplest way to shop</h4>
       </div>
-      <img src='/img/female_splash_darker.PNG' id='splashBackground'>
+      <img src='/images/background/female_splash_darker.PNG' id='splashBackground'>
       <div id='FBButton' class="primary-button">
-        <div id="splashFBText"><img id='splashFBImg' src='/img/icons/fbSignUp.png'>sign up with facebook</div>
+        <div id="splashFBText"><img id='splashFBImg' src='/images/icons/fbSignUp.png'>sign up with facebook</div>
       </div>
     </div>
   </script>
@@ -134,6 +138,7 @@
 
   <!-- build:js({app,.tmp}) scripts/main.js -->
   <script src="scripts/main.js"></script>
+  <script src="scripts/vendor/fb.js">
   <!-- endbuild -->
 </body>
 
