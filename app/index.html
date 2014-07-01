@@ -16,7 +16,6 @@
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/index.css">
-  <link rel="stylesheet" href="css/closet.css">
   <link rel="stylesheet" href="css/closetSwiper.css">
   <link rel="stylesheet" href="css/jquery.mobile-1.4.0.css">
   <!-- endbuild -->
@@ -54,72 +53,93 @@
     </div>
   </script>
 
-
-
   <script type="text/x-handlebars" data-template-name='pan'>
-      <h2 id="mainTitle" class="phreshColor phreshFont">phresh</h2>
+    <h1 id="mainTitle" class="phreshColor phreshFont">phresh</h1>
 
-      <!--START CARDS-->
-      <!--<img id="toCloset" src="img/icons/bag.png"/>-->
-      <div id="navBar">
-        <img src="images/closet/gearIcon.PNG" id="toSettings" class="icon" />
-        <img id="notificationsLink" class="icon" />
-        <img src="images/closet/bagIcon.png" id="toCloset" class="icon" />
-      </div>
-      <div class="productCard top">
-        <div class="flipCont">
-          <div class="frontSide"></div>
-          <div class="backSide">
-            <div class="backSideDescription">
-              <div class="fadeScroll"></div>
-            </div>
-            <ul class="backSideBottomCont">
-              <li class="first">Share</li>
-              <li class="second">Buy Now</li>
-            </ul>
+    <!--START CARDS-->
+    <!--<img id="toCloset" src="img/icons/bag.png"/>-->
+    <div id="navBar">
+      <img src="images/nothing.png" id="toSettings" class="icon" />
+      <img id="notificationsLink" class="icon" />{{#link-to 'showroom'}}
+      <img src="images/closet/bagIcon.png" id="toCloset" class="icon" />{{/link-to}}
+    </div>
+    <div class="productCard top">
+      <div class="flipCont">
+        <div class="frontSide"></div>
+        <div class="backSide">
+          <div class="backSideDescription">
+            <div class="fadeScroll"></div>
           </div>
+          <ul class="backSideBottomCont">
+            <li class="first">Share</li>
+            <li class="second">Buy Now</li>
+          </ul>
         </div>
       </div>
-      <div class="productCard middle">
-        <div class="flipCont">
-          <div class="frontSide"></div>
-          <div class="backSide">
-            <div class="backSideDescription">
-              <div class="fadeScroll"></div>
-            </div>
-            <ul class="backSideBottomCont">
-              <li class="first">Share</li>
-              <li class="second">Buy Now</li>
-            </ul>
+    </div>
+    <div class="productCard middle">
+      <div class="flipCont">
+        <div class="frontSide"></div>
+        <div class="backSide">
+          <div class="backSideDescription">
+            <div class="fadeScroll"></div>
           </div>
+          <ul class="backSideBottomCont">
+            <li class="first">Share</li>
+            <li class="second">Buy Now</li>
+          </ul>
         </div>
       </div>
-      <div class="productCard bottom">
-        <div class="flipCont">
-          <div class="frontSide"></div>
-          <div class="backSide">
-            <div class="backSideDescription">
-              <div class="fadeScroll"></div>
-            </div>
-            <ul class="backSideBottomCont">
-              <li class="first">Share</li>
-              <li class="second">Buy Now</li>
-            </ul>
+    </div>
+    <div class="productCard bottom">
+      <div class="flipCont">
+        <div class="frontSide"></div>
+        <div class="backSide">
+          <div class="backSideDescription">
+            <div class="fadeScroll"></div>
           </div>
+          <ul class="backSideBottomCont">
+            <li class="first">Share</li>
+            <li class="second">Buy Now</li>
+          </ul>
         </div>
       </div>
-      <!--END CARDS-->
-      <!--START CARD INFO-->
-      <div id="cardInfo">
-        <h4 id="productTitle" class="centerHeader"></h4>
-        <h4 id="productPrice" class="centerHeader"></h4>
-      </div>
-      <!--END CARD INFO-->
+    </div>
+    <!--END CARDS-->
+    <!--START CARD INFO-->
+    <div id="cardInfo">
+      <h4 id="productTitle" class="centerHeader"></h4>
+      <h4 id="productPrice" class="centerHeader"></h4>
+    </div>
+    <!--END CARD INFO-->
     </div>
   </script>
 
   <script type="text/x-handlebars" id="discovery">
     {{view App.panView}}
+  </script>
+
+  <script type="text/x-handlebars" id='showroom'>
+    <h1 id="mainTitle" class="phreshColor phreshFont">phresh</h1>
+
+    <!--START CARDS-->
+    <div id="navBar">
+      {{#link-to 'discovery'}}
+      <img src="images/closet/back2Icon.png" id="toSettings" class="icon" />
+      {{/link-to}}
+      <img id="notificationsLink" class="icon" />
+      <img src="images/nothing.png" id="toCloset" class="icon" />
+    </div>
+
+        <div id="closetProfileCont">
+          <h4 id="closetProfileName"><strong>mahirshah1</strong></h4>
+          <div id="closetProfileImage" class="phreshBGColor"></div>
+        </div>
+        <ul id="grid">
+        </ul>
+      </div>
+      <div id="checkOut" class="phreshColor">check out</div>
+    </div>
   </script>
 
   <script type="text/x-handlebars" id='swipe'>
@@ -134,8 +154,8 @@
   </script>
 
   <script type="text/x-handlebars" id="tutorial">
-      {{view App.swipeView}}
-      {{view App.panView}}
+    {{view App.swipeView}}
+    {{view App.panView}}
   </script>
 
   <script type="text/x-handlebars" id="logout">

@@ -1,3 +1,5 @@
+var gender;
+
 // This is called with the results from from FB.getLoginStatus().
 function statusChangeCallback(response) {
   console.log('statusChangeCallback');
@@ -8,7 +10,7 @@ function statusChangeCallback(response) {
   // for FB.getLoginStatus().
   if (response.status === 'connected') {
     // Logged into your app and Facebook.
-    window.location = "/#/discovery";
+    testAPI();
   } else if (response.status === 'not_authorized') {
     window.location = "/#/splash";
   } else {
@@ -67,9 +69,9 @@ window.fbAsyncInit = function () {
 function testAPI() {
   console.log('Welcome!  Fetching your information.... ');
   FB.api('/me', function (response) {
-    console.log('Successful login for: ' + response.name);
-    document.getElementById('status').innerHTML =
-      'Thanks for logging in, ' + response.name + '!';
+    console.log(response.gender);
+    gender = response.gender;
+    window.location = "/#/discovery";
   });
 }
 
