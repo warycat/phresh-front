@@ -284,7 +284,8 @@ module.exports = function (grunt) {
             '.htaccess',
             'images/{,*/}*.*',
             '{,*/}*.html',
-            'styles/fonts/{,*/}*.*'
+            'styles/fonts/{,*/}*.*',
+            'CNAME'
           ]
         }, {
           expand: true,
