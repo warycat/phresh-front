@@ -12,6 +12,62 @@ App.Router.map(function () {
   this.route('discovery');
   this.route('logout');
   this.route('showroom');
+  this.route('api');
+});
+
+App.ApiRoute = Ember.Route.extend({
+
+});
+
+App.ApiController = Ember.ObjectController.extend({
+  actions:{
+    put_user:function(){
+      console.log('put_user');
+    }
+  , get_user:function(){
+      console.log('get_user');
+    }
+  , get_users:function(){
+      console.log('get_users');
+    }
+  , post_user:function(){
+      console.log('post_user');
+    }
+  , delete_user:function(){
+      console.log('delete_user');
+    }
+  , put_item:function(){
+      console.log('put_item');
+    }
+  , get_item:function(){
+      console.log('get_item');
+    }
+  , get_items:function(){
+      console.log('get_items');
+    }
+  , post_item:function(){
+      console.log('post_item');
+    }
+  , delete_item:function(){
+      console.log('delete_item');
+    }
+  , put_list:function(){
+      console.log('put_list');
+    }
+  , get_list:function(){
+      console.log('get_list');
+    }
+  , get_lists:function(){
+      console.log('get_lists');
+    }
+  , post_list:function(){
+      console.log('post_list');
+    }
+  , delete_list:function(){
+      console.log('delete_list');
+    }
+  }
+
 });
 
 App.IndexRoute = Ember.Route.extend({
@@ -112,6 +168,7 @@ App.panView = Ember.View.extend({
   }
 
 });
+
 
 
 $(function () {

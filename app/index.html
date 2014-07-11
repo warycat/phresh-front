@@ -14,11 +14,11 @@
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
+<!--   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/index.css">
   <link rel="stylesheet" href="css/closetSwiper.css">
   <link rel="stylesheet" href="css/jquery.mobile-1.4.0.css">
-  <!-- endbuild -->
+ -->  <!-- endbuild -->
   <!-- build:js scripts/vendor/modernizr.js -->
   <script src="../bower_components/modernizr/modernizr.js"></script>
   <!-- endbuild -->
@@ -36,6 +36,34 @@
       <div class="bounce2"></div>
       <div class="bounce3"></div>
     </div>
+  </script>
+
+
+  <script type="text/x-handlebars" id="api">
+  <h3>user</h3>
+  <ul>
+  <li><button {{action 'put_user'}}>put user</button></li>
+  <li><button {{action 'get_user'}}>get user</button></li>
+  <li><button {{action 'get_users'}}>get users</button></li>
+  <li><button {{action 'post_user'}}>post user</button></li>
+  <li><button {{action 'delete_user'}}>delete user</button></li>
+  </ul>
+  <h3>item</h3>
+  <ul>
+  <li><button {{action 'put_item'}}>put item</button></li>
+  <li><button {{action 'get_user'}}>get item</button></li>
+  <li><button {{action 'get_items'}}>get items</button></li>
+  <li><button {{action 'post_item'}}>post item</button></li>
+  <li><button {{action 'delete_item'}}>delete item</button></li>
+  </ul>
+  <h3>list</h3>
+  <ul>
+  <li><button {{action 'put_list'}}>put list</button></li>
+  <li><button {{action 'get_list'}}>get list</button></li>
+  <li><button {{action 'get_lists'}}>get lists</button></li>
+  <li><button {{action 'post_list'}}>post list</button></li>
+  <li><button {{action 'delete_list'}}>delete list</button></li>
+  </ul>
   </script>
 
   <script type="text/x-handlebars" id="splash">
