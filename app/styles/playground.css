@@ -1,20 +1,77 @@
+.phreshcolor{
+	color: #FFD75B;
+}
+
+.phreshfont{
+	font-family: 'Roboto', sans-serif;
+}
+
 .welcome {
 
 	color: #FFD75B;
 	font-size: 50pt;
 	position: relative;
 	text-align: center;
-	margin-top: 50%
-
+	margin-top: 50%;
 
 	}
 
-.loginbutton {
-	padding: 3%;
-	font-size: 220%;
-	margin: 0 auto;
-	border-radius: .1em;
+.loginphresh{
+	position: absolute;
+	top: 180px;
+	left: 28px;
+	color: #FFD75B;
+	font-size: 90pt;
 }
 
+.loginsubheading{
+	position: absolute;
+	top: 335px;
+	left: 28px;
+	width:355px;
+	text-align: right;
+	color: #FFFFFF;
+	font-size: 17pt;
+	font-weight: bold;
+}
+
+.largebutton{
+	position: absolute;
+	margin-left: 0
+	margin-top: 0;
+	height: 60px;
+	width: 360px;
+	top: 525px;
+	left: 30px;
+	font-size: 20pt;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	background-color: #FFFFFF;
+
+}
+
+.facebook{
+	position: absolute;
+	top: 533px;
+	left: 43px;
+	height: 10%;
+	width: 10%;
+	z-index: 10;
+
+}
+
+
+/*Larry please help fix - the splashbackground image should go all the way to the bottom - right now there is a gap*/
+.splashbackground{
+	padding-left:  0;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	position: fixed;
+	height: 100%;
+	width: 100%;
 
 }
