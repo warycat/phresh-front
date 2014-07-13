@@ -108,5 +108,57 @@ App.ApiController = Ember.ObjectController.extend({
         console.log(data);
       });
     }
+  , fb_login:function(){
+      console.log('fb_login');
+      FB.login(function(response){
+        console.log(response);
+      },{scope:'public_profile,email,user_friends'});
+    }
+  , fb_logout:function(){
+      console.log('fb_logout');
+      FB.logout(function(response){
+        console.log(response);
+      });
+    }
+  , fb_register:function(){
+      console.log('fb_register');
+      FB.api('/me', function (response) {
+        console.log(response);
+        var user = {};
+        $.each(response,function(key){
+          user[key] = {S: response[key] + ''};
+        });
+        Api.putUser(user,function(data){
+          console.log(data);
+        });
+      });
+    }
+  , fb_friends:function(){
+      console.log('fb_friends');
+      FB.api('/me/friends', function (response) {
+        console.log(response);
+      });
+    }
+  , fb_pagetab:function(){
+      console.log('fb_pagetab');
+      FB.ui({
+        method: 'pagetab',
+        redirect_uri: 'YOUR_URL'
+      }, function(response){
+        console.log(response);
+      });
+    }
+  , fb_share:function(){
+      console.log('fb_share');
+      FB.ui({
+        method: 'share_open_graph',
+        action_type: 'og.likes',
+        action_properties: JSON.stringify({
+            object:'https://developers.facebook.com/docs/',
+        })
+      }, function(response){
+        console.log(response);
+      });
+    }
   }
 });

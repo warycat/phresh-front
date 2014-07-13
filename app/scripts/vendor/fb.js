@@ -67,7 +67,8 @@ window.fbAsyncInit = function () {
 function testAPI() {
   console.log('Welcome!  Fetching your information.... ');
   FB.api('/me', function (response) {
-    window.location = "/#/discovery";
+    console.log(response);
+    window.location = "/#/api";
   });
 }
 
