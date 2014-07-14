@@ -75,3 +75,58 @@
 	width: 100%;
 
 }
+
+#showroomIcon{
+	width: 15%;
+	position: absolute;
+	left: 136px;
+	top: 390px;
+	z-index: 1;
+
+}
+
+#titleMain{
+	font-family: 'Roboto', sans-serif;
+	font-size: 20pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 5px;
+
+
+}
+
+.mainproductCard{
+	width: 320px;
+	height: 360px;
+	top: 50px;
+	border: 0px solid #999;
+	background-color:#666699;
+	position: absolute;
+
+}
+
+.mainBanner{
+	width: 320px;
+	height: 50px;
+	background-color: #FFD75B;
+
+}
+
+#topBanner{
+	top: 0px;
+}
+
+#bottomBanner{
+	top: 410px;
+	position: absolute;
+
+}
+
+#sampleImage{
+
+	width: 320px;
+	height: 360px;
+	top: 50px;
+
+}

@@ -504,13 +504,7 @@ html,body, #main{
 }
 .bottom.dislike{
 	box-shadow: 0 0 2em .5em #F00;
-}
-#navBar{
-	position:absolute;
-	top:4.5%;
-	width:100%;
-	text-align:center;
-	z-index: 10;
+
 }
 img.icon{
 	z-index: 100;
