@@ -1,0 +1,267 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>Lucky 7</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+  <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="../bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+  <link rel='stylesheet' href='styles/playground.css' />
+
+</head>
+<body>
+  <!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+<script type="text/x-handlebars" id="api">
+  <div class='container'>
+    <h3>user</h3>
+    <div class='btn-group'>
+    <button class="btn btn-default" {{action 'put_user'}}>put user</button>
+    <button class="btn btn-default" {{action 'get_user'}}>get user</button>
+    <button class="btn btn-default" {{action 'get_users'}}>get users</button>
+    <button class="btn btn-default" {{action 'post_user'}}>post user</button>
+    <button class="btn btn-default" {{action 'delete_user'}}>delete user</button>
+    </div>
+    <h3>item</h3>
+    <div class='btn-group'>
+    <button class="btn btn-default" {{action 'put_item'}}>put item</button>
+    <button class="btn btn-default" {{action 'get_item'}}>get item</button>
+    <button class="btn btn-default" {{action 'get_items'}}>get items</button>
+    <button class="btn btn-default" {{action 'post_item'}}>post item</button>
+    <button class="btn btn-default" {{action 'delete_item'}}>delete item</button>
+    </div>
+    <h3>list</h3>
+    <div class='btn-group'>
+    <button class="btn btn-default" {{action 'put_list'}}>put list</button>
+    <button class="btn btn-default" {{action 'get_list'}}>get list</button>
+    <button class="btn btn-default" {{action 'get_lists'}}>get lists</button>
+    <button class="btn btn-default" {{action 'post_list'}}>post list</button>
+    <button class="btn btn-default" {{action 'delete_list'}}>delete list</button>
+    </div>
+    <h3>FB</h3>
+    <div class='btn-group'>
+    <button class="btn btn-default" {{action 'fb_login'}}>login</button>
+    <button class="btn btn-default" {{action 'fb_register'}}>register</button>
+    <button class="btn btn-default" {{action 'fb_friends'}}>friends</button>
+    <button class="btn btn-default" {{action 'fb_logout'}}>logout</button>
+    <button class="btn btn-default" {{action 'fb_pagetab'}}>pagetab</button>
+    <button class="btn btn-default" {{action 'fb_share'}}>share</button>
+    </div>
+    <h3>SS</h3>
+    <h4>womens-accessories</h4>
+    <button class="btn btn-default" {{action 'ss_cat' 'belts'}}>belts</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'hats'}}>hats</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'scarves'}}>scarves</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'sunglasses'}}>sunglasses</button>
+    <h4>jeans</h4>
+    <button class="btn btn-default" {{action 'ss_cat' 'bootcut-jeans'}}>bootcut-jeans</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'classic-jeans'}}>classic-jeans</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'cropped-jeans'}}>cropped-jeans</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'distressed-jeans'}}>distressed-jeans</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'flare-jeans'}}>flare-jeans</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'relaxed-jeans'}}>relaxed-jeans</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'skinny-jeans'}}>skinny-jeans</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'straight-jeans'}}>straight-jeans</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'stretch-jeans'}}>stretch-jeans</button>
+    <h4>dresses</h4>
+    <button class="btn btn-default" {{action 'ss_cat' 'cocktail-dresses'}}>cocktail-dresses</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'day-dresses'}}>day-dresses</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'evening-dresses'}}>evening-dresses</button>
+    <h4>jackets</h4> 
+    <button class="btn btn-default" {{action 'ss_cat' 'blazers'}}>blazers</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'casual-jackets'}}>casual-jackets</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'vests'}}>vests</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'leather-jackets'}}>leather-jackets</button>
+    <h4>jewelry</h4>
+    <button class="btn btn-default" {{action 'ss_cat' 'bracelets'}}>bracelets</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'charms'}}>charms</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'earrings'}}>earrings</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'necklaces'}}>necklaces</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'rings'}}>rings</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'watches'}}>watches</button>
+    <h4>womens-outerwear</h4>
+    <button class="btn btn-default" {{action 'ss_cat' 'coats'}}>coats</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'fur-and-shearling-coats'}}>fur-and-shearling-coats</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'leather-and-suede-coats'}}>leather-and-suede-coats</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'puffer-coats'}}>puffer-coats</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'raincoats-and-trenchcoats'}}>raincoats-and-trenchcoats</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'wool-coats'}}>wool-coats</button>
+    <h4>womens-pants</h4>
+    <button class="btn btn-default" {{action 'ss_cat' 'casual-pants'}}>casual-pants</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'cropped-pants'}}>cropped-pants</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'dress-pants'}}>dress-pants</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'leggings'}}>leggings</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'skinny-pants'}}>skinny-pants</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'wide-leg-pants'}}>wide-leg-pants</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'shorts'}}>shorts</button>
+    <h4>shorts</h4>
+    <button class="btn btn-default" {{action 'ss_cat' 'mini-skirts'}}>mini-skirts</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mid-length-skirts'}}>mid-length-skirts</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'long-skirts'}}>long-skirts</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'cardigan-sweaters'}}>cardigan-sweaters</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'cashmere-sweaters'}}>cashmere-sweaters</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'crewneck-sweaters'}}>crewneck-sweaters</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'turtleneck-sweaters'}}>turtleneck-sweaters</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'v-neck-sweaters'}}>v-neck-sweaters</button>
+    <h4>sweaters</h4>
+    <button class="btn btn-default" {{action 'ss_cat' 'one-piece-swimsuits'}}>one-piece-swimsuits</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'two-piece-swimsuits'}}>two-piece-swimsuits</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'swimsuit-coverups'}}>swimsuit-coverups</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'sweatshirts'}}>sweatshirts</button>
+    <h4>womens-tops</h4>
+    <button class="btn btn-default" {{action 'ss_cat' 'button-front-tops'}}>button-front-tops</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'camisole-tops'}}>camisole-front-tops</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'cashmere-tops'}}>cashmere-tops</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'halter-tops'}}>halter-tops</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'longsleeve-tops'}}>longsleeve-tops</button<button class="btn btn-default" {{action 'ss_cat' 'shortsleeve-tops'}}>shortsleeve-tops</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'sleeveless-tops'}}>sleeveless-tops</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'tank-tops'}}>tank-tops</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'tees-and-tshirts'}}>tees-and-tshirts-tops</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'tunic-tops'}}>tunic-tops</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'polo-tops'}}>polo-tops</button>
+    <h4>Handbags</h4>
+    <button class="btn btn-default" {{action 'ss_cat' 'backpacks'}}>backpacks-tops</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'clutches'}}>clutches</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'evening-handbags'}}>evening-handbags</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'hobo-bags'}}>hobo-bags</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'satchels'}}>satchels</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'shoulder-bags'}}>shoulder-bags</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'tote-bags'}}>tote-bags</button>
+    <h4>womens-shoes</h4>
+    <button class="btn btn-default" {{action 'ss_cat' 'boots'}}>boots</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'evening-shoes'}}>evening-shoes</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'flats'}}>flats</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mules-and-clogs'}}>mules-and-clogs</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'platforms'}}>platforms</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'pumps'}}>pumps</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'sandals'}}>sandals</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'womens-sneakers'}}>womens-sneakers</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'wedges'}}>wedges</button>
+    <h4>mens-clothes</h4>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-sunglasses'}}>mens-sunglasses</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-athletic-pants'}}>mens-athletic-pants</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-bootcut-jeans'}}>mens-bootcut-jeans</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-distressed-jeans'}}>mens-distressed-jeans</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-loose-jeans'}}>mens-loose-jeans</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-low-rise-jeans'}}>mens-low-rise-jeans</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-relaxed-jeans'}}>mens-relaxed-jeans</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-slim-jeans'}}>mens-slim-jeans</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'straight-leg-jeans'}}>mens-straight-leg-jeans</button>
+    <h4>mens-pants</h4>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-denim-jackets'}}>mens-denim-jackets</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-jackets'}}>mens-jackets</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-leather-and-suede-coats'}}>mens-leather-and-suede-coats</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-overcoats-and-trenchcoats'}}>mens-overcoats-and-trenchcoats</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-wool-coats'}}>mens-wool-coats</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-casual-pants'}}>mens-casual-pants</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-chinos-and-khakis'}}>mens-chinos-and-khakis</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-dress-pants'}}>mens-dress-pants</button>
+    <h4>mens-shirts</h4>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-dress-shirts'}}>mens-dress-shirts</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-longsleeve-shirts'}}>mens-longsleeve-shirts</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-shortsleeve-shirts'}}>mens-shortsleeve-shirts</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-polo-shirts'}}>mens-polo-shirts</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-tees-and-tshirts'}}>mens-tees-and-tshirts</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-shorts'}}>mens-shorts</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-blazers-and-sport-coats'}}>mens-blazers-and-sport-coats</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-cardigan-sweaters'}}>mens-cardigan-sweaters</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-cashmere-sweaters'}}>mens-cashmere-sweaters</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-crewneck-sweaters'}}>mens-crewneck-sweaters</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-half-zip-sweaters'}}>mens-half-zip-sweaters</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-turtleneck-sweaters'}}>mens-turtleneck-sweaters</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-v-neck-sweaters'}}>mens-v-neck-sweaters</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-vests'}}>mens-vests</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-sweatshirts'}}>mens-sweatshirts</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-swimsuits'}}>mens-swimsuits</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-swimsuits'}}>mens-swimsuits</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-messenger-bags'}}>mens-messenger-bags</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-tote-bags'}}>mens-tote-bags</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-business-bags'}}>mens-business-bags</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-backpacks'}}>mens-backpacks</button>
+    <h4>mens-shoes</h4>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-sneakers'}}>mens-sneakers</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-slip-ons-shoes'}}>mens-slip-ons-shoes</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-lace-up-shoes'}}>mens-lace-up-shoes</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-sandals'}}>mens-sandals</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-boots'}}>mens-boots</button>
+    <h4>mens-watches-and-jewelry</h4>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-cuff-links'}}>mens-cuff-links</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-jewelry'}}>mens-jewelry</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'mens-watches'}}>mens-watches</button>  
+    </div>
+  </div>
+</script>
+
+<script type="text/x-handlebars" id="index">
+  <div class="container">
+  <div class='welcome'>phresh</div>
+</script>
+
+
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/handlebars/handlebars.js"></script>
+  <script src="../bower_components/ember/ember.js"></script>
+  <script src="../bower_components/async/lib/async.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+    (function (b, o, i, l, e, r) {
+      b.GoogleAnalyticsObject = l;
+      b[l] || (b[l] =
+        function () {
+          (b[l].q = b[l].q || []).push(arguments)
+        });
+      b[l].l = +new Date;
+      e = o.createElement(i);
+      r = o.getElementsByTagName(i)[0];
+      e.src = '//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- build:js scripts/plugins.js -->
+  <script src="../bower_components/bootstrap/js/affix.js"></script>
+  <script src="../bower_components/bootstrap/js/alert.js"></script>
+  <script src="../bower_components/bootstrap/js/dropdown.js"></script>
+  <script src="../bower_components/bootstrap/js/tooltip.js"></script>
+  <script src="../bower_components/bootstrap/js/modal.js"></script>
+  <script src="../bower_components/bootstrap/js/transition.js"></script>
+  <script src="../bower_components/bootstrap/js/button.js"></script>
+  <script src="../bower_components/bootstrap/js/popover.js"></script>
+  <script src="../bower_components/bootstrap/js/carousel.js"></script>
+  <script src="../bower_components/bootstrap/js/scrollspy.js"></script>
+  <script src="../bower_components/bootstrap/js/collapse.js"></script>
+  <script src="../bower_components/bootstrap/js/tab.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js({app,.tmp}) scripts/main.js -->
+  <script src="scripts/vendor/ember-touch.js"></script>
+  <script src="scripts/vendor/fb.js"></script>
+  <script src="scripts/api.js"></script>
+  <script src="scripts/ss.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/apiController.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>

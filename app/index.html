@@ -26,46 +26,6 @@
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-<script type="text/x-handlebars" id="api">
-  <div class='container'>
-    <h3>user</h3>
-    <div class='btn-group'>
-    <button class="btn btn-default" {{action 'put_user'}}>put user</button>
-    <button class="btn btn-default" {{action 'get_user'}}>get user</button>
-    <button class="btn btn-default" {{action 'get_users'}}>get users</button>
-    <button class="btn btn-default" {{action 'post_user'}}>post user</button>
-    <button class="btn btn-default" {{action 'delete_user'}}>delete user</button>
-    </div>
-    <h3>item</h3>
-    <div class='btn-group'>
-    <button class="btn btn-default" {{action 'put_item'}}>put item</button>
-    <button class="btn btn-default" {{action 'get_item'}}>get item</button>
-    <button class="btn btn-default" {{action 'get_items'}}>get items</button>
-    <button class="btn btn-default" {{action 'post_item'}}>post item</button>
-    <button class="btn btn-default" {{action 'delete_item'}}>delete item</button>
-    </div>
-    <h3>list</h3>
-    <div class='btn-group'>
-    <button class="btn btn-default" {{action 'put_list'}}>put list</button>
-    <button class="btn btn-default" {{action 'get_list'}}>get list</button>
-    <button class="btn btn-default" {{action 'get_lists'}}>get lists</button>
-    <button class="btn btn-default" {{action 'post_list'}}>post list</button>
-    <button class="btn btn-default" {{action 'delete_list'}}>delete list</button>
-    </div>
-    <h3>FB</h3>
-    <div class='btn-group'>
-    <button class="btn btn-default" {{action 'fb_login'}}>login</button>
-    <button class="btn btn-default" {{action 'fb_register'}}>register</button>
-    <button class="btn btn-default" {{action 'fb_friends'}}>friends</button>
-    <button class="btn btn-default" {{action 'fb_logout'}}>logout</button>
-    <button class="btn btn-default" {{action 'fb_pagetab'}}>pagetab</button>
-    <button class="btn btn-default" {{action 'fb_share'}}>share</button>
-
-    </div>
-    </div>
-  </div>
-</script>
-
 <script type="text/x-handlebars" id="index">
   <div class="container">
   <div class='welcome'>phresh</div>
@@ -77,6 +37,7 @@
   <script src="../bower_components/jquery/dist/jquery.js"></script>
   <script src="../bower_components/handlebars/handlebars.js"></script>
   <script src="../bower_components/ember/ember.js"></script>
+  <script src="../bower_components/async/lib/async.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -117,6 +78,7 @@
   <script src="scripts/vendor/ember-touch.js"></script>
   <script src="scripts/vendor/fb.js"></script>
   <script src="scripts/api.js"></script>
+  <script src="scripts/ss.js"></script>
   <script src="scripts/main.js"></script>
   <script src="scripts/apiController.js"></script>
   <!-- endbuild -->
