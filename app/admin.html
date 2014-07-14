@@ -30,38 +30,44 @@
   <div class='container'>
     <h3>user</h3>
     <div class='btn-group'>
-    <button class="btn btn-default" {{action 'put_user'}}>put user</button>
-    <button class="btn btn-default" {{action 'get_user'}}>get user</button>
-    <button class="btn btn-default" {{action 'get_users'}}>get users</button>
-    <button class="btn btn-default" {{action 'post_user'}}>post user</button>
-    <button class="btn btn-default" {{action 'delete_user'}}>delete user</button>
+      <button class="btn btn-default" {{action 'put_user'}}>put user</button>
+      <button class="btn btn-default" {{action 'get_user'}}>get user</button>
+      <button class="btn btn-default" {{action 'get_users'}}>get users</button>
+      <button class="btn btn-default" {{action 'post_user'}}>post user</button>
+      <button class="btn btn-default" {{action 'delete_user'}}>delete user</button>
     </div>
     <h3>item</h3>
     <div class='btn-group'>
-    <button class="btn btn-default" {{action 'put_item'}}>put item</button>
-    <button class="btn btn-default" {{action 'get_item'}}>get item</button>
-    <button class="btn btn-default" {{action 'get_items'}}>get items</button>
-    <button class="btn btn-default" {{action 'post_item'}}>post item</button>
-    <button class="btn btn-default" {{action 'delete_item'}}>delete item</button>
+      <button class="btn btn-default" {{action 'put_item'}}>put item</button>
+      <button class="btn btn-default" {{action 'get_item'}}>get item</button>
+      <button class="btn btn-default" {{action 'get_items'}}>get items</button>
+      <button class="btn btn-default" {{action 'post_item'}}>post item</button>
+      <button class="btn btn-default" {{action 'delete_item'}}>delete item</button>
     </div>
     <h3>list</h3>
     <div class='btn-group'>
-    <button class="btn btn-default" {{action 'put_list'}}>put list</button>
-    <button class="btn btn-default" {{action 'get_list'}}>get list</button>
-    <button class="btn btn-default" {{action 'get_lists'}}>get lists</button>
-    <button class="btn btn-default" {{action 'post_list'}}>post list</button>
-    <button class="btn btn-default" {{action 'delete_list'}}>delete list</button>
+      <button class="btn btn-default" {{action 'put_list'}}>put list</button>
+      <button class="btn btn-default" {{action 'get_list'}}>get list</button>
+      <button class="btn btn-default" {{action 'get_lists'}}>get lists</button>
+      <button class="btn btn-default" {{action 'post_list'}}>post list</button>
+      <button class="btn btn-default" {{action 'delete_list'}}>delete list</button>
     </div>
     <h3>FB</h3>
     <div class='btn-group'>
-    <button class="btn btn-default" {{action 'fb_login'}}>login</button>
-    <button class="btn btn-default" {{action 'fb_register'}}>register</button>
-    <button class="btn btn-default" {{action 'fb_friends'}}>friends</button>
-    <button class="btn btn-default" {{action 'fb_logout'}}>logout</button>
-    <button class="btn btn-default" {{action 'fb_pagetab'}}>pagetab</button>
-    <button class="btn btn-default" {{action 'fb_share'}}>share</button>
+      <button class="btn btn-default" {{action 'fb_login'}}>login</button>
+      <button class="btn btn-default" {{action 'fb_register'}}>register</button>
+      <button class="btn btn-default" {{action 'fb_friends'}}>friends</button>
+      <button class="btn btn-default" {{action 'fb_logout'}}>logout</button>
+      <button class="btn btn-default" {{action 'fb_pagetab'}}>pagetab</button>
+      <button class="btn btn-default" {{action 'fb_share'}}>share</button>
     </div>
+  </div>
+</script>
+
+<script type="text/x-handlebars" id="ss">
+  <div class='container'>
     <h3>SS</h3>
+    <div id='imagesContainer' class='well'></div>
     <h4>womens-accessories</h4>
     <button class="btn btn-default" {{action 'ss_cat' 'belts'}}>belts</button>
     <button class="btn btn-default" {{action 'ss_cat' 'hats'}}>hats</button>
@@ -75,7 +81,7 @@
     <button class="btn btn-default" {{action 'ss_cat' 'flare-jeans'}}>flare-jeans</button>
     <button class="btn btn-default" {{action 'ss_cat' 'relaxed-jeans'}}>relaxed-jeans</button>
     <button class="btn btn-default" {{action 'ss_cat' 'skinny-jeans'}}>skinny-jeans</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'straight-jeans'}}>straight-jeans</button>
+    <button class="btn btn-default" {{action 'ss_cat' 'straight-leg-jeans'}}>straight-leg-jeans</button>
     <button class="btn btn-default" {{action 'ss_cat' 'stretch-jeans'}}>stretch-jeans</button>
     <h4>dresses</h4>
     <button class="btn btn-default" {{action 'ss_cat' 'cocktail-dresses'}}>cocktail-dresses</button>
@@ -202,7 +208,6 @@
     <button class="btn btn-default" {{action 'ss_cat' 'mens-cuff-links'}}>mens-cuff-links</button>
     <button class="btn btn-default" {{action 'ss_cat' 'mens-jewelry'}}>mens-jewelry</button>
     <button class="btn btn-default" {{action 'ss_cat' 'mens-watches'}}>mens-watches</button>  
-    </div>
   </div>
 </script>
 
@@ -217,6 +222,16 @@
   <script src="../bower_components/jquery/dist/jquery.js"></script>
   <script src="../bower_components/handlebars/handlebars.js"></script>
   <script src="../bower_components/ember/ember.js"></script>
+  <script src="../bower_components/get-style-property/get-style-property.js"></script>
+  <script src="../bower_components/get-size/get-size.js"></script>
+  <script src="../bower_components/eventie/eventie.js"></script>
+  <script src="../bower_components/doc-ready/doc-ready.js"></script>
+  <script src="../bower_components/eventEmitter/EventEmitter.js"></script>
+  <script src="../bower_components/jquery-bridget/jquery.bridget.js"></script>
+  <script src="../bower_components/matches-selector/matches-selector.js"></script>
+  <script src="../bower_components/outlayer/item.js"></script>
+  <script src="../bower_components/outlayer/outlayer.js"></script>
+  <script src="../bower_components/masonry/masonry.js"></script>
   <script src="../bower_components/async/lib/async.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
@@ -261,6 +276,7 @@
   <script src="scripts/ss.js"></script>
   <script src="scripts/main.js"></script>
   <script src="scripts/apiController.js"></script>
+  <script src="scripts/ssController.js"></script>
   <!-- endbuild -->
 </body>
 

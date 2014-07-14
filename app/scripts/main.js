@@ -13,10 +13,8 @@ App.Router.map(function () {
   this.route('logout');
   this.route('showroom');
   this.route('api');
+  this.route('ss');
 });
-
-
-
 
 App.IndexRoute = Ember.Route.extend({
 	afterModel: function(){
@@ -75,10 +73,12 @@ App.panView = Ember.View.extend({
   panOptions: {
     numberOfRequiredTouches: 1
   },
+
   didInsertElement:function(){
 		// console.log('didInsertElement');
 		// getMoreItems(10,true);
   },
+  
   touchStart: function(evt){
     var originalEvent = evt.originalEvent;
     console.log(originalEvent);
