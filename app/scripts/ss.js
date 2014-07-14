@@ -37,7 +37,7 @@ var SS = (function(){
       }
     );
   }
-  
+
   return {
     getItemsInCat:getItemsInCat
   };
