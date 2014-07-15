@@ -2,6 +2,16 @@ document.ontouchmove = function(event){
   event.preventDefault();
 };
 
+$.ajaxSetup({
+  contentType : 'application/json',
+  processData : false
+});
+$.ajaxPrefilter( function(options) {
+  if (options.data){
+    options.data=JSON.stringify(options.data);
+  }
+});
+
 var App = Ember.Application.create();
 
 App.Router.map(function () {

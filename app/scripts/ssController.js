@@ -1,7 +1,10 @@
 App.SsController = Ember.ObjectController.extend({
   actions:{
-    ss_cat:function(cat){
-      console.log('ss_cat');
+    clean:function(){
+      $('#imagesContainer').empty();
+    }
+  , category:function(cat,gender){
+      console.log('category',cat,gender);
       SS.getItemsInCat(cat,function(products){
         $.each(products,function(index,product){
           var item = {SRC:{S:'ShopStyle'}};
@@ -21,34 +24,59 @@ App.SsController = Ember.ObjectController.extend({
                 item.imageSIZES = {S:JSON.stringify(value.sizes)};
                 break;
               case 'alternateImages':
-                item.alternateImages = {SS:[]};
-                $.each(value,function(index,image){
-                  item.alternateImages.SS.push(JSON.stringify(image));
-                });
+                // item.alternateImages = {SS:[]};
+                // $.each(value,function(index,image){
+                //   item.alternateImages.SS.push(JSON.stringify(image));
+                // });
+                // if(item.alternateImages.SS.length === 0){
+                //   delete item.alternateImages;
+                // }else{
+                //   console.log(item.alternateImages);
+                // }
                 break;
               case 'colors':
-                item.colors = {SS:[]};
-                $.each(value,function(index,color){
-                  item.colors.SS.push(JSON.stringify(color));
-                });
+                // item.colors = {SS:[]};
+                // $.each(value,function(index,color){
+                //   item.colors.SS.push(JSON.stringify(color));
+                // });
+                // if(item.colors.SS.length === 0){
+                //   delete item.colors;
+                // }else{
+                //   console.log(item.colors);
+                // }
                 break;
               case 'sizes':
-                item.sizes = {SS:[]};
-                $.each(value,function(index,size){
-                  item.sizes.SS.push(JSON.stringify(size));
-                });
+                // item.sizes = {SS:[]};
+                // $.each(value,function(index,size){
+                //   item.sizes.SS.push(JSON.stringify(size));
+                // });
+                // if(item.sizes.SS.length === 0){
+                //   delete item.sizes;
+                // }else{
+                //   console.log(item.sizes);
+                // }
                 break;
               case 'categories':
-                item.categories = {SS:[]};
-                $.each(value,function(index,category){
-                  item.categories.SS.push(JSON.stringify(category));
-                });
+                // item.categories = {SS:[]};
+                // $.each(value,function(index,category){
+                //   item.categories.SS.push(JSON.stringify(category));
+                // });
+                // if(item.categories.SS.length === 0){
+                //   delete item.categories;
+                // }else{
+                //   console.log(item.categories);
+                // }
                 break;
               case 'badges':
-                item.badges = {SS:[]};
-                $.each(value,function(index,category){
-                  item.badges.SS.push(JSON.stringify(category));
-                });
+                // item.badges = {SS:[]};
+                // $.each(value,function(index,category){
+                //   item.badges.SS.push(JSON.stringify(category));
+                // });
+                // if(item.badges.SS.length === 0){
+                //   delete item.badges;
+                // }else{
+                //   console.log(item.badges);
+                // }
                 break;
               default:
                 console.log(key);
@@ -58,16 +86,25 @@ App.SsController = Ember.ObjectController.extend({
               case 'id':
                 item[key] = {'S':'ss' + value};
                 break;
+              case 'price':
+                item[key] = {'N':'' + value};
+                break;
               default:
+                // console.log(key,value);
                 item[key] = {'S': '' + value};
               }
             }
           });
           var dict = JSON.parse(item.imageSIZES.S);
-          $('#imagePreview').attr('src',dict.IPhone.url);
-          console.log(dict.IPhone.url);
+          var $elem = $('<img style="height:40px;" class="item"  src="' + dict.IPhone.url + '" />');
+          Api.putItem(item,gender,function(data){
+            if(data){
+              $('#imagesContainer').append($elem);
+            }
+          });
         });
       });
     }
   }
 });
+

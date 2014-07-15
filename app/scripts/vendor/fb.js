@@ -67,7 +67,6 @@ function testAPI() {
   console.log('Welcome!  Fetching your information.... ');
   FB.api('/me', function (response) {
     console.log(response);
-    window.location = "/#/api";
   });
 }
 

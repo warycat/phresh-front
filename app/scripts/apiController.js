@@ -38,19 +38,19 @@ App.ApiController = Ember.ObjectController.extend({
     }
   , put_item:function(){
       console.log('put_item');
-      Api.putItem({id:{S:'123'},name:{S:'dress'}},function(data){
+      Api.putItem({id:{S:'123'},name:{S:'dress'}},'mens',function(data){
         console.log(data);
       });
     }
   , get_item:function(){
       console.log('get_item');
-      Api.getItem('123',function(data){
+      Api.getItem('123','mens',function(data){
         console.log(data);
       });
     }
   , get_items:function(){
       console.log('get_items');
-      Api.getItems(function(data){
+      Api.getItems('mens',function(data){
         console.log(data);
       });
     }
@@ -62,19 +62,19 @@ App.ApiController = Ember.ObjectController.extend({
         , Value:{S:'large'}
         }
       };
-      Api.postItem('123',body,function(data){
+      Api.postItem('123',body,'mens',function(data){
         console.log(data);
       });
     }
   , delete_item:function(){
       console.log('delete_item');
-      Api.deleteItem('123',function(data){
+      Api.deleteItem('123','mens',function(data){
         console.log(data);
       });
     }
   , put_list:function(){
       console.log('put_list');
-      Api.putList({id:{S:'123'},name:{S:'young'},ids:{SS:['123','234']}},function(data){
+      Api.putList({id:{S:'123'},name:{S:'young'},ids:{SS:['123','234']}},'mens',function(data){
         console.log(data);
       });
     }

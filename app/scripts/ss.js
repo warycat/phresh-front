@@ -1,15 +1,6 @@
 var SS = (function(){
 	var pid = '&pid=uid1444-23870038-13';
 	var url = 'http://api.shopstyle.com/api/v2';
-  $.ajaxSetup({
-    contentType : 'application/json',
-    processData : false
-  });
-  $.ajaxPrefilter( function(options) {
-    if (options.data){
-      options.data=JSON.stringify(options.data);
-    }
-  });
 
   function getItemsInCat(cat,done){
     var offset = 0;
