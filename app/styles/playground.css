@@ -77,10 +77,28 @@
 }
 
 #showroomIcon{
+	width: 25%;
+	position: absolute;
+	left: 120px;
+	top: 385px;
+	z-index: 1;
+
+}
+
+#likeIcon{
 	width: 15%;
 	position: absolute;
-	left: 136px;
-	top: 390px;
+	left: 230px;
+	top: 400px;
+	z-index: 1;
+
+}
+
+#dislikeIcon{
+	width: 15%;
+	position: absolute;
+	left: 40px;
+	top: 400px;
 	z-index: 1;
 
 }
@@ -93,10 +111,34 @@
 	text-align: center;
 	padding-top: 5px;
 
+}
+
+.mainProductCardTop{
+	width: 320px;
+	height: 360px;
+	top: 50px;
+	border: 0px solid #999;
+	background-color:#666699;
+	position: absolute;
+	z-index: 10
+
 
 }
 
-.mainproductCard{
+#sampleImageTop{
+	position: absolute;
+	max-width: 100%;
+	max-height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+    top: 0; left: 0; bottom: 0; right: 0;
+    top: 50px;
+    z-index: 10
+   
+}
+
+.mainProductCardBottom{
 	width: 320px;
 	height: 360px;
 	top: 50px;
@@ -106,27 +148,33 @@
 
 }
 
+#sampleImageBottom{
+	position: absolute;
+	max-width: 100%;
+	max-height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+    top: 0; left: 0; bottom: 0; right: 0;
+    top: 50px;
+
+}
+
 .mainBanner{
 	width: 320px;
 	height: 50px;
-	background-color: #FFD75B;
 
 }
 
 #topBanner{
 	top: 0px;
+	background-color: #000000;
 }
 
 #bottomBanner{
 	top: 410px;
 	position: absolute;
+	background-color: #000000;
 
 }
 
-#sampleImage{
-
-	width: 320px;
-	height: 360px;
-	top: 50px;
-
-}
