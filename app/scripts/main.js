@@ -6,6 +6,7 @@ $.ajaxSetup({
   contentType : 'application/json',
   processData : false
 });
+
 $.ajaxPrefilter( function(options) {
   if (options.data){
     options.data=JSON.stringify(options.data);
@@ -15,12 +16,12 @@ $.ajaxPrefilter( function(options) {
 var App = Ember.Application.create();
 
 App.Router.map(function () {
-	this.route('index',{path:'/'});
-  this.route('main');
-  this.route('main-description',{path:'main-description'});
-  this.route('showroom');
-  this.route('api');
-  this.route('ss');
+	this.resource('index',{path:'/'});
+  this.resource('main');
+  this.resource('main-description',{path:'main-description'});
+  this.resource('showroom');
+  this.resource('ss');
+  this.resource('api');
 });
 
 

@@ -1,79 +1,74 @@
-.phreshcolor{
-	color: #FFD75B;
+.phreshcolor {
+    color: #FFD75B;
 }
 
-.phreshfont{
-	font-family: 'Roboto', sans-serif;
+.phreshfont {
+    font-family: 'Roboto', sans-serif;
 }
 
 /*loginscreen*/
 
 .welcome {
-
-	color: #FFD75B;
-	font-size: 50pt;
-	position: relative;
-	text-align: center;
-	margin-top: 50%;
-
-	}
-
-.loginphresh{
-	position: absolute;
-	top: 180px;
-	left: 28px;
-	color: #FFD75B;
-	font-size: 90pt;
+    color: #FFD75B;
+    font-size: 50pt;
+    position: relative;
+    text-align: center;
+    margin-top: 50%;
 }
 
-.loginsubheading{
-	position: absolute;
-	top: 335px;
-	left: 28px;
-	width:355px;
-	text-align: right;
-	color: #FFFFFF;
-	font-size: 17pt;
-	font-weight: bold;
+.loginphresh {
+    position: absolute;
+    top: 180px;
+    left: 28px;
+    color: #FFD75B;
+    font-size: 90pt;
 }
 
-.largebutton{
-	position: absolute;
-	margin-left: 0
+.loginsubheading {
+    position: absolute;
+    top: 335px;
+    left: 28px;
+    width: 355px;
+    text-align: right;
+    color: #FFFFFF;
+    font-size: 17pt;
+    font-weight: bold;
+}
+
+.largebutton {
+    position: absolute;
+    margin-left: 0
 	margin-top: 0;
-	height: 60px;
-	width: 360px;
-	top: 525px;
-	left: 30px;
-	font-size: 20pt;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 400;
-	background-color: #FFFFFF;
-
+    height: 60px;
+    width: 360px;
+    top: 525px;
+    left: 30px;
+    font-size: 20pt;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background-color: #FFFFFF;
 }
 
-.facebook{
-	position: absolute;
-	top: 533px;
-	left: 43px;
-	height: 10%;
-	width: 10%;
-	z-index: 10;
-
+.facebook {
+    position: absolute;
+    top: 533px;
+    left: 43px;
+    height: 10%;
+    width: 10%;
+    z-index: 10;
 }
 
-.splashbackground{
-	padding-left:  0;
-	padding-top: 0;
-	padding-bottom: 0;
-	margin: 0;
-	top: 0;
-	left: 0;
-	right: 0;
-	position: fixed;
-	height: 100%;
-	width: 100%;
-
+.splashbackground {
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
 }
 
 /*Main screen*/
@@ -128,62 +123,56 @@
 
 /*MAIN SCREEN*/
 
-.mainBanner{
-	width: 320px;
-	height: 50px;
-
-
+.mainBanner {
+    width: 320px;
+    height: 50px;
 }
 
-#topBanner{
-	top: 0px;
-	position: absolute;
-	background-color: #000000;
+#topBanner {
+    top: 0px;
+    position: absolute;
+    background-color: #000000;
 }
 
-#bottomBanner{
-	top: 410px;
-	position: absolute;
-	background-color: #000000;
-
+#bottomBanner {
+    top: 410px;
+    position: absolute;
+    background-color: #000000;
 }
 
-.likeDislikeButton{
-	width: 60px;
-	height: 60px;
+.likeDislikeButton {
+    width: 60px;
+    height: 60px;
     border-radius: 50px;
     background-color: #FFFFFF;
 }
 
-#likeButton{
+#likeButton {
     position: absolute;
     top: 392px;
     left: 200px;
-
 }
 
-#dislikeButton{
+#dislikeButton {
     position: absolute;
     top: 392px;
     left: 60px;
-
 }
 
-#menuIcon{
-	position: absolute;
-	top: 1px;
-	left: 10px;
-	width: 15%;
+#menuIcon {
+    position: absolute;
+    top: 1px;
+    left: 10px;
+    width: 15%;
 }
 
-#titleMain{
-	font-family: 'Roboto', sans-serif;
-	font-size: 18pt;
-	color: #ffffff;
-	font-weight: normal;
-	text-align: center;
-	padding-top: 8px;
-
+#titleMain {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18pt;
+    color: #ffffff;
+    font-weight: normal;
+    text-align: center;
+    padding-top: 8px;
 }
 
 /* NOT CURRENTLY IN USE
@@ -198,57 +187,59 @@
 }
 */
 
-.mainProductCardTop{
-	width: 320px;
-	height: 360px;
-	top: 50px;
-	border: 0px solid #999;
-	background-color:#666699;
-	position: absolute;
-	z-index: 10
-
-}
-
-#sampleImageTop{
-	position: absolute;
-	max-width: 100%;
-	max-height: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-    top: 0; left: 0; bottom: 0; right: 0;
+.mainProductCardTop {
+    width: 320px;
+    height: 360px;
     top: 50px;
-    z-index: 10
-   
+    border: 0px solid #999;
+    background-color: #666699;
+    position: absolute;
+    z-index: 10;
 }
 
-.mainProductCardBottom{
-	width: 320px;
-	height: 360px;
-	top: 50px;
-	border: 0px solid #999;
-	background-color:#666699;
-	position: absolute;
-
-}
-
-#sampleImageBottom{
-	position: absolute;
-	max-width: 100%;
-	max-height: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-    top: 0; left: 0; bottom: 0; right: 0;
+#sampleImageTop {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     top: 50px;
+    z-index: 10;
+}
 
+.mainProductCardBottom {
+    width: 320px;
+    height: 360px;
+    top: 50px;
+    border: 0px solid #999;
+    background-color: #666699;
+    position: absolute;
+}
+
+#sampleImageBottom {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 50px;
 }
 
 
 /*Back of Card - Description*/
 
 
-.cardDescription{
+.cardDescription {
     position: absolute;
     top: 70px;
     width: 320px;
@@ -259,18 +250,14 @@
     opacity: 0.6;
     z-index: 15;
     color: #000000;
-
-
-#description{
 	font-family: 'Roboto', sans-serif;
-
 }
 
 /*Showroom*/
 
-.backArrow{
-	position: absolute;
-	width: 10%
+.backArrow {
+    position: absolute;
+    width: 10%
 	top: 10px;
-	left: 10px;
+    left: 10px;
 }
