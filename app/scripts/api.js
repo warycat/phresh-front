@@ -1,7 +1,6 @@
 var Api = (function(){
 	var url = 'http://dev.whatisphresh.com:3000';
 
-
   function putUser(user, done){
     $.ajax({type:'PUT', url:url + '/users', data:user}).done(done);
   }

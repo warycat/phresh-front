@@ -17,21 +17,13 @@ var App = Ember.Application.create();
 App.Router.map(function () {
 	this.route('index',{path:'/'});
   this.route('facebook',{path:'facebook'});
-  this.route('main-image');
+  this.route('main');
   this.route('main-description');
   this.route('showroom');
   this.route('api');
   this.route('ss');
 });
 
-App.IndexRoute = Ember.Route.extend({
-  afterModel: function(){
-    console.log('index');
-    FB.getLoginStatus(function (response) {
-      statusChangeCallback(response);
-    });
-  }
-});
 
 App.LogoutRoute = Ember.Route.extend({
 	afterModel: function(){
