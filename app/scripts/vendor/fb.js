@@ -10,9 +10,9 @@ function statusChangeCallback(response) {
     // Logged into your app and Facebook.
     testAPI();
   } else if (response.status === 'not_authorized') {
-    window.location = "/#/splash";
+    window.location = "/#/login";
   } else {
-    window.location = "/#/splash";
+    window.location = "/#/login";
   }
 }
 

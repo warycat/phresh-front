@@ -16,20 +16,21 @@ var App = Ember.Application.create();
 
 App.Router.map(function () {
 	this.route('index',{path:'/'});
-  this.route('splash');
-  this.route('posts');
-  this.route('tutorial');
-  this.route('discovery');
-  this.route('logout');
+  this.route('facebook',{path:'facebook'});
+  this.route('main-image');
+  this.route('main-description');
   this.route('showroom');
   this.route('api');
   this.route('ss');
 });
 
 App.IndexRoute = Ember.Route.extend({
-	afterModel: function(){
-		console.log('index');
-	}
+  afterModel: function(){
+    console.log('index');
+    FB.getLoginStatus(function (response) {
+      statusChangeCallback(response);
+    });
+  }
 });
 
 App.LogoutRoute = Ember.Route.extend({
@@ -129,10 +130,10 @@ App.panView = Ember.View.extend({
 
 $(function () {
   $('#FBButton').click(function () {
-		console.log('click');
-		FB.login(function(response){
-			console.log(response);
-		},{scope:'public_profile,email,user_friends'});
+    console.log('click');
+    FB.login(function(response){
+      console.log(response);
+    },{scope:'public_profile,email,user_friends'});
   });
 });
 
