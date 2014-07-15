@@ -17,7 +17,7 @@ var App = Ember.Application.create();
 App.Router.map(function () {
 	this.route('index',{path:'/'});
   this.route('main');
-  this.route('main-description');
+  this.route('main-description',{path:'main-description'});
   this.route('showroom');
   this.route('api');
   this.route('ss');
