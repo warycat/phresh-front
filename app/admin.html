@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
   <meta charset="utf-8">
-  <title>Lucky 7</title>
+  <title>Phresh Admin</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <link rel="shortcut icon" href="/favicon.ico">
@@ -66,148 +66,219 @@
 
 <script type="text/x-handlebars" id="ss">
   <div class='container'>
-    <h3>SS</h3>
-    <div id='imagesContainer' class='well'></div>
-    <h4>womens-accessories</h4>
-    <button class="btn btn-default" {{action 'ss_cat' 'belts'}}>belts</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'hats'}}>hats</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'scarves'}}>scarves</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'sunglasses'}}>sunglasses</button>
-    <h4>jeans</h4>
-    <button class="btn btn-default" {{action 'ss_cat' 'bootcut-jeans'}}>bootcut-jeans</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'classic-jeans'}}>classic-jeans</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'cropped-jeans'}}>cropped-jeans</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'distressed-jeans'}}>distressed-jeans</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'flare-jeans'}}>flare-jeans</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'relaxed-jeans'}}>relaxed-jeans</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'skinny-jeans'}}>skinny-jeans</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'straight-leg-jeans'}}>straight-leg-jeans</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'stretch-jeans'}}>stretch-jeans</button>
-    <h4>dresses</h4>
-    <button class="btn btn-default" {{action 'ss_cat' 'cocktail-dresses'}}>cocktail-dresses</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'day-dresses'}}>day-dresses</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'evening-dresses'}}>evening-dresses</button>
-    <h4>jackets</h4> 
-    <button class="btn btn-default" {{action 'ss_cat' 'blazers'}}>blazers</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'casual-jackets'}}>casual-jackets</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'vests'}}>vests</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'leather-jackets'}}>leather-jackets</button>
-    <h4>jewelry</h4>
-    <button class="btn btn-default" {{action 'ss_cat' 'bracelets'}}>bracelets</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'charms'}}>charms</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'earrings'}}>earrings</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'necklaces'}}>necklaces</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'rings'}}>rings</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'watches'}}>watches</button>
-    <h4>womens-outerwear</h4>
-    <button class="btn btn-default" {{action 'ss_cat' 'coats'}}>coats</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'fur-and-shearling-coats'}}>fur-and-shearling-coats</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'leather-and-suede-coats'}}>leather-and-suede-coats</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'puffer-coats'}}>puffer-coats</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'raincoats-and-trenchcoats'}}>raincoats-and-trenchcoats</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'wool-coats'}}>wool-coats</button>
-    <h4>womens-pants</h4>
-    <button class="btn btn-default" {{action 'ss_cat' 'casual-pants'}}>casual-pants</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'cropped-pants'}}>cropped-pants</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'dress-pants'}}>dress-pants</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'leggings'}}>leggings</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'skinny-pants'}}>skinny-pants</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'wide-leg-pants'}}>wide-leg-pants</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'shorts'}}>shorts</button>
-    <h4>shorts</h4>
-    <button class="btn btn-default" {{action 'ss_cat' 'mini-skirts'}}>mini-skirts</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mid-length-skirts'}}>mid-length-skirts</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'long-skirts'}}>long-skirts</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'cardigan-sweaters'}}>cardigan-sweaters</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'cashmere-sweaters'}}>cashmere-sweaters</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'crewneck-sweaters'}}>crewneck-sweaters</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'turtleneck-sweaters'}}>turtleneck-sweaters</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'v-neck-sweaters'}}>v-neck-sweaters</button>
-    <h4>sweaters</h4>
-    <button class="btn btn-default" {{action 'ss_cat' 'one-piece-swimsuits'}}>one-piece-swimsuits</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'two-piece-swimsuits'}}>two-piece-swimsuits</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'swimsuit-coverups'}}>swimsuit-coverups</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'sweatshirts'}}>sweatshirts</button>
-    <h4>womens-tops</h4>
-    <button class="btn btn-default" {{action 'ss_cat' 'button-front-tops'}}>button-front-tops</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'camisole-tops'}}>camisole-front-tops</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'cashmere-tops'}}>cashmere-tops</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'halter-tops'}}>halter-tops</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'longsleeve-tops'}}>longsleeve-tops</button<button class="btn btn-default" {{action 'ss_cat' 'shortsleeve-tops'}}>shortsleeve-tops</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'sleeveless-tops'}}>sleeveless-tops</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'tank-tops'}}>tank-tops</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'tees-and-tshirts'}}>tees-and-tshirts-tops</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'tunic-tops'}}>tunic-tops</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'polo-tops'}}>polo-tops</button>
-    <h4>Handbags</h4>
-    <button class="btn btn-default" {{action 'ss_cat' 'backpacks'}}>backpacks-tops</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'clutches'}}>clutches</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'evening-handbags'}}>evening-handbags</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'hobo-bags'}}>hobo-bags</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'satchels'}}>satchels</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'shoulder-bags'}}>shoulder-bags</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'tote-bags'}}>tote-bags</button>
-    <h4>womens-shoes</h4>
-    <button class="btn btn-default" {{action 'ss_cat' 'boots'}}>boots</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'evening-shoes'}}>evening-shoes</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'flats'}}>flats</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mules-and-clogs'}}>mules-and-clogs</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'platforms'}}>platforms</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'pumps'}}>pumps</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'sandals'}}>sandals</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'womens-sneakers'}}>womens-sneakers</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'wedges'}}>wedges</button>
-    <h4>mens-clothes</h4>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-sunglasses'}}>mens-sunglasses</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-athletic-pants'}}>mens-athletic-pants</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-bootcut-jeans'}}>mens-bootcut-jeans</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-distressed-jeans'}}>mens-distressed-jeans</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-loose-jeans'}}>mens-loose-jeans</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-low-rise-jeans'}}>mens-low-rise-jeans</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-relaxed-jeans'}}>mens-relaxed-jeans</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-slim-jeans'}}>mens-slim-jeans</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'straight-leg-jeans'}}>mens-straight-leg-jeans</button>
-    <h4>mens-pants</h4>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-denim-jackets'}}>mens-denim-jackets</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-jackets'}}>mens-jackets</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-leather-and-suede-coats'}}>mens-leather-and-suede-coats</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-overcoats-and-trenchcoats'}}>mens-overcoats-and-trenchcoats</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-wool-coats'}}>mens-wool-coats</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-casual-pants'}}>mens-casual-pants</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-chinos-and-khakis'}}>mens-chinos-and-khakis</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-dress-pants'}}>mens-dress-pants</button>
-    <h4>mens-shirts</h4>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-dress-shirts'}}>mens-dress-shirts</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-longsleeve-shirts'}}>mens-longsleeve-shirts</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-shortsleeve-shirts'}}>mens-shortsleeve-shirts</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-polo-shirts'}}>mens-polo-shirts</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-tees-and-tshirts'}}>mens-tees-and-tshirts</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-shorts'}}>mens-shorts</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-blazers-and-sport-coats'}}>mens-blazers-and-sport-coats</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-cardigan-sweaters'}}>mens-cardigan-sweaters</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-cashmere-sweaters'}}>mens-cashmere-sweaters</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-crewneck-sweaters'}}>mens-crewneck-sweaters</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-half-zip-sweaters'}}>mens-half-zip-sweaters</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-turtleneck-sweaters'}}>mens-turtleneck-sweaters</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-v-neck-sweaters'}}>mens-v-neck-sweaters</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-vests'}}>mens-vests</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-sweatshirts'}}>mens-sweatshirts</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-swimsuits'}}>mens-swimsuits</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-swimsuits'}}>mens-swimsuits</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-messenger-bags'}}>mens-messenger-bags</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-tote-bags'}}>mens-tote-bags</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-business-bags'}}>mens-business-bags</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-backpacks'}}>mens-backpacks</button>
-    <h4>mens-shoes</h4>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-sneakers'}}>mens-sneakers</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-slip-ons-shoes'}}>mens-slip-ons-shoes</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-lace-up-shoes'}}>mens-lace-up-shoes</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-sandals'}}>mens-sandals</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-boots'}}>mens-boots</button>
-    <h4>mens-watches-and-jewelry</h4>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-cuff-links'}}>mens-cuff-links</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-jewelry'}}>mens-jewelry</button>
-    <button class="btn btn-default" {{action 'ss_cat' 'mens-watches'}}>mens-watches</button>  
+    <div id="imagesContainer" class="well" >
+    </div>
+    <button class="btn btn-default" {{action 'clean'}}>clean</button>
+
+    <h3>Shop Style add from category</h3>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">womens-accessories <span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+      <li><a {{action 'category' 'belts' 'womens'}} >belts</a></li>
+      <li><a {{action 'category' 'hats' 'womens'}} >hats</a></li>
+      <li><a {{action 'category' 'scarves' 'womens'}} >scarves</a></li>
+      <li><a {{action 'category' 'sunglasses' 'womens'}} >sunglasses</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">jeans<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+      <li><a {{action 'category' 'bootcut-jeans' 'womens'}}>bootcut-jeans</a></li>
+      <li><a {{action 'category' 'classic-jeans' 'womens'}}>classic-jeans</a></li>
+      <li><a {{action 'category' 'cropped-jeans' 'womens'}}>cropped-jeans</a></li>
+      <li><a {{action 'category' 'distressed-jeans' 'womens'}}>distressed-jeans</a></li>
+      <li><a {{action 'category' 'flare-jeans' 'womens'}}>flare-jeans</a></li>
+      <li><a {{action 'category' 'relaxed-jeans' 'womens'}}>relaxed-jeans</a></li>
+      <li><a {{action 'category' 'skinny-jeans' 'womens'}}>skinny-jeans</a></li>
+      <li><a {{action 'category' 'straight-leg-jeans' 'womens'}}>straight-leg-jeans</a></li>
+      <li><a {{action 'category' 'stretch-jeans' 'womens'}}>stretch-jeans</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">dresses<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'cocktail-dresses' 'womens'}}>cocktail-dresses</a></li>
+    <li><a {{action 'category' 'day-dresses' 'womens'}}>day-dresses</a></li>
+    <li><a {{action 'category' 'evening-dresses' 'womens'}}>evening-dresses</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">jackets<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'blazers' 'womens'}}>blazers</a></li>
+    <li><a {{action 'category' 'casual-jackets' 'womens'}}>casual-jackets</a></li>
+    <li><a {{action 'category' 'vests' 'womens'}}>vests</a></li>
+    <li><a {{action 'category' 'leather-jackets' 'womens'}}>leather-jackets</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">jewelry<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'bracelets' 'womens'}}>bracelets</a></li>
+    <li><a {{action 'category' 'charms' 'womens'}}>charms</a></li>
+    <li><a {{action 'category' 'earrings' 'womens'}}>earrings</a></li>
+    <li><a {{action 'category' 'necklaces' 'womens'}}>necklaces</a></li>
+    <li><a {{action 'category' 'rings' 'womens'}}>rings</a></li>
+    <li><a {{action 'category' 'watches' 'womens'}}>watches</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">womens-outerwear<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'coats' 'womens'}}>coats</a></li>
+    <li><a {{action 'category' 'fur-and-shearling-coats' 'womens'}}>fur-and-shearling-coats</a></li>
+    <li><a {{action 'category' 'leather-and-suede-coats' 'womens'}}>leather-and-suede-coats</a></li>
+    <li><a {{action 'category' 'puffer-coats' 'womens'}}>puffer-coats</a></li>
+    <li><a {{action 'category' 'raincoats-and-trenchcoats' 'womens'}}>raincoats-and-trenchcoats</a></li>
+    <li><a {{action 'category' 'wool-coats' 'womens'}}>wool-coats</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">womens-pants<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'casual-pants' 'womens'}}>casual-pants</a></li>
+    <li><a {{action 'category' 'cropped-pants' 'womens'}}>cropped-pants</a></li>
+    <li><a {{action 'category' 'dress-pants' 'womens'}}>dress-pants</a></li>
+    <li><a {{action 'category' 'leggings' 'womens'}}>leggings</a></li>
+    <li><a {{action 'category' 'skinny-pants' 'womens'}}>skinny-pants</a></li>
+    <li><a {{action 'category' 'wide-leg-pants' 'womens'}}>wide-leg-pants</a></li>
+    <li><a {{action 'category' 'shorts' 'womens'}}>shorts</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">shorts<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'mini-skirts' 'womens'}}>mini-skirts</a></li>
+    <li><a {{action 'category' 'mid-length-skirts' 'womens'}}>mid-length-skirts</a></li>
+    <li><a {{action 'category' 'long-skirts' 'womens'}}>long-skirts</a></li>
+    <li><a {{action 'category' 'cardigan-sweaters' 'womens'}}>cardigan-sweaters</a></li>
+    <li><a {{action 'category' 'cashmere-sweaters' 'womens'}}>cashmere-sweaters</a></li>
+    <li><a {{action 'category' 'crewneck-sweaters' 'womens'}}>crewneck-sweaters</a></li>
+    <li><a {{action 'category' 'turleneck-sweaters' 'womens'}}>turleneck-sweaters</a></li>
+    <li><a {{action 'category' 'v-neck-sweaters' 'womens'}}>v-neck-sweaters</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">sweaters<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'one-piece-swimsuits' 'womens'}}>one-piece-swimsuits</a></li>
+    <li><a {{action 'category' 'two-piece-swimsuits' 'womens'}}>two-piece-swimsuits</a></li>
+    <li><a {{action 'category' 'swimsuit-coverups' 'womens'}}>swimsuit-coverups</a></li>
+    <li><a {{action 'category' 'sweatshirts' 'womens'}}>sweatshirts</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">womens-tops<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'button-front-tops' 'womens'}}>button-front-tops</a></li>
+    <li><a {{action 'category' 'camisole-tops' 'womens'}}>camisole-front-tops</a></li>
+    <li><a {{action 'category' 'cashmere-tops' 'womens'}}>cashmere-tops</a></li>
+    <li><a {{action 'category' 'halter-tops' 'womens'}}>halter-tops</a></li>
+    <li><a {{action 'category' 'longsleeve-tops' 'womens'}}>longsleeve-tops</a></li>
+    <li><a {{action 'category' 'shortsleeve-tops' 'womens'}}>shortsleeve-tops</a></li>
+    <li><a {{action 'category' 'sleeveless-tops' 'womens'}}>sleeveless-tops</a></li>
+    <li><a {{action 'category' 'tank-tops' 'womens'}}>tank-tops</a></li>
+    <li><a {{action 'category' 'tees-and-tshirts' 'womens'}}>tees-and-tshirts-tops</a></li>
+    <li><a {{action 'category' 'tunic-tops' 'womens'}}>tunic-tops</a></li>
+    <li><a {{action 'category' 'polo-tops' 'womens'}}>polo-tops</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Handbags<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'backpacks' 'womens'}}>backpacks-tops</a></li>
+    <li><a {{action 'category' 'clutches' 'womens'}}>clutches</a></li>
+    <li><a {{action 'category' 'evening-handbags' 'womens'}}>evening-handbags</a></li>
+    <li><a {{action 'category' 'hobo-bags' 'womens'}}>hobo-bags</a></li>
+    <li><a {{action 'category' 'satchels' 'womens'}}>satchels</a></li>
+    <li><a {{action 'category' 'shoulder-bags' 'womens'}}>shoulder-bags</a></li>
+    <li><a {{action 'category' 'tote-bags' 'womens'}}>tote-bags</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">womens-shoes<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'boots' 'womens'}}>boots</a></li>
+    <li><a {{action 'category' 'evening-shoes' 'womens'}}>evening-shoes</a></li>
+    <li><a {{action 'category' 'flats' 'womens'}}>flats</a></li>
+    <li><a {{action 'category' 'mules-and-clogs' 'womens'}}>mules-and-clogs</a></li>
+    <li><a {{action 'category' 'platforms' 'womens'}}>platforms</a></li>
+    <li><a {{action 'category' 'pumps' 'womens'}}>pumps</a></li>
+    <li><a {{action 'category' 'sandals' 'womens'}}>sandals</a></li>
+    <li><a {{action 'category' 'womens-sneakers' 'womens'}}>womens-sneakers</a></li>
+    <li><a {{action 'category' 'wedges' 'womens'}}>wedges</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">mens-clothes<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'mens-sunglasses' 'mens'}}>mens-sunglasses</a></li>
+    <li><a {{action 'category' 'mens-athletic-pants' 'mens'}}>mens-athletic-pants</a></li>
+    <li><a {{action 'category' 'mens-bootcut-jeans' 'mens'}}>mens-bootcut-jeans</a></li>
+    <li><a {{action 'category' 'mens-distressed-jeans' 'mens'}}>mens-distressed-jeans</a></li>
+    <li><a {{action 'category' 'mens-loose-jeans' 'mens'}}>mens-loose-jeans</a></li>
+    <li><a {{action 'category' 'mens-low-rise-jeans' 'mens'}}>mens-low-rise-jeans</a></li>
+    <li><a {{action 'category' 'mens-relaxed-jeans' 'mens'}}>mens-relaxed-jeans</a></li>
+    <li><a {{action 'category' 'mens-slim-jeans' 'mens'}}>mens-slim-jeans</a></li>
+    <li><a {{action 'category' 'straight-leg-jeans' 'mens'}}>mens-straight-leg-jeans</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">mens-pants<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'mens-denim-jackets' 'mens'}}>mens-denim-jackets</a></li>
+    <li><a {{action 'category' 'mens-jackets' 'mens'}}>mens-jackets</a></li>
+    <li><a {{action 'category' 'mens-leather-and-suede-coats' 'mens'}}>mens-leather-and-suede-coats</a></li>
+    <li><a {{action 'category' 'mens-overcoats-and-trenchcoats' 'mens'}}>mens-overcoats-and-trenchcoats</a></li>
+    <li><a {{action 'category' 'mens-wool-coats' 'mens'}}>mens-wool-coats</a></li>
+    <li><a {{action 'category' 'mens-casual-pants' 'mens'}}>mens-casual-pants</a></li>
+    <li><a {{action 'category' 'mens-chinos-and-khakis' 'mens'}}>mens-chinos-and-khakis</a></li>
+    <li><a {{action 'category' 'mens-dress-pants' 'mens'}}>mens-dress-pants</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">mens-shirts<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'mens-dress-shirts' 'mens'}}>mens-dress-shirts</a></li>
+    <li><a {{action 'category' 'mens-longsleeve-shirts' 'mens'}}>mens-longsleeve-shirts</a></li>
+    <li><a {{action 'category' 'mens-shortsleeve-shirts' 'mens'}}>mens-shortsleeve-shirts</a></li>
+    <li><a {{action 'category' 'mens-polo-shirts' 'mens'}}>mens-polo-shirts</a></li>
+    <li><a {{action 'category' 'mens-tees-and-tshirts' 'mens'}}>mens-tees-and-tshirts</a></li>
+    <li><a {{action 'category' 'mens-shorts' 'mens'}}>mens-shorts</a></li>
+    <li><a {{action 'category' 'mens-blazers-and-sport-coats' 'mens'}}>mens-blazers-and-sport-coats</a></li>
+    <li><a {{action 'category' 'mens-cardigan-sweaters' 'mens'}}>mens-cardigan-sweaters</a></li>
+    <li><a {{action 'category' 'mens-cashmere-sweaters' 'mens'}}>mens-cashmere-sweaters</a></li>
+    <li><a {{action 'category' 'mens-crewneck-sweaters' 'mens'}}>mens-crewneck-sweaters</a></li>
+    <li><a {{action 'category' 'mens-half-zip-sweaters' 'mens'}}>mens-half-zip-sweaters</a></li>
+    <li><a {{action 'category' 'mens-turtleneck-sweaters' 'mens'}}>mens-turtleneck-sweaters</a></li>
+    <li><a {{action 'category' 'mens-v-neck-sweaters' 'mens'}}>mens-v-neck-sweaters</a></li>
+    <li><a {{action 'category' 'mens-vests' 'mens'}}>mens-vests</a></li>
+    <li><a {{action 'category' 'mens-sweatshirts' 'mens'}}>mens-sweatshirts</a></li>
+    <li><a {{action 'category' 'mens-swimsuits' 'mens'}}>mens-swimsuits</a></li>
+    <li><a {{action 'category' 'mens-messenger-bags' 'mens'}}>mens-messenger-bags</a></li>
+    <li><a {{action 'category' 'mens-tote-bags' 'mens'}}>mens-tote-bags</a></li>
+    <li><a {{action 'category' 'mens-business-bags' 'mens'}}>mens-business-bags</a></li>
+    <li><a {{action 'category' 'mens-backpacks' 'mens'}}>mens-backpacks</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">mens-shoes<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'mens-sneakers' 'mens'}}>mens-sneakers</a></li>
+    <li><a {{action 'category' 'mens-slip-ons-shoes' 'mens'}}>mens-slip-ons-shoes</a></li>
+    <li><a {{action 'category' 'mens-lace-up-shoes' 'mens'}}>mens-lace-up-shoes</a></li>
+    <li><a {{action 'category' 'mens-sandals' 'mens'}}>mens-sandals</a></li>
+    <li><a {{action 'category' 'mens-boots' 'mens'}}>mens-boots</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">mens-watches-and-jewelry<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'mens-cuff-links' 'mens'}}>mens-cuff-links</a></li>
+    <li><a {{action 'category' 'mens-jewelry' 'mens'}}>mens-jewelry</a></li>
+    <li><a {{action 'category' 'mens-watches' 'mens'}}>mens-watches</a></li>  
+      </ul>
+    </div>
   </div>
 </script>
 
