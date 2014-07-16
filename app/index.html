@@ -41,14 +41,20 @@
   <div>
     <button class="likeDislikeButton" id="likeButton">phresh</button>div>/div>
     <button class="likeDislikeButton" id="dislikeButton">stale</button>div>/div>
+    {{#link-to 'main-description'}}<button class="likeDislikeButton" id="infoButton">i</button>div>/div>{{/link-to}}
   </div>
 
-  <img src="images/icons/hamburgericon2.png" id="menuIcon"/>
+<div>
+  {{#link-to 'showroom'}}<img src="images/icons/yellow star.png" id="showroomIcon"/>{{/link-to}}
+</div>
+
+
 
 
   <!-- NOT CURRENTLY IN USE 
 
-  <img src="images/icons/bagicon.png" id="showroomIcon"/>
+    <img src="images/icons/hamburgericon2.png" id="menuIcon"/>
+
 
   <img src="images/icons/plusicon.png" id="likeIcon"/>
   <img src="images/icons/xicon.png" id="dislikeIcon"/>
@@ -101,7 +107,18 @@
 <script type="text/x-handlebars" id="showroom">
   <div>
     <div class="mainBanner" id="topBanner"><div id="titleMain">my phresh list</div>
-    <div class="mainBanner" id="bottomBanner"></div>
+    <div id="wrapper">
+      <div id="list">
+        <div class="item"><img style="width:10em;" src='http://resources.shopstyle.com/mim/66/7c/667c773dc06ecf76da259bab570281bf.jpg'></div>
+        <div class="item"><img style="width:10em;" src='http://resources.shopstyle.com/mim/7e/6d/7e6d964964a871e34f3fb354daca828c.jpg'></div>
+        <div class="item"><img style="width:10em;" src='http://resources.shopstyle.com/mim/8b/d0/8bd01e348f71f39d386ea378f84351ca.jpg'></div>
+        <div class="item"><img style="width:10em;" src='http://resources.shopstyle.com/mim/df/0d/df0db2e29f684397f14b25579536200a.jpg'></div>
+        <div class="item"><img style="width:10em;" src='http://resources.shopstyle.com/mim/66/7c/667c773dc06ecf76da259bab570281bf.jpg'></div>
+        <div class="item"><img style="width:10em;" src='http://resources.shopstyle.com/mim/7e/6d/7e6d964964a871e34f3fb354daca828c.jpg'></div>
+        <div class="item"><img style="width:10em;" src='http://resources.shopstyle.com/mim/66/7c/667c773dc06ecf76da259bab570281bf.jpg'></div>
+        <div class="item"><img style="width:10em;" src='http://resources.shopstyle.com/mim/7e/6d/7e6d964964a871e34f3fb354daca828c.jpg'></div>
+      </div>
+    </div>
   </div>
 </script>
 
@@ -120,7 +137,7 @@
   <script src="../bower_components/outlayer/item.js"></script>
   <script src="../bower_components/outlayer/outlayer.js"></script>
   <script src="../bower_components/masonry/masonry.js"></script>
-  <script src="../bower_components/async/lib/async.js"></script>
+  <script src="../bower_components/add-to-homescreen/src/addtohomescreen.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
