@@ -41,24 +41,24 @@ var Api = (function(){
     $.ajax({type:'DELETE', url:url + '/items/' + gender + '/' + id}).done(done);
   }
 
-  function putList(list, done){
-    $.ajax({type:'PUT', url:url + '/lists', data:list}).done(done);
+  function putListUser(lid,uid,done){
+    $.ajax({type:'PUT', url:url + '/lists/users/', data:{lid:{S:lid+''},uid:{S:uid+''}}}).done(done);
   }
 
-  function getList(id,done){
-    $.ajax({type:'GET', url:url + '/lists/' + id}).done(done);
+  function getListUser(lid,uid,done){
+    $.ajax({type:'GET', url:url + '/lists/users/' + lid + '/' + uid}).done(done);
   }
 
-  function getLists(done){
-    $.ajax({type:'GET', url:url + '/lists'}).done(done);
+  function getListUsers(lid,done){
+    $.ajax({type:'GET', url:url + '/lists/users/' + lid}).done(done);
   }
 
-  function postList(id,body,done){
-    $.ajax({type:'POST',url:url + '/lists/' + id, data:body}).done(done);
+  function getListsUsers(done){
+    $.ajax({type:'GET', url:url + '/lists/users/'}).done(done);
   }
 
-  function deleteList(id,done){
-    $.ajax({type:'DELETE',url:url + '/lists/' + id}).done(done);
+  function deleteListUser(lid,uid,done){
+    $.ajax({type:'DELETE',url:url + '/lists/users/' + lid + '/' + uid}).done(done);
   }
 
   return {
@@ -72,11 +72,11 @@ var Api = (function(){
   , getItems:getItems
   , postItem:postItem
   , deleteItem:deleteItem
-  , putList:putList
-  , getList:getList
-  , getLists:getLists
-  , postList:postList
-  , deleteList:deleteList
+  , putListUser:putListUser
+  , getListUser:getListUser
+  , getListUsers:getListUsers
+  , getListsUsers:getListsUsers
+  , deleteListUser:deleteListUser
   };
 })();
 

@@ -72,39 +72,33 @@ App.ApiController = Ember.ObjectController.extend({
         console.log(data);
       });
     }
-  , put_list:function(){
-      console.log('put_list');
-      Api.putList({id:{S:'123'},name:{S:'young'},ids:{SS:['123','234']}},'mens',function(data){
+  , put_list_user:function(){
+      console.log('put_list_user');
+      Api.putListUser('list123','user123',function(data){
         console.log(data);
       });
     }
-  , get_list:function(){
-      console.log('get_list');
-      Api.getList('123',function(data){
+  , get_list_user:function(){
+      console.log('get_list_user');
+      Api.getListUser('list123','user123',function(data){
         console.log(data);
       });
     }
-  , get_lists:function(){
-      console.log('get_lists');
-      Api.getLists(function(data){
+  , get_list_users:function(){
+      console.log('get_list_users');
+      Api.getListUsers('list123',function(data){
         console.log(data);
       });
     }
-  , post_list:function(){
-      console.log('post_list');
-      var body = {
-        ids:{
-          Action:'ADD'
-        , Value:{SS:['345']}
-        }
-      };
-      Api.postList('123',body,function(data){
+  , get_lists_users:function(){
+      console.log('get_lists_users');
+      Api.getListsUsers(function(data){
         console.log(data);
       });
     }
-  , delete_list:function(){
-      console.log('delete_list');
-      Api.deleteList('123',function(data){
+  , delete_list_user:function(){
+      console.log('delete_list_user');
+      Api.deleteListUser('list123','user123',function(data){
         console.log(data);
       });
     }
