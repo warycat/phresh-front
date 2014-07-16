@@ -73,13 +73,15 @@
 
 /*Main screen*/
 
-/* NOT CURRENTLY IN USE
 #showroomIcon{
-	width: 20%;
+	width: 10%;
 	position: absolute;
-	left: 265px;
-	top: 5px;
-	z-index: 20;
+	left: 270px;
+	top: 9px;
+
+}
+
+/* NOT CURRENTLY IN USE
 
 }
 
@@ -123,6 +125,8 @@
 
 /*MAIN SCREEN*/
 
+
+
 .mainBanner {
     width: 320px;
     height: 50px;
@@ -145,6 +149,9 @@
     height: 60px;
     border-radius: 50px;
     background-color: #FFFFFF;
+    border-width: 4px;
+    border-color: #000000;
+
 }
 
 #likeButton {
@@ -159,6 +166,15 @@
     left: 60px;
 }
 
+#infoButton {
+    position: absolute;
+    top: 400px;
+    left: 140px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+
 #menuIcon {
     position: absolute;
     top: 1px;
@@ -168,11 +184,11 @@
 
 #titleMain {
     font-family: 'Roboto', sans-serif;
-    font-size: 18pt;
+    font-size: 16pt;
     color: #ffffff;
     font-weight: normal;
     text-align: center;
-    padding-top: 8px;
+    padding-top: 11px;
 }
 
 /* NOT CURRENTLY IN USE
