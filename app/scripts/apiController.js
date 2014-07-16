@@ -102,6 +102,36 @@ App.ApiController = Ember.ObjectController.extend({
         console.log(data);
       });
     }
+  , put_list_item:function(){
+      console.log('put_list_item');
+      Api.putListItem('list123','item123',function(data){
+        console.log(data);
+      });
+    }
+  , get_list_item:function(){
+      console.log('get_list_item');
+      Api.getListItem('list123','item123',function(data){
+        console.log(data);
+      });
+    }
+  , get_list_items:function(){
+      console.log('get_list_items');
+      Api.getListItems('list123',function(data){
+        console.log(data);
+      });
+    }
+  , get_lists_items:function(){
+      console.log('get_lists_items');
+      Api.getListsItems(function(data){
+        console.log(data);
+      });
+    }
+  , delete_list_item:function(){
+      console.log('delete_list_item');
+      Api.deleteListItem('list123','item123',function(data){
+        console.log(data);
+      });
+    }
   , fb_login:function(){
       console.log('fb_login');
       FB.login(function(response){

@@ -61,6 +61,26 @@ var Api = (function(){
     $.ajax({type:'DELETE',url:url + '/lists/users/' + lid + '/' + uid}).done(done);
   }
 
+  function putListItem(lid,iid,done){
+    $.ajax({type:'PUT', url:url + '/lists/items/', data:{lid:{S:lid+''},iid:{S:iid+''}}}).done(done);
+  }
+
+  function getListItem(lid,iid,done){
+    $.ajax({type:'GET', url:url + '/lists/items/' + lid + '/' + iid}).done(done);
+  }
+
+  function getListItems(lid,done){
+    $.ajax({type:'GET', url:url + '/lists/items/' + lid}).done(done);
+  }
+
+  function getListsItems(done){
+    $.ajax({type:'GET', url:url + '/lists/items/'}).done(done);
+  }
+
+  function deleteListItem(lid,iid,done){
+    $.ajax({type:'DELETE',url:url + '/lists/items/' + lid + '/' + iid}).done(done);
+  }
+
   return {
     putUser:putUser
   , getUser:getUser
@@ -77,6 +97,11 @@ var Api = (function(){
   , getListUsers:getListUsers
   , getListsUsers:getListsUsers
   , deleteListUser:deleteListUser
+  , putListItem:putListItem
+  , getListItem:getListItem
+  , getListItems:getListItems
+  , getListsItems:getListsItems
+  , deleteListItem:deleteListItem
   };
 })();
 
