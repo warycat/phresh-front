@@ -168,6 +168,42 @@ App.ApiController = Ember.ObjectController.extend({
         console.log(data);
       });
     }
+  , post_user_item:function(){
+      console.log('post_user_item');
+      var body = {
+        share:{
+          Action:'PUT'
+        , Value:{S:(new Date()).toISOString()}
+        }
+      };
+      Api.postUserItem('user123','item123',body,function(data){
+        console.log(data);
+      });
+    }
+  , get_user_item:function(){
+      console.log('get_user_item');
+      Api.getUserItem('user123','item123',function(data){
+        console.log(data);
+      });
+    }
+  , get_user_items:function(){
+      console.log('get_user_items');
+      Api.getUserItems('user123',function(data){
+        console.log(data);
+      });
+    }
+  , get_users_items:function(){
+      console.log('get_users_items');
+      Api.getUsersItems(function(data){
+        console.log(data);
+      });
+    }
+  , delete_user_item:function(){
+      console.log('delete_user_item');
+      Api.deleteUserItem('user123','item123',function(data){
+        console.log(data);
+      });
+    }
   , fb_login:function(){
       console.log('fb_login');
       FB.login(function(response){
