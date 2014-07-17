@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Lucky 7</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="shortcut icon" href="/favicon.ico">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css styles/vendor.css -->
@@ -38,7 +38,7 @@
   <div>
     <img src='images/female.png' id='splashBackground'>
     <div class="loginbutton"></div>
-    <button type="button" class="btn btn-default btn-lg btn-block largebutton">log in with Facebook</button>
+    <button type="button" class="btn btn-default btn-lg btn-block largebutton" {{action fb_login}}>log in with Facebook</button>
     <img src='images/icons/fbSignUp.png' id='splashFBImg' class='facebook' />
     <div class="loginphresh">phresh</div>
     <div class="loginsubheading">shopping. only easier.</div>
@@ -56,13 +56,13 @@
   </div>
 
   <div>
-    <button class="likeDislikeButton" id="likeButton">phresh</button>div>/div>
-    <button class="likeDislikeButton" id="dislikeButton">stale</button>div>/div>
-    <button class="likeDislikeButton" id="infoButton">i</button>div>/div>
+    <button class="likeDislikeButton" id="likeButton" {{action like}}>phresh</button>div>/div>
+    <button class="likeDislikeButton" id="dislikeButton" {{action stale}}>stale</button>div>/div>
+    <button class="likeDislikeButton" id="infoButton" {{action info}}>i</button>div>/div>
   </div>
 
   <div>
-    <img src="images/icons/yellow star.png" id="showroomIcon" />
+    {{#link-to 'showroom'}}<img src="images/icons/yellow star.png" id="showroomIcon" />{{/link-to}}
   </div>
 
 
@@ -96,13 +96,13 @@
   <div class="mainBanner" id="bottomBanner"></div>
 
   <div>
-    <button class="likeDislikeButton" id="likeButton">buy</button>div>/div>
-    <button class="likeDislikeButton" id="dislikeButton">share</button>div>/div>
-    <button class="likeDislikeButton" id="infoButton">i</button>div>/div>
+    <button class="likeDislikeButton" id="likeButton" {{action buy}}>buy</button>div>/div>
+    <button class="likeDislikeButton" id="dislikeButton" {{action share}}>share</button>div>/div>
+    <button class="likeDislikeButton" id="infoButton" {{action info}}>i</button>div>/div>
   </div>
 
   <div>
-    <img src="images/icons/yellow star.png" id="showroomIcon" />
+    {{#link-to 'showroom'}}<img src="images/icons/yellow star.png" id="showroomIcon" />{{/link-to}}
   </div>
 
 
@@ -137,7 +137,7 @@
   <div class="mainBanner" id="topBanner">
     <div id="titleMain">my phresh list</div>
     <div class="mainBanner" id="bottomBanner"></div>
-    <img src="images/icons/backarrow.png" class="backArrow" />
+    {{#link-to 'discovery'}}<img src="images/icons/backarrow.png" class="backArrow" />{{/link-to}}
   </div>
 </div>
 
@@ -308,6 +308,12 @@
   <script src="scripts/ss.js"></script>
   <script src="scripts/main.js"></script>
   <script src="scripts/indexController.js"></script>
+  <script src="scripts/loginController.js"></script>
+  <script src="scripts/discoveryController.js"></script>
+  <script src="scripts/discoveryDescriptionController.js"></script>
+  <script src="scripts/showroomController.js"></script>
+  <script src="scripts/showroomItemController.js"></script>
+  <script src="scripts/showroomItemDescriptionController.js"></script>
   <!-- endbuild -->
 </body>
 

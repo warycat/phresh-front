@@ -1,3 +1,3 @@
-App.Showroom.Controller = Ember.ObjectController.extend({
+App.ShowroomController = Ember.ObjectController.extend({
 
 });
