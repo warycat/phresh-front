@@ -22,6 +22,7 @@ App.Router.map(function () {
   this.resource('showroom');
   this.resource('ss');
   this.resource('api');
+  this.resource('login');
 });
 
 

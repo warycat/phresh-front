@@ -72,39 +72,135 @@ App.ApiController = Ember.ObjectController.extend({
         console.log(data);
       });
     }
-  , put_list:function(){
-      console.log('put_list');
-      Api.putList({id:{S:'123'},name:{S:'young'},ids:{SS:['123','234']}},'mens',function(data){
+  , put_list_user:function(){
+      console.log('put_list_user');
+      Api.putListUser('list123','user123',function(data){
         console.log(data);
       });
     }
-  , get_list:function(){
-      console.log('get_list');
-      Api.getList('123',function(data){
+  , get_list_user:function(){
+      console.log('get_list_user');
+      Api.getListUser('list123','user123',function(data){
         console.log(data);
       });
     }
-  , get_lists:function(){
-      console.log('get_lists');
-      Api.getLists(function(data){
+  , get_list_users:function(){
+      console.log('get_list_users');
+      Api.getListUsers('list123',function(data){
         console.log(data);
       });
     }
-  , post_list:function(){
-      console.log('post_list');
+  , get_lists_users:function(){
+      console.log('get_lists_users');
+      Api.getListsUsers(function(data){
+        console.log(data);
+      });
+    }
+  , delete_list_user:function(){
+      console.log('delete_list_user');
+      Api.deleteListUser('list123','user123',function(data){
+        console.log(data);
+      });
+    }
+  , put_list_item:function(){
+      console.log('put_list_item');
+      Api.putListItem('list123','item123',function(data){
+        console.log(data);
+      });
+    }
+  , get_list_item:function(){
+      console.log('get_list_item');
+      Api.getListItem('list123','item123',function(data){
+        console.log(data);
+      });
+    }
+  , get_list_items:function(){
+      console.log('get_list_items');
+      Api.getListItems('list123',function(data){
+        console.log(data);
+      });
+    }
+  , get_lists_items:function(){
+      console.log('get_lists_items');
+      Api.getListsItems(function(data){
+        console.log(data);
+      });
+    }
+  , delete_list_item:function(){
+      console.log('delete_list_item');
+      Api.deleteListItem('list123','item123',function(data){
+        console.log(data);
+      });
+    }
+  , post_item_user:function(){
+      console.log('post_item_user');
       var body = {
-        ids:{
-          Action:'ADD'
-        , Value:{SS:['345']}
+        like:{
+          Action:'PUT'
+        , Value:{S:(new Date()).toISOString()}
         }
       };
-      Api.postList('123',body,function(data){
+      Api.postItemUser('item123','user123',body,function(data){
         console.log(data);
       });
     }
-  , delete_list:function(){
-      console.log('delete_list');
-      Api.deleteList('123',function(data){
+  , get_item_user:function(){
+      console.log('get_item_user');
+      Api.getItemUser('item123','user123',function(data){
+        console.log(data);
+      });
+    }
+  , get_item_users:function(){
+      console.log('get_item_users');
+      Api.getItemUsers('item123',function(data){
+        console.log(data);
+      });
+    }
+  , get_items_users:function(){
+      console.log('get_items_users');
+      Api.getItemsUsers(function(data){
+        console.log(data);
+      });
+    }
+  , delete_item_user:function(){
+      console.log('delete_item_user');
+      Api.deleteItemUser('item123','user123',function(data){
+        console.log(data);
+      });
+    }
+  , post_user_item:function(){
+      console.log('post_user_item');
+      var body = {
+        share:{
+          Action:'PUT'
+        , Value:{S:(new Date()).toISOString()}
+        }
+      };
+      Api.postUserItem('user123','item123',body,function(data){
+        console.log(data);
+      });
+    }
+  , get_user_item:function(){
+      console.log('get_user_item');
+      Api.getUserItem('user123','item123',function(data){
+        console.log(data);
+      });
+    }
+  , get_user_items:function(){
+      console.log('get_user_items');
+      Api.getUserItems('user123',function(data){
+        console.log(data);
+      });
+    }
+  , get_users_items:function(){
+      console.log('get_users_items');
+      Api.getUsersItems(function(data){
+        console.log(data);
+      });
+    }
+  , delete_user_item:function(){
+      console.log('delete_user_item');
+      Api.deleteUserItem('user123','item123',function(data){
         console.log(data);
       });
     }

@@ -70,14 +70,39 @@
       <button class="btn btn-default" {{action 'post_item'}}>post item</button>
       <button class="btn btn-default" {{action 'delete_item'}}>delete item</button>
     </div>
-    <h3>list</h3>
+    <h3>lists users</h3>
     <div class='btn-group'>
-      <button class="btn btn-default" {{action 'put_list'}}>put list</button>
-      <button class="btn btn-default" {{action 'get_list'}}>get list</button>
-      <button class="btn btn-default" {{action 'get_lists'}}>get lists</button>
-      <button class="btn btn-default" {{action 'post_list'}}>post list</button>
-      <button class="btn btn-default" {{action 'delete_list'}}>delete list</button>
+      <button class="btn btn-default" {{action 'put_list_user'}}>put list user</button>
+      <button class="btn btn-default" {{action 'get_list_user'}}>get list user</button>
+      <button class="btn btn-default" {{action 'get_list_users'}}>get list users</button>
+      <button class="btn btn-default" {{action 'get_lists_users'}}>get lists users</button>
+      <button class="btn btn-default" {{action 'delete_list_user'}}>delete list user</button>
     </div>
+    <h3>lists items</h3>
+    <div class='btn-group'>
+      <button class="btn btn-default" {{action 'put_list_item'}}>put list item</button>
+      <button class="btn btn-default" {{action 'get_list_item'}}>get list item</button>
+      <button class="btn btn-default" {{action 'get_list_items'}}>get list items</button>
+      <button class="btn btn-default" {{action 'get_lists_items'}}>get lists items</button>
+      <button class="btn btn-default" {{action 'delete_list_item'}}>delete list item</button>
+    </div>
+    <h3>items users</h3>
+    <div class='btn-group'>
+      <button class="btn btn-default" {{action 'post_item_user'}}>post item user</button>
+      <button class="btn btn-default" {{action 'get_item_user'}}>get item user</button>
+      <button class="btn btn-default" {{action 'get_item_users'}}>get item users</button>
+      <button class="btn btn-default" {{action 'get_items_users'}}>get items users</button>
+      <button class="btn btn-default" {{action 'delete_item_user'}}>delete item user</button>
+    </div>
+    <h3>users items</h3>
+    <div class='btn-group'>
+      <button class="btn btn-default" {{action 'post_user_item'}}>post user item</button>
+      <button class="btn btn-default" {{action 'get_user_item'}}>get user item</button>
+      <button class="btn btn-default" {{action 'get_user_items'}}>get user items</button>
+      <button class="btn btn-default" {{action 'get_users_items'}}>get users items</button>
+      <button class="btn btn-default" {{action 'delete_user_item'}}>delete user item</button>
+    </div>
+
     <h3>FB</h3>
     <div class='btn-group'>
       <button class="btn btn-default" {{action 'fb_login'}}>login</button>
@@ -344,7 +369,7 @@
       e.src = '//www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e, r)
     }(window, document, 'script', 'ga'));
-    ga('create', 'UA-XXXXX-X');
+    ga('create', 'UA-52035106-1');
     ga('send', 'pageview');
   </script>
 

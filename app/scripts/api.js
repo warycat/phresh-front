@@ -41,24 +41,84 @@ var Api = (function(){
     $.ajax({type:'DELETE', url:url + '/items/' + gender + '/' + id}).done(done);
   }
 
-  function putList(list, done){
-    $.ajax({type:'PUT', url:url + '/lists', data:list}).done(done);
+  function putListUser(lid,uid,done){
+    $.ajax({type:'PUT', url:url + '/lists.users/', data:{lid:{S:lid+''},uid:{S:uid+''}}}).done(done);
   }
 
-  function getList(id,done){
-    $.ajax({type:'GET', url:url + '/lists/' + id}).done(done);
+  function getListUser(lid,uid,done){
+    $.ajax({type:'GET', url:url + '/lists.users/' + lid + '/' + uid}).done(done);
   }
 
-  function getLists(done){
-    $.ajax({type:'GET', url:url + '/lists'}).done(done);
+  function getListUsers(lid,done){
+    $.ajax({type:'GET', url:url + '/lists.users/' + lid}).done(done);
   }
 
-  function postList(id,body,done){
-    $.ajax({type:'POST',url:url + '/lists/' + id, data:body}).done(done);
+  function getListsUsers(done){
+    $.ajax({type:'GET', url:url + '/lists.users/'}).done(done);
   }
 
-  function deleteList(id,done){
-    $.ajax({type:'DELETE',url:url + '/lists/' + id}).done(done);
+  function deleteListUser(lid,uid,done){
+    $.ajax({type:'DELETE',url:url + '/lists.users/' + lid + '/' + uid}).done(done);
+  }
+
+  function putListItem(lid,iid,done){
+    $.ajax({type:'PUT', url:url + '/lists.items/', data:{lid:{S:lid+''},iid:{S:iid+''}}}).done(done);
+  }
+
+  function getListItem(lid,iid,done){
+    $.ajax({type:'GET', url:url + '/lists.items/' + lid + '/' + iid}).done(done);
+  }
+
+  function getListItems(lid,done){
+    $.ajax({type:'GET', url:url + '/lists.items/' + lid}).done(done);
+  }
+
+  function getListsItems(done){
+    $.ajax({type:'GET', url:url + '/lists.items/'}).done(done);
+  }
+
+  function deleteListItem(lid,iid,done){
+    $.ajax({type:'DELETE',url:url + '/lists.items/' + lid + '/' + iid}).done(done);
+  }
+
+  function postItemUser(iid,uid,body,done){
+    $.ajax({type:'POST', url:url + '/items.users/' + iid + '/' + uid, data:body}).done(done);
+  }
+
+  function getItemUser(iid,uid,done){
+    $.ajax({type:'GET', url:url + '/items.users/' + iid + '/' + uid}).done(done);
+  }
+
+  function getItemUsers(iid,done){
+    $.ajax({type:'GET', url:url + '/items.users/' + iid }).done(done);
+  }
+
+  function getItemsUsers(done){
+    $.ajax({type:'GET', url:url + '/items.users/'}).done(done);
+  }
+
+  function deleteItemUser(iid,uid,done){
+    $.ajax({type:'DELETE', url:url + '/items.users/' + iid + '/' + uid}).done(done);
+  }
+
+  function postUserItem(uid,iid,body,done){
+    $.ajax({type:'POST', url:url + '/users.items/' + uid + '/' + iid, data:body}).done(done);
+  }
+
+  function getUserItem(uid,iid,done){
+    $.ajax({type:'GET', url:url + '/users.items/' + uid + '/' + iid}).done(done);
+  }
+
+  function getUserItems(uid,done){
+    $.ajax({type:'GET', url:url + '/users.items/' + uid }).done(done);
+  }
+
+  function getUsersItems(done){
+    $.ajax({type:'GET', url:url + '/users.items/'}).done(done);
+  }
+
+  function deleteUserItem(uid,iid,done){
+    $.ajax({type:'DELETE', url:url + '/users.items/' + uid + '/' + iid}).done(done);
   }
 
   return {
@@ -67,16 +127,36 @@ var Api = (function(){
   , getUsers:getUsers
   , postUser:postUser
   , deleteUser:deleteUser
+
   , putItem:putItem
   , getItem:getItem
   , getItems:getItems
   , postItem:postItem
   , deleteItem:deleteItem
-  , putList:putList
-  , getList:getList
-  , getLists:getLists
-  , postList:postList
-  , deleteList:deleteList
+
+  , putListUser:putListUser
+  , getListUser:getListUser
+  , getListUsers:getListUsers
+  , getListsUsers:getListsUsers
+  , deleteListUser:deleteListUser
+
+  , putListItem:putListItem
+  , getListItem:getListItem
+  , getListItems:getListItems
+  , getListsItems:getListsItems
+  , deleteListItem:deleteListItem
+
+  , postItemUser:postItemUser
+  , getItemUser:getItemUser
+  , getItemUsers:getItemUsers
+  , getItemsUsers:getItemsUsers
+  , deleteItemUser:deleteItemUser
+
+  , postUserItem:postUserItem
+  , getUserItem:getUserItem
+  , getUserItems:getUserItems
+  , getUsersItems:getUsersItems
+  , deleteUserItem:deleteUserItem
   };
 })();
 
