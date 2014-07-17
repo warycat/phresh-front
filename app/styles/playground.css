@@ -151,6 +151,7 @@
     background-color: #FFFFFF;
     border-width: 4px;
     border-color: #000000;
+    z-index: 30;
 
 }
 
@@ -191,17 +192,28 @@
     padding-top: 11px;
 }
 
-/* NOT CURRENTLY IN USE
-#titleMain2{
-	font-family: 'Roboto', sans-serif;
-	font-size: 18pt;
-	color: #FFD75B;
-	font-weight: normal;
-	text-align: center;
-	padding-top: 14px;
-
+.backArrow {
+    position: absolute;
+    width: 5%;
+    top: 12px;
+    left: 5px;
 }
-*/
+
+.shareIcon {
+    position: absolute;
+    width: 8%;
+    top: 14px;
+    left: 285px;
+}
+
+.deleteIcon {
+  position: absolute;
+  top: 70px;
+  width: 20px;
+  height: 20px;
+  right: 20px;
+  z-index: 20;
+}
 
 .mainProductCardTop {
     width: 320px;
@@ -257,16 +269,18 @@
 
 .cardDescription {
     position: absolute;
-    top: 70px;
+    top: 50px;
     width: 320px;
-    height: 340px;
+    height: 360px;
     padding-left: 20px;
     padding-right: 20px;
+    padding-top: 15px;
     background-color: #FFFFFF;
     opacity: 0.6;
     z-index: 15;
     color: #000000;
 	font-family: 'Roboto', sans-serif;
+	overflow: scroll;
 }
 
 /*Showroom*/
