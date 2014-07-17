@@ -17,12 +17,16 @@ var App = Ember.Application.create();
 
 App.Router.map(function () {
 	this.resource('index',{path:'/'});
-  this.resource('main');
-  this.resource('main-description',{path:'main-description'});
+  this.resource('login');
+  this.resource('discovery');
+  this.resource('discoveryDescription');
   this.resource('showroom');
+  this.resource('showroomItem');
+  this.resource('showroomItemDescription');
+  this.resource('landing');
+
   this.resource('ss');
   this.resource('api');
-  this.resource('login');
 });
 
 
