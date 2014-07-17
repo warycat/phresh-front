@@ -132,6 +132,42 @@ App.ApiController = Ember.ObjectController.extend({
         console.log(data);
       });
     }
+  , post_item_user:function(){
+      console.log('post_item_user');
+      var body = {
+        like:{
+          Action:'PUT'
+        , Value:{S:(new Date()).toISOString()}
+        }
+      };
+      Api.postItemUser('item123','user123',body,function(data){
+        console.log(data);
+      });
+    }
+  , get_item_user:function(){
+      console.log('get_item_user');
+      Api.getItemUser('item123','user123',function(data){
+        console.log(data);
+      });
+    }
+  , get_item_users:function(){
+      console.log('get_item_users');
+      Api.getItemUsers('item123',function(data){
+        console.log(data);
+      });
+    }
+  , get_items_users:function(){
+      console.log('get_items_users');
+      Api.getItemsUsers(function(data){
+        console.log(data);
+      });
+    }
+  , delete_item_user:function(){
+      console.log('delete_item_user');
+      Api.deleteItemUser('item123','user123',function(data){
+        console.log(data);
+      });
+    }
   , fb_login:function(){
       console.log('fb_login');
       FB.login(function(response){

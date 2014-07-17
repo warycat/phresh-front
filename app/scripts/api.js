@@ -81,27 +81,57 @@ var Api = (function(){
     $.ajax({type:'DELETE',url:url + '/lists/items/' + lid + '/' + iid}).done(done);
   }
 
+  function postItemUser(iid,uid,body,done){
+    $.ajax({type:'POST', url:url + '/items/users/' + iid + '/' + uid, data:body}).done(done);
+  }
+
+  function getItemUser(iid,uid,done){
+    $.ajax({type:'GET', url:url + '/items/users/' + iid + '/' + uid}).done(done);
+  }
+
+  function getItemUsers(iid,done){
+    $.ajax({type:'GET', url:url + '/items/users/' + iid }).done(done);
+  }
+
+  function getItemsUsers(done){
+    $.ajax({type:'GET', url:url + '/items/users/'}).done(done);
+  }
+
+  function deleteItemUser(iid,uid,done){
+    $.ajax({type:'DELETE', url:url + '/items/users/' + iid + '/' + uid}).done(done);
+  }
+
+
   return {
     putUser:putUser
   , getUser:getUser
   , getUsers:getUsers
   , postUser:postUser
   , deleteUser:deleteUser
+
   , putItem:putItem
   , getItem:getItem
   , getItems:getItems
   , postItem:postItem
   , deleteItem:deleteItem
+
   , putListUser:putListUser
   , getListUser:getListUser
   , getListUsers:getListUsers
   , getListsUsers:getListsUsers
   , deleteListUser:deleteListUser
+
   , putListItem:putListItem
   , getListItem:getListItem
   , getListItems:getListItems
   , getListsItems:getListsItems
   , deleteListItem:deleteListItem
+
+  , postItemUser:postItemUser
+  , getItemUser:getItemUser
+  , getItemUsers:getItemUsers
+  , getItemsUsers:getItemsUsers
+  , deleteItemUser:deleteItemUser
   };
 })();
 
