@@ -13,16 +13,20 @@ $.ajaxPrefilter( function(options) {
   }
 });
 
-var App = Ember.Application.create();
+var App = Ember.Application.create({
+  LOG_TRANSITIONS: true
+});
 
 App.Router.map(function () {
 	this.resource('index',{path:'/'});
   this.resource('login');
-  this.resource('discovery');
-  this.resource('discoveryDescription');
+  this.resource('discovery',function(){
+    this.route('description');
+  });
   this.resource('showroom');
-  this.resource('showroomItem');
-  this.resource('showroomItemDescription');
+  this.resource('item',function(){
+    this.route('description');
+  });
   this.resource('landing');
 
   this.resource('ss');
