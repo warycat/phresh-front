@@ -6,16 +6,15 @@ function statusChangeCallback(response) {
   // app know the current login status of the person.
   // Full docs on the response object can be found in the documentation
   // for FB.getLoginStatus().
-  console.log(window.location.pathname);
   if(window.location.pathname === '/admin.html')return;
-  // if (response.status === 'connected') {
-  //   // Logged into your app and Facebook.
-  //   window.location = "/index.html#main";
-  // } else if (response.status === 'not_authorized') {
-  //   window.location = "/index.html#login";
-  // } else {
-  //   window.location = "/index.html#login";
-  // }
+  if (response.status === 'connected') {
+    // Logged into your app and Facebook.
+    window.location = "/index.html#discovery";
+  } else if (response.status === 'not_authorized') {
+    window.location = "/index.html#discovery";
+  } else {
+    window.location = "/index.html#discovery";
+  }
 }
 
 // This function is called when someone finishes with the Login

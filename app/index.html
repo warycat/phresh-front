@@ -58,7 +58,7 @@
   <div>
     <button class="likeDislikeButton" id="likeButton" {{action keep}}>phresh</button>div>/div>
     <button class="likeDislikeButton" id="dislikeButton" {{action trash}}>stale</button>div>/div>
-    <button class="likeDislikeButton" id="infoButton" {{action info_btn}}>i</button>div>/div>
+    <button class="likeDislikeButton" id="infoButton" {{action info_btn}}>{{info_text}}</button>div>/div>
   </div>
 
   <div>
@@ -71,26 +71,26 @@
 
   <div>
     <div class="mainproductCardTop">
-      <img src="images/sample5.jpg" id="sampleImageTop" {{action info_img}} />
+      <img {{bind-attr src=topImgURL}} id="sampleImageTop" {{action info_img}} />
     </div>
   </div>
 
   <!--BOTTOM CARD-->
 
   {{outlet}}
-
+<!--
   <div>
     <div class="mainproductCardBottom">
       <img src="images/sample4.jpg" id="sampleImageBottom" />
     </div>
   </div>
-
+-->
 </script>
 
 <script type="text/x-handlebars" id="discovery/description">
 
   <div>
-    <div id="description" class="cardDescription">BrandedName
+    <div id="description" class="cardDescription" {{action exit}}>BrandedName
       <p></p>Description
       <p></p>Price ($ + price - not priceLabel)</p>
     </div>
@@ -114,7 +114,7 @@
 
 </script>
 
-<script type="text/x-handlebars" id="showroomItem">
+<script type="text/x-handlebars" id="item">
 
   <div>
     <div class="mainBanner" id="topBanner">
@@ -149,6 +149,7 @@
     </div>
   </div>
 
+  {{outlet}}
 
   <!--BOTTOM CARD-->
 
@@ -160,39 +161,8 @@
 
 </script>
 
-<script type="text/x-handlebars" id="showroomItemDescription">
+<script type="text/x-handlebars" id="item/description">
 
-  <div>
-    <div class="mainBanner" id="topBanner">
-      <div id="titleMain">(btw, this is phresh)</div>
-    </div>
-  </div>
-
-  <div>
-    <div class="mainBanner" id="bottomBanner"></div>
-  </div>
-
-  <div>
-    <button class="likeDislikeButton" id="likeButton">buy</button>div>/div>
-    <button class="likeDislikeButton" id="dislikeButton">share</button>div>/div>
-    <button class="likeDislikeButton" id="infoButton">i</button>div>/div>
-  </div>
-
-  <div>
-    <img src="images/icons/backarrow.png" class="backArrow" />
-  </div>
-
-  <div>
-    <img src="images/icons/delete.png" class="deleteIcon" />
-  </div>
-
-  <!--TOP CARD-->
-
-  <div>
-    <div class="mainproductCardTop">
-      <img src="images/sample5.jpg" id="sampleImageTop" />
-    </div>
-  </div>
 
   <div>
     <div id="description" class="cardDescription">BrandedName
@@ -200,15 +170,6 @@
       <p></p>Price ($ + price - not priceLabel)</p>
     </div>
   </div>
-
-  <!--BOTTOM CARD-->
-
-  <div>
-    <div class="mainproductCardBottom">
-      <img src="images/sample4.jpg" id="sampleImageBottom" />
-    </div>
-  </div>
-
 
 </script>
 
@@ -232,6 +193,7 @@
   <script src="../bower_components/outlayer/outlayer.js"></script>
   <script src="../bower_components/masonry/masonry.js"></script>
   <script src="../bower_components/add-to-homescreen/src/addtohomescreen.js"></script>
+  <script src="../bower_components/underscore/underscore.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -279,8 +241,8 @@
   <script src="scripts/discoveryController.js"></script>
   <script src="scripts/discoveryDescriptionController.js"></script>
   <script src="scripts/showroomController.js"></script>
-  <script src="scripts/showroomItemController.js"></script>
-  <script src="scripts/showroomItemDescriptionController.js"></script>
+  <script src="scripts/itemController.js"></script>
+  <script src="scripts/itemDescriptionController.js"></script>
   <!-- endbuild -->
 </body>
 

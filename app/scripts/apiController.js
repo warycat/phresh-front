@@ -204,6 +204,18 @@ App.ApiController = Ember.ObjectController.extend({
         console.log(data);
       });
     }
+  , generate_all_womens:function(){
+      Api.getItems('womens',function(data){
+        async.each(data.Items,function(item,callback){
+          console.log(item.id);
+          Api.putListItem('all-womens',item.id.S,function(data){
+            console.log(data);
+            callback();
+          });
+        });
+      });
+    }
+
   , fb_login:function(){
       console.log('fb_login');
       FB.login(function(response){
