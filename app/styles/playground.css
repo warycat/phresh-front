@@ -6,8 +6,6 @@
     font-family: 'Roboto', sans-serif;
 }
 
-/*loginscreen*/
-
 .welcome {
     color: #FFD75B;
     font-size: 50pt;
@@ -71,61 +69,12 @@
     width: 100%;
 }
 
-/*Main screen*/
-
 #showroomIcon{
 	width: 10%;
 	position: absolute;
 	left: 270px;
 	top: 9px;
-
 }
-
-/* NOT CURRENTLY IN USE
-
-}
-
-#likeIcon{
-	width: 15%;
-	position: absolute;
-	left: 220px;
-	top: 400px;
-	z-index: 20;
-
-}
-
-#dislikeIcon{
-	width: 15%;
-	position: absolute;
-	left: 50px;
-	top: 400px;
-	z-index: 20;
-
-}
-
-#shareIcon{
-	width: 15%;
-	position: absolute;
-	left: 100px;
-	top: 410px;
-	z-index: 20;
-
-}
-
-#buyIcon{
-	width: 15%;
-	position: absolute;
-	left: 173px;
-	top: 410px;
-	z-index: 20;
-
-}
-
-*/
-
-/*MAIN SCREEN*/
-
-
 
 .mainBanner {
     width: 320px;
@@ -264,9 +213,6 @@
 }
 
 
-/*Back of Card - Description*/
-
-
 .cardDescription {
     position: absolute;
     top: 50px;
@@ -285,28 +231,18 @@
 
 /*Showroom*/
 
-.backArrow {
-    position: absolute;
-    width: 10%
-	top: 10px;
-    left: 10px;
-}
-
-body
-{
+body {
     background-color: #FFFFFF;
 }
 
-#wrapper
-{
+#wrapper {
     max-width: 60em; /* 960 px */
     margin: 0 auto;
     margin-top: 2.8em;
     padding: 0.9em;
 }
 
-#list
-{
+#list {
     width: 100%;
     overflow: hidden;
     margin-top:1em;
@@ -322,8 +258,7 @@ body
     column-fill: auto;
 }
 
-.item
-{
+.item {
     background-color: #fff;
     background-color: rgba( 255, 255, 255, .5 );
     margin-bottom: 1.875em; /* 30px */
@@ -348,7 +283,3 @@ body
         margin-bottom: 0.938em; /* 15px */
     }
 }
-
-
-
-    
