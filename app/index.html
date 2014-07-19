@@ -90,9 +90,9 @@
 <script type="text/x-handlebars" id="discovery/description">
 
   <div>
-    <div id="description" class="cardDescription" {{action exit}}>BrandedName
-      <p></p>Description
-      <p></p>Price ($ + price - not priceLabel)</p>
+    <div id="description" class="cardDescription" {{action exit}}>{{controllers.discovery.currentItem.brandedName.S}}
+      <p></p>{{{controllers.discovery.currentItem.description.S}}}
+      <p></p>${{controllers.discovery.currentItem.price.N}}</p>
     </div>
   </div>
 
@@ -100,18 +100,17 @@
 
 <script type="text/x-handlebars" id="showroom">
 
-<div>
-  <div class="mainBanner" id="topBanner">
+  <div class="mainBanner" id="topBanner" style="position:fixed;">
     <div id="titleMain">my phresh list</div>
-    <div class="mainBanner" id="bottomBanner"></div>
-    {{#link-to 'discovery'}}<img src="images/icons/backarrow.png" class="backArrow" />{{/link-to}}
+    <img {{action exit}} src="images/icons/backarrow.png" class="backArrow" />
+    <img {{action share}} src="images/icons/shareicon.png" class="shareIcon" />
+
   </div>
-</div>
+    <div id="wrapper" style="background-color: #545e5d;">
+      <div id="list">
 
-<div>
-  <img src="images/icons/shareicon.png" class="shareIcon" />
-</div>  
-
+      </div>
+    </div>
 </script>
 
 <script type="text/x-handlebars" id="item">
@@ -194,6 +193,7 @@
   <script src="../bower_components/masonry/masonry.js"></script>
   <script src="../bower_components/add-to-homescreen/src/addtohomescreen.js"></script>
   <script src="../bower_components/underscore/underscore.js"></script>
+  <script src="../bower_components/async/lib/async.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 

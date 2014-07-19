@@ -1,6 +1,17 @@
-document.ontouchmove = function(event){
-  event.preventDefault();
-};
+// document.ontouchmove = function(event){
+//   event.preventDefault();
+// };
+
+// document.ontouchmove = function(e) {
+//     var target = e.currentTarget;
+//     while(target) {
+//         if(checkIfElementShouldScroll(target))
+//             return;
+//         target = target.parentNode;
+//     }
+
+//     e.preventDefault();
+// };
 
 $.ajaxSetup({
   contentType : 'application/json',
@@ -32,6 +43,8 @@ App.Router.map(function () {
   this.resource('ss');
   this.resource('api');
 });
+
+
 
 
 // App.LogoutRoute = Ember.Route.extend({

@@ -1,5 +1,6 @@
 App.DiscoveryDescriptionController = Ember.ObjectController.extend({
-  action:{
+  needs:['discovery']
+, actions:{
     exit:function(){
       this.transitionToRoute('discovery');
     }

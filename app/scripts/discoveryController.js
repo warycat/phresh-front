@@ -7,6 +7,7 @@ App.DiscoveryRoute = Ember.Route.extend({
     model.Items = _.shuffle(model.Items);
     if(controller.get('topImgURL') === ''){
       Api.getItem(model.Items[0].iid.S,'womens',function(data){
+        controller.set('currentItem',data.Item);
         var sizes = JSON.parse(data.Item.imageSIZES.S);
         controller.set('topImgURL',sizes.IPhone.url);
       });
@@ -19,6 +20,7 @@ App.DiscoveryController = Ember.ObjectController.extend((function(){
   var topImgURL = '';
   var images = [];
   var current = 0;
+  var currentItem = {};
   
   function share(){
     console.log('share func');
@@ -29,6 +31,7 @@ App.DiscoveryController = Ember.ObjectController.extend((function(){
     this.set('current',this.get('current')+1);
     var self = this;
     Api.getItem(model.Items[this.get('current')].iid.S,'womens',function(data){
+      self.set('currentItem',data.Item);
       var sizes = JSON.parse(data.Item.imageSIZES.S);
       self.set('topImgURL',sizes.IPhone.url);
     });
@@ -40,8 +43,19 @@ App.DiscoveryController = Ember.ObjectController.extend((function(){
   }
 
   function keep(){
-    console.log('trash');
-    next.apply(this);
+    console.log('keep');
+    var self = this;
+    var iid = this.get('currentItem').id.S;
+    var uid = FB.getUserID();
+    var body = {
+      keep:{
+        Action:'PUT'
+      , Value:{S:(new Date()).toISOString()}
+      }
+    };
+    Api.postUserItem(uid,iid,body,function(){
+      next.apply(self);
+    });
   }
 
   function popinfo(){
@@ -67,12 +81,13 @@ App.DiscoveryController = Ember.ObjectController.extend((function(){
 
   function showroom(){
     console.log('showroom');
-    this.transitionToRoute('/showroom/123');
+    this.transitionToRoute('/showroom/'+FB.getUserID());
   }
 
   return {
     info_text:info_text
   , current:current
+  , currentItem:currentItem
   , topImgURL:topImgURL
   , images:images
   , actions:{
