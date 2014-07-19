@@ -1,0 +1,318 @@
+<!DOCTYPE html><html class=no-js><head><meta charset=utf-8><title>Phresh Admin</title><meta name=description content=""><meta name=viewport content="width=device-width"><link rel="shortcut icon" href=/favicon.ico><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/vendor.css><link rel=stylesheet href=styles/main.css><script src=scripts/vendor/modernizr.js></script><link rel=stylesheet href=styles/playground.css><body><!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]--><script type=text/x-handlebars><nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Phresh Admin</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>{{#link-to 'api'}}Api{{/link-to}}</li>
+        <li>{{#link-to 'ss'}}Shop Style{{/link-to}}</li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+{{outlet}}</script><script type=text/x-handlebars id=api><div class='container'>
+    <h3>user</h3>
+    <div class='btn-group'>
+      <button class="btn btn-default" {{action 'put_user'}}>put user</button>
+      <button class="btn btn-default" {{action 'get_user'}}>get user</button>
+      <button class="btn btn-default" {{action 'get_users'}}>get users</button>
+      <button class="btn btn-default" {{action 'post_user'}}>post user</button>
+      <button class="btn btn-default" {{action 'delete_user'}}>delete user</button>
+    </div>
+    <h3>item</h3>
+    <div class='btn-group'>
+      <button class="btn btn-default" {{action 'put_item'}}>put item</button>
+      <button class="btn btn-default" {{action 'get_item'}}>get item</button>
+      <button class="btn btn-default" {{action 'get_items'}}>get items</button>
+      <button class="btn btn-default" {{action 'post_item'}}>post item</button>
+      <button class="btn btn-default" {{action 'delete_item'}}>delete item</button>
+    </div>
+    <h3>lists users</h3>
+    <div class='btn-group'>
+      <button class="btn btn-default" {{action 'put_list_user'}}>put list user</button>
+      <button class="btn btn-default" {{action 'get_list_user'}}>get list user</button>
+      <button class="btn btn-default" {{action 'get_list_users'}}>get list users</button>
+      <button class="btn btn-default" {{action 'get_lists_users'}}>get lists users</button>
+      <button class="btn btn-default" {{action 'delete_list_user'}}>delete list user</button>
+    </div>
+    <h3>lists items</h3>
+    <div class='btn-group'>
+      <button class="btn btn-default" {{action 'put_list_item'}}>put list item</button>
+      <button class="btn btn-default" {{action 'get_list_item'}}>get list item</button>
+      <button class="btn btn-default" {{action 'get_list_items'}}>get list items</button>
+      <button class="btn btn-default" {{action 'get_lists_items'}}>get lists items</button>
+      <button class="btn btn-default" {{action 'delete_list_item'}}>delete list item</button>
+    </div>
+    <h3>generate list</h3>
+    <div class='btn-group'>
+      <button class="btn btn-default" {{action 'generate_all_womens'}}>generate all womens</button>
+      <button class="btn btn-default" {{action 'generate_random_womens'}}>generate random womens</button>
+      <button class="btn btn-default" {{action 'generate_all_mens'}}>generate all mens</button>
+      <button class="btn btn-default" {{action 'generate_random_mens'}}>generate random mens</button>
+    </div>
+    <h3>items users</h3>
+    <div class='btn-group'>
+      <button class="btn btn-default" {{action 'post_item_user'}}>post item user</button>
+      <button class="btn btn-default" {{action 'get_item_user'}}>get item user</button>
+      <button class="btn btn-default" {{action 'get_item_users'}}>get item users</button>
+      <button class="btn btn-default" {{action 'get_items_users'}}>get items users</button>
+      <button class="btn btn-default" {{action 'delete_item_user'}}>delete item user</button>
+    </div>
+    <h3>users items</h3>
+    <div class='btn-group'>
+      <button class="btn btn-default" {{action 'post_user_item'}}>post user item</button>
+      <button class="btn btn-default" {{action 'get_user_item'}}>get user item</button>
+      <button class="btn btn-default" {{action 'get_user_items'}}>get user items</button>
+      <button class="btn btn-default" {{action 'get_users_items'}}>get users items</button>
+      <button class="btn btn-default" {{action 'delete_user_item'}}>delete user item</button>
+    </div>
+
+    <h3>FB</h3>
+    <div class='btn-group'>
+      <button class="btn btn-default" {{action 'fb_login'}}>login</button>
+      <button class="btn btn-default" {{action 'fb_register'}}>register</button>
+      <button class="btn btn-default" {{action 'fb_friends'}}>friends</button>
+      <button class="btn btn-default" {{action 'fb_logout'}}>logout</button>
+      <button class="btn btn-default" {{action 'fb_pagetab'}}>pagetab</button>
+      <button class="btn btn-default" {{action 'fb_share'}}>share</button>
+    </div>
+  </div></script><script type=text/x-handlebars id=ss><div class='container'>
+    <div id="imagesContainer" class="well" >
+    </div>
+    <button class="btn btn-default" {{action 'clean'}}>clean</button>
+
+    <h3>Shop Style add from category</h3>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">womens-accessories <span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+      <li><a {{action 'category' 'belts' 'womens'}} >belts</a></li>
+      <li><a {{action 'category' 'hats' 'womens'}} >hats</a></li>
+      <li><a {{action 'category' 'scarves' 'womens'}} >scarves</a></li>
+      <li><a {{action 'category' 'sunglasses' 'womens'}} >sunglasses</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">jeans<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+      <li><a {{action 'category' 'bootcut-jeans' 'womens'}}>bootcut-jeans</a></li>
+      <li><a {{action 'category' 'classic-jeans' 'womens'}}>classic-jeans</a></li>
+      <li><a {{action 'category' 'cropped-jeans' 'womens'}}>cropped-jeans</a></li>
+      <li><a {{action 'category' 'distressed-jeans' 'womens'}}>distressed-jeans</a></li>
+      <li><a {{action 'category' 'flare-jeans' 'womens'}}>flare-jeans</a></li>
+      <li><a {{action 'category' 'relaxed-jeans' 'womens'}}>relaxed-jeans</a></li>
+      <li><a {{action 'category' 'skinny-jeans' 'womens'}}>skinny-jeans</a></li>
+      <li><a {{action 'category' 'straight-leg-jeans' 'womens'}}>straight-leg-jeans</a></li>
+      <li><a {{action 'category' 'stretch-jeans' 'womens'}}>stretch-jeans</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">dresses<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'cocktail-dresses' 'womens'}}>cocktail-dresses</a></li>
+    <li><a {{action 'category' 'day-dresses' 'womens'}}>day-dresses</a></li>
+    <li><a {{action 'category' 'evening-dresses' 'womens'}}>evening-dresses</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">jackets<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'blazers' 'womens'}}>blazers</a></li>
+    <li><a {{action 'category' 'casual-jackets' 'womens'}}>casual-jackets</a></li>
+    <li><a {{action 'category' 'vests' 'womens'}}>vests</a></li>
+    <li><a {{action 'category' 'leather-jackets' 'womens'}}>leather-jackets</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">jewelry<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'bracelets' 'womens'}}>bracelets</a></li>
+    <li><a {{action 'category' 'charms' 'womens'}}>charms</a></li>
+    <li><a {{action 'category' 'earrings' 'womens'}}>earrings</a></li>
+    <li><a {{action 'category' 'necklaces' 'womens'}}>necklaces</a></li>
+    <li><a {{action 'category' 'rings' 'womens'}}>rings</a></li>
+    <li><a {{action 'category' 'watches' 'womens'}}>watches</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">womens-outerwear<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'coats' 'womens'}}>coats</a></li>
+    <li><a {{action 'category' 'fur-and-shearling-coats' 'womens'}}>fur-and-shearling-coats</a></li>
+    <li><a {{action 'category' 'leather-and-suede-coats' 'womens'}}>leather-and-suede-coats</a></li>
+    <li><a {{action 'category' 'puffer-coats' 'womens'}}>puffer-coats</a></li>
+    <li><a {{action 'category' 'raincoats-and-trenchcoats' 'womens'}}>raincoats-and-trenchcoats</a></li>
+    <li><a {{action 'category' 'wool-coats' 'womens'}}>wool-coats</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">womens-pants<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'casual-pants' 'womens'}}>casual-pants</a></li>
+    <li><a {{action 'category' 'cropped-pants' 'womens'}}>cropped-pants</a></li>
+    <li><a {{action 'category' 'dress-pants' 'womens'}}>dress-pants</a></li>
+    <li><a {{action 'category' 'leggings' 'womens'}}>leggings</a></li>
+    <li><a {{action 'category' 'skinny-pants' 'womens'}}>skinny-pants</a></li>
+    <li><a {{action 'category' 'wide-leg-pants' 'womens'}}>wide-leg-pants</a></li>
+    <li><a {{action 'category' 'shorts' 'womens'}}>shorts</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">shorts<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'mini-skirts' 'womens'}}>mini-skirts</a></li>
+    <li><a {{action 'category' 'mid-length-skirts' 'womens'}}>mid-length-skirts</a></li>
+    <li><a {{action 'category' 'long-skirts' 'womens'}}>long-skirts</a></li>
+    <li><a {{action 'category' 'cardigan-sweaters' 'womens'}}>cardigan-sweaters</a></li>
+    <li><a {{action 'category' 'cashmere-sweaters' 'womens'}}>cashmere-sweaters</a></li>
+    <li><a {{action 'category' 'crewneck-sweaters' 'womens'}}>crewneck-sweaters</a></li>
+    <li><a {{action 'category' 'turleneck-sweaters' 'womens'}}>turleneck-sweaters</a></li>
+    <li><a {{action 'category' 'v-neck-sweaters' 'womens'}}>v-neck-sweaters</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">sweaters<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'one-piece-swimsuits' 'womens'}}>one-piece-swimsuits</a></li>
+    <li><a {{action 'category' 'two-piece-swimsuits' 'womens'}}>two-piece-swimsuits</a></li>
+    <li><a {{action 'category' 'swimsuit-coverups' 'womens'}}>swimsuit-coverups</a></li>
+    <li><a {{action 'category' 'sweatshirts' 'womens'}}>sweatshirts</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">womens-tops<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'button-front-tops' 'womens'}}>button-front-tops</a></li>
+    <li><a {{action 'category' 'camisole-tops' 'womens'}}>camisole-front-tops</a></li>
+    <li><a {{action 'category' 'cashmere-tops' 'womens'}}>cashmere-tops</a></li>
+    <li><a {{action 'category' 'halter-tops' 'womens'}}>halter-tops</a></li>
+    <li><a {{action 'category' 'longsleeve-tops' 'womens'}}>longsleeve-tops</a></li>
+    <li><a {{action 'category' 'shortsleeve-tops' 'womens'}}>shortsleeve-tops</a></li>
+    <li><a {{action 'category' 'sleeveless-tops' 'womens'}}>sleeveless-tops</a></li>
+    <li><a {{action 'category' 'tank-tops' 'womens'}}>tank-tops</a></li>
+    <li><a {{action 'category' 'tees-and-tshirts' 'womens'}}>tees-and-tshirts-tops</a></li>
+    <li><a {{action 'category' 'tunic-tops' 'womens'}}>tunic-tops</a></li>
+    <li><a {{action 'category' 'polo-tops' 'womens'}}>polo-tops</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Handbags<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'backpacks' 'womens'}}>backpacks-tops</a></li>
+    <li><a {{action 'category' 'clutches' 'womens'}}>clutches</a></li>
+    <li><a {{action 'category' 'evening-handbags' 'womens'}}>evening-handbags</a></li>
+    <li><a {{action 'category' 'hobo-bags' 'womens'}}>hobo-bags</a></li>
+    <li><a {{action 'category' 'satchels' 'womens'}}>satchels</a></li>
+    <li><a {{action 'category' 'shoulder-bags' 'womens'}}>shoulder-bags</a></li>
+    <li><a {{action 'category' 'tote-bags' 'womens'}}>tote-bags</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">womens-shoes<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'boots' 'womens'}}>boots</a></li>
+    <li><a {{action 'category' 'evening-shoes' 'womens'}}>evening-shoes</a></li>
+    <li><a {{action 'category' 'flats' 'womens'}}>flats</a></li>
+    <li><a {{action 'category' 'mules-and-clogs' 'womens'}}>mules-and-clogs</a></li>
+    <li><a {{action 'category' 'platforms' 'womens'}}>platforms</a></li>
+    <li><a {{action 'category' 'pumps' 'womens'}}>pumps</a></li>
+    <li><a {{action 'category' 'sandals' 'womens'}}>sandals</a></li>
+    <li><a {{action 'category' 'womens-sneakers' 'womens'}}>womens-sneakers</a></li>
+    <li><a {{action 'category' 'wedges' 'womens'}}>wedges</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">mens-clothes<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'mens-sunglasses' 'mens'}}>mens-sunglasses</a></li>
+    <li><a {{action 'category' 'mens-athletic-pants' 'mens'}}>mens-athletic-pants</a></li>
+    <li><a {{action 'category' 'mens-bootcut-jeans' 'mens'}}>mens-bootcut-jeans</a></li>
+    <li><a {{action 'category' 'mens-distressed-jeans' 'mens'}}>mens-distressed-jeans</a></li>
+    <li><a {{action 'category' 'mens-loose-jeans' 'mens'}}>mens-loose-jeans</a></li>
+    <li><a {{action 'category' 'mens-low-rise-jeans' 'mens'}}>mens-low-rise-jeans</a></li>
+    <li><a {{action 'category' 'mens-relaxed-jeans' 'mens'}}>mens-relaxed-jeans</a></li>
+    <li><a {{action 'category' 'mens-slim-jeans' 'mens'}}>mens-slim-jeans</a></li>
+    <li><a {{action 'category' 'straight-leg-jeans' 'mens'}}>mens-straight-leg-jeans</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">mens-pants<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'mens-denim-jackets' 'mens'}}>mens-denim-jackets</a></li>
+    <li><a {{action 'category' 'mens-jackets' 'mens'}}>mens-jackets</a></li>
+    <li><a {{action 'category' 'mens-leather-and-suede-coats' 'mens'}}>mens-leather-and-suede-coats</a></li>
+    <li><a {{action 'category' 'mens-overcoats-and-trenchcoats' 'mens'}}>mens-overcoats-and-trenchcoats</a></li>
+    <li><a {{action 'category' 'mens-wool-coats' 'mens'}}>mens-wool-coats</a></li>
+    <li><a {{action 'category' 'mens-casual-pants' 'mens'}}>mens-casual-pants</a></li>
+    <li><a {{action 'category' 'mens-chinos-and-khakis' 'mens'}}>mens-chinos-and-khakis</a></li>
+    <li><a {{action 'category' 'mens-dress-pants' 'mens'}}>mens-dress-pants</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">mens-shirts<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'mens-dress-shirts' 'mens'}}>mens-dress-shirts</a></li>
+    <li><a {{action 'category' 'mens-longsleeve-shirts' 'mens'}}>mens-longsleeve-shirts</a></li>
+    <li><a {{action 'category' 'mens-shortsleeve-shirts' 'mens'}}>mens-shortsleeve-shirts</a></li>
+    <li><a {{action 'category' 'mens-polo-shirts' 'mens'}}>mens-polo-shirts</a></li>
+    <li><a {{action 'category' 'mens-tees-and-tshirts' 'mens'}}>mens-tees-and-tshirts</a></li>
+    <li><a {{action 'category' 'mens-shorts' 'mens'}}>mens-shorts</a></li>
+    <li><a {{action 'category' 'mens-blazers-and-sport-coats' 'mens'}}>mens-blazers-and-sport-coats</a></li>
+    <li><a {{action 'category' 'mens-cardigan-sweaters' 'mens'}}>mens-cardigan-sweaters</a></li>
+    <li><a {{action 'category' 'mens-cashmere-sweaters' 'mens'}}>mens-cashmere-sweaters</a></li>
+    <li><a {{action 'category' 'mens-crewneck-sweaters' 'mens'}}>mens-crewneck-sweaters</a></li>
+    <li><a {{action 'category' 'mens-half-zip-sweaters' 'mens'}}>mens-half-zip-sweaters</a></li>
+    <li><a {{action 'category' 'mens-turtleneck-sweaters' 'mens'}}>mens-turtleneck-sweaters</a></li>
+    <li><a {{action 'category' 'mens-v-neck-sweaters' 'mens'}}>mens-v-neck-sweaters</a></li>
+    <li><a {{action 'category' 'mens-vests' 'mens'}}>mens-vests</a></li>
+    <li><a {{action 'category' 'mens-sweatshirts' 'mens'}}>mens-sweatshirts</a></li>
+    <li><a {{action 'category' 'mens-swimsuits' 'mens'}}>mens-swimsuits</a></li>
+    <li><a {{action 'category' 'mens-messenger-bags' 'mens'}}>mens-messenger-bags</a></li>
+    <li><a {{action 'category' 'mens-tote-bags' 'mens'}}>mens-tote-bags</a></li>
+    <li><a {{action 'category' 'mens-business-bags' 'mens'}}>mens-business-bags</a></li>
+    <li><a {{action 'category' 'mens-backpacks' 'mens'}}>mens-backpacks</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">mens-shoes<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'mens-sneakers' 'mens'}}>mens-sneakers</a></li>
+    <li><a {{action 'category' 'mens-slip-ons-shoes' 'mens'}}>mens-slip-ons-shoes</a></li>
+    <li><a {{action 'category' 'mens-lace-up-shoes' 'mens'}}>mens-lace-up-shoes</a></li>
+    <li><a {{action 'category' 'mens-sandals' 'mens'}}>mens-sandals</a></li>
+    <li><a {{action 'category' 'mens-boots' 'mens'}}>mens-boots</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">mens-watches-and-jewelry<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+    <li><a {{action 'category' 'mens-cuff-links' 'mens'}}>mens-cuff-links</a></li>
+    <li><a {{action 'category' 'mens-jewelry' 'mens'}}>mens-jewelry</a></li>
+    <li><a {{action 'category' 'mens-watches' 'mens'}}>mens-watches</a></li>  
+      </ul>
+    </div>
+  </div></script><script src=scripts/vendor.js></script><!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --><script>(function (b, o, i, l, e, r) {
+      b.GoogleAnalyticsObject = l;
+      b[l] || (b[l] =
+        function () {
+          (b[l].q = b[l].q || []).push(arguments)
+        });
+      b[l].l = +new Date;
+      e = o.createElement(i);
+      r = o.getElementsByTagName(i)[0];
+      e.src = '//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-52035106-1');
+    ga('send', 'pageview');</script><script src=scripts/plugins.js></script><script src=scripts/main.js></script>
