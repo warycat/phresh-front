@@ -20,10 +20,10 @@ var App = Ember.Application.create({
 App.Router.map(function () {
 	this.resource('index',{path:'/'});
   this.resource('login');
-  this.resource('discovery',function(){
+  this.resource('discovery', {path: '/discovery/'}, function(){
     this.route('description');
   });
-  this.resource('showroom');
+  this.resource('showroom', {path:'/showroom/:uid'});
   this.resource('item',function(){
     this.route('description');
   });

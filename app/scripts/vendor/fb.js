@@ -9,11 +9,11 @@ function statusChangeCallback(response) {
   if(window.location.pathname === '/admin.html')return;
   if (response.status === 'connected') {
     // Logged into your app and Facebook.
-    window.location = "/index.html#discovery";
+    window.location = "/index.html#/discovery";
   } else if (response.status === 'not_authorized') {
-    window.location = "/index.html#discovery";
+    window.location = "/index.html#/login";
   } else {
-    window.location = "/index.html#discovery";
+    window.location = "/index.html#/login";
   }
 }
 
