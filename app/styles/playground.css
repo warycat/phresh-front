@@ -88,14 +88,14 @@
 }
 
 #bottomBanner {
-    top: 410px;
+    bottom: 0px;
     position: absolute;
     background-color: #000000;
 }
 
+/*
 .likeDislikeButton {
-    width: 60px;
-    height: 60px;
+    width: 20%;
     border-radius: 50px;
     background-color: #FFFFFF;
     border-width: 4px;
@@ -103,26 +103,33 @@
     z-index: 30;
 
 }
+*/
+
+
 
 #likeButton {
     position: absolute;
-    top: 392px;
-    left: 200px;
+    bottom: 15px;
+    left: 195px;
+    width: 20%;
+    z-index: 20;
 }
 
 #dislikeButton {
     position: absolute;
-    top: 392px;
-    left: 60px;
+    bottom: 15px;
+    left: 65px;
+    width: 20%;
+    z-index: 20;
 }
 
 #infoButton {
     position: absolute;
-    top: 400px;
-    left: 140px;
-    width: 40px;
-    height: 40px;
+    bottom: 20px;
+    left: 135px;
+    width: 17%;
     border-radius: 50px;
+    z-index: 20;
 }
 
 #menuIcon {
@@ -164,54 +171,30 @@
   z-index: 20;
 }
 
-.mainProductCardTop {
-    width: 320px;
-    height: 360px;
-    top: 50px;
-    border: 0px solid #999;
-    background-color: #666699;
+
+#sampleImageContainer {
     position: absolute;
-    z-index: 10;
+    top: 50px;
+    left: 0;
+    bottom: 50px;
+    right: 0;
+
 }
 
 #sampleImageTop {
     position: absolute;
+    margin: auto;
     max-width: 100%;
     max-height: 100%;
     margin-left: auto;
     margin-right: auto;
     display: block;
-    top: 0;
+    top: 50px;
     left: 0;
-    bottom: 0;
+    bottom: 50px;
     right: 0;
-    top: 50px;
-    z-index: 10;
+   
 }
-
-.mainProductCardBottom {
-    width: 320px;
-    height: 360px;
-    top: 50px;
-    border: 0px solid #999;
-    background-color: #666699;
-    position: absolute;
-}
-
-#sampleImageBottom {
-    position: absolute;
-    max-width: 100%;
-    max-height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    top: 50px;
-}
-
 
 .cardDescription {
     position: absolute;
