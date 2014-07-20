@@ -1,12 +1,17 @@
 App.DiscoveryRoute = Ember.Route.extend({
-  model: function(){
-    return Api.getListItems('all-womens');
+  model: function(params){
+    if(params.gender !== 'male'){
+      return Api.getListItems('all-womens');
+    }else{
+      return Api.getListItems('all-mens');
+    }
   }
 , setupController:function(controller, model){
     controller.set('model',model);
+    console.log(model);
     model.Items = _.shuffle(model.Items);
     if(controller.get('topImgURL') === ''){
-      Api.getItem(model.Items[0].iid.S,'womens',function(data){
+      Api.getItem(model.Items[0].iid.S,function(data){
         controller.set('currentItem',data.Item);
         var sizes = JSON.parse(data.Item.imageSIZES.S);
         controller.set('topImgURL',sizes.IPhone.url);
@@ -30,7 +35,7 @@ App.DiscoveryController = Ember.ObjectController.extend((function(){
     var model = this.get('model');
     this.set('current',this.get('current')+1);
     var self = this;
-    Api.getItem(model.Items[this.get('current')].iid.S,'womens',function(data){
+    Api.getItem(model.Items[this.get('current')].iid.S,function(data){
       self.set('currentItem',data.Item);
       var sizes = JSON.parse(data.Item.imageSIZES.S);
       self.set('topImgURL',sizes.IPhone.url);

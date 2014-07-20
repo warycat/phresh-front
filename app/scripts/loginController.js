@@ -12,7 +12,7 @@ App.LoginController = Ember.ObjectController.extend({
           });
           Api.putUser(user,function(data){
             console.log(data);
-            window.location = '/index.html#discovery';
+            window.location = "/index.html#/discovery/" + response.gender;
           });
         });
       },{scope:'public_profile,email,user_friends'});

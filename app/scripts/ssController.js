@@ -97,10 +97,12 @@ App.SsController = Ember.ObjectController.extend({
           });
           var dict = JSON.parse(item.imageSIZES.S);
           var $elem = $('<img style="height:40px;" class="item"  src="' + dict.IPhone.url + '" />');
-          Api.putItem(item,gender,function(data){
-            if(data){
-              $('#imagesContainer').append($elem);
-            }
+          Api.putItem(item,function(data){
+            Api.putListItem('all-'+gender,item.id.S,function(){
+              if(data){
+                $('#imagesContainer').append($elem);
+              }
+            });
           });
         });
       });
