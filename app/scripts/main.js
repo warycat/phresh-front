@@ -35,7 +35,7 @@ App.Router.map(function () {
     this.route('description');
   });
   this.resource('showroom', {path:'/showroom/:uid'});
-  this.resource('item',function(){
+  this.resource('item',{path:'/item/:iid'},function(){
     this.route('description');
   });
   this.resource('landing');

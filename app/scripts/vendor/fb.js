@@ -9,6 +9,7 @@ function statusChangeCallback(response) {
   if(window.location.pathname === '/admin.html')return;
   if (response.status === 'connected') {
     FB.api('/me', function (response) {
+      App.me = response;
       window.location = "/index.html#/discovery/" + response.gender;
     });
   } else if (response.status === 'not_authorized') {

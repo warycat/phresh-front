@@ -5,17 +5,17 @@ App.LoginController = Ember.ObjectController.extend({
       FB.login(function(response){
         console.log(response);
         FB.api('/me', function (response) {
-          console.log(response);
+          App.me = response;
           var user = {};
           $.each(response,function(key){
             user[key] = {S: response[key] + ''};
           });
           Api.putUser(user,function(data){
             console.log(data);
-            window.location = "/index.html#/discovery/" + response.gender;
+            window.location = '/index.html#/discovery/' + response.gender;
           });
         });
-      },{scope:'public_profile,email,user_friends'});
+      },{scope:'public_profile,email,user_friends,publish_actions'});
     }
   }
 });

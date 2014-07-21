@@ -57,9 +57,9 @@
   </div>
 
   <div>
-    <button class="likeDislikeButton" id="likeButton" {{action keep}}>phresh</button>div>/div>
-    <button class="likeDislikeButton" id="dislikeButton" {{action trash}}>stale</button>div>/div>
-    <button class="likeDislikeButton" id="infoButton" {{action info_btn}}>{{info_text}}</button>div>/div>
+    <img {{bind-attr src=leftBtnURL}} id="dislikeButton" {{action leftBtnClick}} />
+    <img {{bind-attr src=midBtnURL}} id="infoButton" {{action midBtnClick}} />
+    <img {{bind-attr src=rightBtnURL}} id="likeButton" {{action rightBtnClick}} />    
   </div>
 
   <div>
@@ -71,21 +71,15 @@
 
 
   <div>
-    <div class="mainproductCardTop">
-      <img {{bind-attr src=topImgURL}} id="sampleImageTop" {{action info_img}} />
+    <div id="sampleImageContainer">
+      <img {{bind-attr src=imgURL}} id="sampleImageTop" {{action info_img}} />
     </div>
   </div>
 
   <!--BOTTOM CARD-->
 
   {{outlet}}
-<!--
-  <div>
-    <div class="mainproductCardBottom">
-      <img src="images/sample4.jpg" id="sampleImageBottom" />
-    </div>
-  </div>
--->
+
 </script>
 
 <script type="text/x-handlebars" id="discovery/description">
@@ -107,9 +101,11 @@
     <img {{action share}} src="images/icons/shareicon.png" class="shareIcon" />
 
   </div>
-    <div id="wrapper" style="background-color: #545e5d;">
+    <div id="wrapper">
       <div id="list">
-
+      {{#each items}}
+        <div class="item"><img style="width:10em;" {{bind-attr id=iid.S}} {{action item iid.S}}/></div>
+      {{/each}}
       </div>
     </div>
 </script>

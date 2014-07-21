@@ -4,24 +4,13 @@ App.ShowroomRoute = Ember.Route.extend({
   }
 , setupController:function(controller, model){
     controller.model = model;
-    var items = {};
-    async.each(
-      model.Items
-    , function(item,callback){
-        if(item.keep){
-          Api.getItem(item.iid.S,'womens',function(data){
-            var sizes = JSON.parse(data.Item.imageSIZES.S);
-            items[item.iid.S] = sizes.IPhone.url;
-            callback();
-          });
-        }
-      }
-    , function(){
-        $.each(items,function(index,item){
-          $('<div class="item"><img style="width:10em;" src="' + item + '" /></div>').appendTo($('#list'));
-        });
-      }
-    );
+    controller.items = model.Items;
+    $.each(model.Items,function(index,item){
+      Api.getItem(item.iid.S,function(data){
+        var sizes = JSON.parse(data.Item.imageSIZES.S);
+        $('#'+item.iid.S).attr('src',sizes.Original.url);
+      });
+    });
   }
 });
 
@@ -29,11 +18,21 @@ App.ShowroomController = Ember.ObjectController.extend((function(){
   var items = {};
   
   function exit(){
-    this.transitionToRoute('discovery');
+    console.log('exit');
+    if(App.me){
+      this.transitionToRoute('/discovery/' + App.me.gender );
+    }else{
+      this.transitionToRoute('login');
+    }
   }
 
   function share(){
     console.log(itemsArray());
+  }
+
+  function item(iid){
+    console.log('item',iid);
+    this.transitionToRoute('/item/'+iid);
   }
 
   return {
@@ -41,6 +40,7 @@ App.ShowroomController = Ember.ObjectController.extend((function(){
   , actions:{
       exit:exit
     , share:share
+    , item:item
     }
   };
 })());
