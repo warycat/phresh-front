@@ -1,6 +1,6 @@
 var Api = (function(){
-	var url = 'http://node.whatisphresh.com';
-//  var url = 'http://dev.whatisphresh.com:3000';
+//  var url = 'http://node.whatisphresh.com';
+  var url = 'http://dev.whatisphresh.com:3000';
 
   function putUser(user, done){
     return $.ajax({type:'PUT', url:url + '/users', data:user}).done(done);
@@ -26,24 +26,24 @@ var Api = (function(){
     return $.ajax({type:'DELETE', url:url + '/users/'+id}).done(done);
   }
 
-  function putItem(item,gender,done){
-    return $.ajax({type:'PUT', url:url + '/items/' + gender + '/', data:item}).done(done);
+  function putItem(item,done){
+    return $.ajax({type:'PUT', url:url + '/items/', data:item}).done(done);
   }
 
-  function getItem(id,gender,done){
-    return $.ajax({type:'GET', url:url + '/items/' + gender + '/' + id}).done(done);
+  function getItem(id,done){
+    return $.ajax({type:'GET', url:url + '/items/' + id}).done(done);
   }
 
-  function getItems(gender,done){
-    return $.ajax({type:'GET', url:url + '/items/' + gender + '/' }).done(done);
+  function getItems(done){
+    return $.ajax({type:'GET', url:url + '/items/' }).done(done);
   }
 
   function postItem(id,body,gender,done){
-    return $.ajax({type:'POST', url:url + '/items/' + gender + '/' + id, data:body}).done(done);
+    return $.ajax({type:'POST', url:url + '/items/' + id, data:body}).done(done);
   }
 
   function deleteItem(id,gender,done){
-    return $.ajax({type:'DELETE', url:url + '/items/' + gender + '/' + id}).done(done);
+    return $.ajax({type:'DELETE', url:url + '/items/' + id}).done(done);
   }
 
   function putListUser(lid,uid,done){
