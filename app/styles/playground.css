@@ -1,17 +1,22 @@
 .phreshcolor {
     color: #FFD75B;
+   
 }
 
 .phreshfont {
-    font-family: 'Roboto', sans-serif;
+
+font-family: 'Over the Rainbow', cursive;
+
 }
 
 .welcome {
     color: #FFD75B;
-    font-size: 50pt;
+    font-size: 70pt;
     position: relative;
     text-align: center;
     margin-top: 50%;
+    z-index: 100;
+    font-weight: bold;
 }
 
 .loginphresh {
@@ -24,49 +29,68 @@
 
 .loginsubheading {
     position: absolute;
-    top: 335px;
-    left: 28px;
-    width: 355px;
-    text-align: right;
-    color: #FFFFFF;
-    font-size: 17pt;
-    font-weight: bold;
+    top: 275px;
+    left: 111px;
+    width: 260px;
+    color: #000000;
+    font-size: 10pt;
+    font-weight: normal;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 .largebutton {
     position: absolute;
-    margin-left: 0
+    margin-left: 0;
 	margin-top: 0;
     height: 60px;
-    width: 360px;
-    top: 525px;
-    left: 30px;
-    font-size: 20pt;
+    width: 250px;
+    top: 425px;
+    left: 35px;
+    font-size: 10pt;
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    font-weight: normal;
     background-color: #FFFFFF;
+    border-style: none;
 }
 
 .facebook {
     position: absolute;
-    top: 533px;
-    left: 43px;
-    height: 10%;
-    width: 10%;
+    top: 440px;
+    left: 63px;
+    height: 6%;
+    width: 6%;
     z-index: 10;
 }
 
+/*
 .splashbackground {
     padding-left: 0;
     padding-top: 0;
     padding-bottom: 0;
-    margin: 0;
+    margin: auto;
     top: 0;
     left: 0;
     right: 0;
-    position: fixed;
-    height: 100%;
-    width: 100%;
+    position: relative;
+    max-height: 100%;
+    max-width: 100%;
+}
+*/
+
+.splashBackground2 {
+  position: absolute;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    top: 50px;
+    left: 0;
+    bottom: 50px;
+    right: 0;
+
 }
 
 #showroomIcon{
