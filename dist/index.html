@@ -1,14 +1,23 @@
-<!DOCTYPE html><html class=no-js><head><meta charset=utf-8><title>Phresh</title><meta name=description content=""><meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui"><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=black><link rel="shortcut icon" href=/favicon.ico><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/vendor.css><link rel=stylesheet href=styles/main.css><script src=scripts/vendor/modernizr.js></script><body><!--[if lt IE 10]>
+<!DOCTYPE html><html class=no-js><head><meta charset=utf-8><title>phresh</title><meta name=description content=""><meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui"><meta name=apple-mobile-web-app-status-bar-style content=black><link rel="shortcut icon" href=/favicon.ico><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/vendor.css><link rel=stylesheet href=styles/main.css><script src=scripts/vendor/modernizr.js></script><link href="http://fonts.googleapis.com/css?family=Over+the+Rainbow|Roboto" rel=stylesheet type=text/css><body><!--[if lt IE 10]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]--><script type=text/x-handlebars id=index><div class="container">
-    <div class='welcome'>phresh</div>
+  <![endif]--><script type=text/x-handlebars id=index><div>
+      <div class="welcome phreshfont">phresh</div>
+      <div class="loginsubheading">STYLE FOR MODERN HUMANS.</div>
+  </div>
+
+  <div>
+      <div class="loginbutton"></div>
+      <button type="button" class="btn btn-default btn-lg btn-block largebutton" {{action fb_login}}>TAP HERE TO BEGIN</button>
+      <img src='images/icons/fbSignUp.png' id='splashFBImg' class='facebook' />
   </div></script><script type=text/x-handlebars id=login><div>
-    <img src='images/female.png' id='splashBackground'>
-    <div class="loginbutton"></div>
-    <button type="button" class="btn btn-default btn-lg btn-block largebutton" {{action fb_login}}>log in with Facebook</button>
-    <img src='images/icons/fbSignUp.png' id='splashFBImg' class='facebook' />
-    <div class="loginphresh">phresh</div>
-    <div class="loginsubheading">shopping. only easier.</div>
+      <div class="welcome phreshfont">phresh</div>
+      <div class="loginsubheading">STYLE FOR MODERN HUMANS.</div>
+  </div>
+
+  <div>
+      <div class="loginbutton"></div>
+      <button type="button" class="btn btn-default btn-lg btn-block largebutton" {{action fb_login}}>TAP HERE TO BEGIN</button>
+      <img src='images/icons/fbSignUp.png' id='splashFBImg' class='facebook' />
   </div></script><script type=text/x-handlebars id=discovery><div>
     <div class="mainBanner" id="topBanner">
       <div id="titleMain">phresh this week</div>
@@ -17,9 +26,9 @@
   </div>
 
   <div>
-    <button class="likeDislikeButton" id="likeButton" {{action keep}}>phresh</button>div>/div>
-    <button class="likeDislikeButton" id="dislikeButton" {{action trash}}>stale</button>div>/div>
-    <button class="likeDislikeButton" id="infoButton" {{action info_btn}}>{{info_text}}</button>div>/div>
+    <img {{bind-attr src=leftBtnURL}} id="dislikeButton" {{action leftBtnClick}} />
+    <img {{bind-attr src=midBtnURL}} id="infoButton" {{action midBtnClick}} />
+    <img {{bind-attr src=rightBtnURL}} id="likeButton" {{action rightBtnClick}} />    
   </div>
 
   <div>
@@ -31,20 +40,14 @@
 
 
   <div>
-    <div class="mainproductCardTop">
-      <img {{bind-attr src=topImgURL}} id="sampleImageTop" {{action info_img}} />
+    <div id="sampleImageContainer">
+      <img {{bind-attr src=imgURL}} id="sampleImageTop" {{action imgClick}} />
     </div>
   </div>
 
   <!--BOTTOM CARD-->
 
-  {{outlet}}
-<!--
-  <div>
-    <div class="mainproductCardBottom">
-      <img src="images/sample4.jpg" id="sampleImageBottom" />
-    </div>
-  </div></script><script type=text/x-handlebars id=discovery/description><div>
+  {{outlet}}</script><script type=text/x-handlebars id=discovery/description><div>
     <div id="description" class="cardDescription" {{action exit}}>{{controllers.discovery.currentItem.brandedName.S}}
       <p></p>{{{controllers.discovery.currentItem.description.S}}}
       <p></p>${{controllers.discovery.currentItem.price.N}}</p>
@@ -55,51 +58,42 @@
     <img {{action share}} src="images/icons/shareicon.png" class="shareIcon" />
 
   </div>
-    <div id="wrapper" style="background-color: #545e5d;">
+    <div id="wrapper">
       <div id="list">
-
+      {{#each items}}
+        <div class="item"><img style="width:10em;" {{bind-attr id=iid.S}} {{action item iid.S}}/></div>
+      {{/each}}
       </div>
     </div></script><script type=text/x-handlebars id=item><div>
     <div class="mainBanner" id="topBanner">
       <div id="titleMain">(btw, this is phresh)</div>
     </div>
-  </div>
-      
-  <div>
     <div class="mainBanner" id="bottomBanner"></div>
   </div>
 
   <div>
-    <button class="likeDislikeButton" id="likeButton">buy</button>div>/div>
-    <button class="likeDislikeButton" id="dislikeButton">share</button>div>/div>
-    <button class="likeDislikeButton" id="infoButton">i</button>div>/div>
-  </div>
-
-  <div>
-    <img src="images/icons/backarrow.png" class="backArrow" />
-  </div>
-
-  <div>
-    <img src="images/icons/delete.png" class="deleteIcon" />
+    <img {{bind-attr src=leftBtnURL}} id="dislikeButton" {{action leftBtnClick}} />
+    <img {{bind-attr src=midBtnURL}} id="infoButton" {{action midBtnClick}} />
+    <img {{bind-attr src=rightBtnURL}} id="likeButton" {{action rightBtnClick}} />    
   </div>
 
 
   <!--TOP CARD-->
 
+
   <div>
-    <div class="mainproductCardTop">
-      <img src="images/sample5.jpg" id="sampleImageTop" />
+    <div id="sampleImageContainer">
+      <img {{bind-attr src=imgURL}} id="sampleImageTop" {{action imgClick}} />
     </div>
   </div>
 
-  {{outlet}}
-
   <!--BOTTOM CARD-->
 
+  {{outlet}}
+
+
   <div>
-    <div class="mainproductCardBottom">
-      <img src="images/sample4.jpg" id="sampleImageBottom" />
-    </div>
+    <img {{bind-attr src=backBtnURL}} class="backArrow" {{action backBtnClick}} />
   </div></script><script type=text/x-handlebars id=item/description><div>
     <div id="description" class="cardDescription">BrandedName
       <p></p>Description

@@ -1,0 +1,58 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>phresh</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="stylesheet" href="styles/vendor.css"/>
+  <link rel="stylesheet" href="styles/main.css"/>
+  <script src="scripts/vendor/modernizr.js"></script>
+
+</head>
+<body>
+
+  <div>
+    <div class="mainBanner" id="topBanner">
+      <div id="titleMain">phresh this week</div>
+    </div>
+    <div class="mainBanner" id="bottomBanner"></div>
+  </div>
+
+  <div>
+    <img src="images/icons/phreshbutton.png" id="likeButton" {{action keep}}/>    
+    <img src="images/icons/tired.png" id="dislikeButton" {{action trash}}/>    
+    <img src="images/icons/Infobutton.png" id="infoButton" {{action info_btn}}/>
+  </div>
+
+  <div>
+    <img src="images/icons/yellow star.png" id="showroomIcon" {{action showroom}}/>
+  </div>
+
+
+  <!--TOP CARD-->
+
+
+  <div>
+    <div id="sampleImageContainer">
+      <img src="images/sample6.jpg" id="sampleImageTop" {{action info_img}} />
+    </div>
+  </div>
+
+  <!--BOTTOM CARD-->
+
+  {{outlet}}
+<!--
+  <div>
+    <div class="mainproductCardBottom">
+      <img src="images/sample4.jpg" id="sampleImageBottom" />
+    </div>
+  </div>
+-->
+
+</body>
+</html>
