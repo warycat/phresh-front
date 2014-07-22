@@ -27,7 +27,6 @@ App.ShowroomController = Ember.ObjectController.extend((function(){
   }
 
   function share(){
-    console.log(itemsArray());
   }
 
   function item(iid){

@@ -21,6 +21,7 @@
   <!-- build:js scripts/vendor/modernizr.js -->
   <script src="../bower_components/modernizr/modernizr.js"></script>
   <!-- endbuild -->
+  <link href='http://fonts.googleapis.com/css?family=Over+the+Rainbow|Roboto' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
@@ -29,21 +30,31 @@
   <![endif]-->
 
 <script type="text/x-handlebars" id="index">
-  <div class="container">
-    <div class='welcome'>phresh</div>
+  <div>
+      <div class="welcome phreshfont">phresh</div>
+      <div class="loginsubheading">STYLE FOR MODERN HUMANS.</div>
+  </div>
+
+  <div>
+      <div class="loginbutton"></div>
+      <button type="button" class="btn btn-default btn-lg btn-block largebutton" {{action fb_login}}>TAP HERE TO BEGIN</button>
+      <img src='images/icons/fbSignUp.png' id='splashFBImg' class='facebook' />
   </div>
 </script>
 
 <script type="text/x-handlebars" id="login">
 
   <div>
-    <img src='images/female.png' id='splashBackground'>
-    <div class="loginbutton"></div>
-    <button type="button" class="btn btn-default btn-lg btn-block largebutton" {{action fb_login}}>log in with Facebook</button>
-    <img src='images/icons/fbSignUp.png' id='splashFBImg' class='facebook' />
-    <div class="loginphresh">phresh</div>
-    <div class="loginsubheading">shopping. only easier.</div>
+      <div class="welcome phreshfont">phresh</div>
+      <div class="loginsubheading">STYLE FOR MODERN HUMANS.</div>
   </div>
+
+  <div>
+      <div class="loginbutton"></div>
+      <button type="button" class="btn btn-default btn-lg btn-block largebutton" {{action fb_login}}>TAP HERE TO BEGIN</button>
+      <img src='images/icons/fbSignUp.png' id='splashFBImg' class='facebook' />
+  </div>
+
 
 </script>
 
@@ -116,17 +127,29 @@
     <div class="mainBanner" id="topBanner">
       <div id="titleMain">(btw, this is phresh)</div>
     </div>
-  </div>
-      
-  <div>
     <div class="mainBanner" id="bottomBanner"></div>
   </div>
 
   <div>
-    <button class="likeDislikeButton" id="likeButton">buy</button>div>/div>
-    <button class="likeDislikeButton" id="dislikeButton">share</button>div>/div>
-    <button class="likeDislikeButton" id="infoButton">i</button>div>/div>
+    <img {{bind-attr src=leftBtnURL}} id="dislikeButton" {{action leftBtnClick}} />
+    <img {{bind-attr src=midBtnURL}} id="infoButton" {{action midBtnClick}} />
+    <img {{bind-attr src=rightBtnURL}} id="likeButton" {{action rightBtnClick}} />    
   </div>
+
+
+  <!--TOP CARD-->
+
+
+  <div>
+    <div id="sampleImageContainer">
+      <img {{bind-attr src=imgURL}} id="sampleImageTop" {{action info_img}} />
+    </div>
+  </div>
+
+  <!--BOTTOM CARD-->
+
+  {{outlet}}
+
 
   <div>
     <img src="images/icons/backarrow.png" class="backArrow" />
@@ -136,24 +159,6 @@
     <img src="images/icons/delete.png" class="deleteIcon" />
   </div>
 
-
-  <!--TOP CARD-->
-
-  <div>
-    <div class="mainproductCardTop">
-      <img src="images/sample5.jpg" id="sampleImageTop" />
-    </div>
-  </div>
-
-  {{outlet}}
-
-  <!--BOTTOM CARD-->
-
-  <div>
-    <div class="mainproductCardBottom">
-      <img src="images/sample4.jpg" id="sampleImageBottom" />
-    </div>
-  </div>
 
 </script>
 
@@ -229,7 +234,6 @@
   <!-- endbuild -->
 
   <!-- build:js({app,.tmp}) scripts/main.js -->
-  <script src="scripts/vendor/ember-touch.js"></script>
   <script src="scripts/vendor/fb.js"></script>
   <script src="scripts/api.js"></script>
   <script src="scripts/ss.js"></script>

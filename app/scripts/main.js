@@ -1,17 +1,8 @@
-// document.ontouchmove = function(event){
-//   event.preventDefault();
-// };
-
-// document.ontouchmove = function(e) {
-//     var target = e.currentTarget;
-//     while(target) {
-//         if(checkIfElementShouldScroll(target))
-//             return;
-//         target = target.parentNode;
-//     }
-
-//     e.preventDefault();
-// };
+document.ontouchmove = function(event){
+  if(window.location.hash.indexOf('showroom') === -1){
+    event.preventDefault();
+  }
+};
 
 $.ajaxSetup({
   contentType : 'application/json',
