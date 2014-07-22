@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
   <meta charset="utf-8">
-  <title>Phresh Admin</title>
+  <title>phresh Admin</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <link rel="shortcut icon" href="/favicon.ico">
@@ -37,7 +37,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Phresh Admin</a>
+      <a class="navbar-brand" href="#">phresh Admin</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -45,6 +45,7 @@
       <ul class="nav navbar-nav">
         <li>{{#link-to 'api'}}Api{{/link-to}}</li>
         <li>{{#link-to 'ss'}}Shop Style{{/link-to}}</li>
+        <li>{{#link-to 'enter'}}Enter{{/link-to}}</li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -340,7 +341,114 @@
   </div>
 </script>
 
+<script type="text/x-handlebars" id="enter">
+<div class='container'>
+  <form class="form-horizontal" role="form">
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">JSON</label>
+      <div class="col-sm-10">
+        {{textarea class='form-control' rows=3 value=jsonString}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">id</label>
+      <div class="col-sm-10">
+      {{input type='text' class='form-control' placeholder='id' value=id}}
+      </div>
+    </div>
 
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">brandedName</label>
+      <div class="col-sm-10">
+      {{input type='text' class='form-control' placeholder='brandedName' value=brandedName}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">unbrandedName</label>
+      <div class="col-sm-10">
+      {{input type='text' class='form-control' placeholder='unbrandedName' value=unbrandedName}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">brandID</label>
+      <div class="col-sm-10">
+      {{input type='text' class='form-control' placeholder='brandID' value=brandID}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">brandNAME</label>
+      <div class="col-sm-10">
+      {{input type='text' class='form-control' placeholder='brandNAME' value=brandNAME}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">retailerID</label>
+      <div class="col-sm-10">
+      {{input type='text' class='form-control' placeholder='retailerID' value=retailerID}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">retailerNAME</label>
+      <div class="col-sm-10">
+      {{input type='text' class='form-control' placeholder='retailerNAME' value=retailerNAME}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">description</label>
+      <div class="col-sm-10">
+      {{textarea type='text' class='form-control' placeholder='description' value=description}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">price</label>
+      <div class="col-sm-10">
+      {{input type='number' class='form-control' placeholder='price' value=price}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">salePrice</label>
+      <div class="col-sm-10">
+      {{input type='number' class='form-control' placeholder='salePrice' value=salePrice}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">imageID</label>
+      <div class="col-sm-10">
+      {{input type='text' class='form-control' placeholder='imageID' value=imageID}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">imageURL</label>
+      <div class="col-sm-10">
+      {{input type='text' class='form-control' placeholder='imageURL' value=imageURL}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">pageUrl</label>
+      <div class="col-sm-10">
+      {{input type='text' class='form-control' placeholder='pageUrl' value=pageUrl}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default" {{action submit}}>Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+</script>
 
 
   <!-- build:js scripts/vendor.js -->
@@ -359,6 +467,7 @@
   <script src="../bower_components/outlayer/outlayer.js"></script>
   <script src="../bower_components/masonry/masonry.js"></script>
   <script src="../bower_components/async/lib/async.js"></script>
+  <script src="../bower_components/underscore/underscore.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -403,6 +512,7 @@
   <script src="scripts/main.js"></script>
   <script src="scripts/apiController.js"></script>
   <script src="scripts/ssController.js"></script>
+  <script src="scripts/enterController.js"></script>
   <!-- endbuild -->
 </body>
 

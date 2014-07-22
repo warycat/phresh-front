@@ -33,6 +33,7 @@ App.Router.map(function () {
 
   this.resource('ss');
   this.resource('api');
+  this.resource('enter');
 });
 
 

@@ -1,3 +1,7 @@
+App.LoginRoute = Ember.Route.extend({
+
+});
+
 App.LoginController = Ember.ObjectController.extend({
   actions:{
     fb_login:function(){

@@ -21,7 +21,6 @@ App.ItemController = Ember.ObjectController.extend((function(){
   var midBtnText = 'info';
   var rightBtnText = 'buy';
   var images = [];
-  var current = 0;
   var imgURL = '';
 
   function backBtnURL(){
@@ -70,18 +69,16 @@ App.ItemController = Ember.ObjectController.extend((function(){
     }
   }
 
-  function showroom(){
-    console.log('showroom');
-    this.transitionToRoute('/showroom/'+FB.getUserID());
-  }
 
   function backBtnClick(){
     var text = this.get('backBtnText');
     switch(text){
     case 'back':
-      this.transitionToRoute('showroom');
+      console.log('back');
+      this.transitionToRoute('/showroom/'+FB.getUserID());
       break;
     case 'home':
+      console.log('home');
       this.transitionToRoute('login');
       break;
     }
@@ -90,7 +87,8 @@ App.ItemController = Ember.ObjectController.extend((function(){
 
   function leftBtnClick(){
     var text = this.get('leftBtnText');
-
+    var item = this.get('model').Item;
+    var iid = item.id.S;
     switch(text){
     case 'share':
       console.log('share');
@@ -154,12 +152,10 @@ App.ItemController = Ember.ObjectController.extend((function(){
 
   function rightBtnClick(){
     var text = this.get('rightBtnText');
-    var self = this;
     var item = this.get('model').Item;
-    var iid = item.id.S;
-    var uid = FB.getUserID();
+    // var iid = item.id.S;
+    // var uid = FB.getUserID();
     var pageUrl = item.pageUrl.S;
-    console.log(currentItem);
     switch(text){
     case 'buy':
       console.log('buy');
