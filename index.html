@@ -95,9 +95,9 @@
   <div>
     <img {{bind-attr src=backBtnURL}} class="backArrow" {{action backBtnClick}} />
   </div></script><script type=text/x-handlebars id=item/description><div>
-    <div id="description" class="cardDescription">BrandedName
-      <p></p>Description
-      <p></p>Price ($ + price - not priceLabel)</p>
+    <div id="description" class="cardDescription" {{action exit}}>{{controllers.item.model.Item.brandedName.S}}
+      <p></p>{{{controllers.item.model.Item.description.S}}}
+      <p></p>${{controllers.item.model.Item.price.N}}</p>
     </div>
   </div></script><script type=text/x-handlebars id=landing></script><script src=scripts/vendor.js></script><!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --><script>(function (b, o, i, l, e, r) {
       b.GoogleAnalyticsObject = l;
