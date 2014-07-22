@@ -196,6 +196,10 @@ App.DiscoveryController = Ember.ObjectController.extend((function(){
     }
   }
 
+  function imgClick(){
+    console.log('img click');
+  }
+
   return {
     leftBtnText:leftBtnText
   , midBtnText:midBtnText

@@ -5,17 +5,34 @@ App.ItemRoute = Ember.Route.extend({
 , setupController:function(controller, model){
     console.log(model);
     controller.set('model',model);
+    var sizes = JSON.parse(model.Item.imageSIZES.S);
+    controller.set('imgURL',sizes.Original.url);
+    if(App.me){
+      controller.set('backBtnText','back');
+    }else{
+      controller.set('backBtnText','home');
+    }
   }
 });
 
 App.ItemController = Ember.ObjectController.extend((function(){
+  var backBtnText = 'back';
   var leftBtnText = 'share';
   var midBtnText = 'info';
   var rightBtnText = 'buy';
   var images = [];
   var current = 0;
   var imgURL = '';
-  var currentItem = {};
+
+  function backBtnURL(){
+    var text = this.get('backBtnText');
+    switch(text){
+    case 'back':
+      return 'images/icons/backarrow.png';
+    case 'home':
+      return 'images/icons/backarrow.png';
+    }
+  }
 
   function leftBtnURL(){
     var text = this.get('leftBtnText');
@@ -53,32 +70,28 @@ App.ItemController = Ember.ObjectController.extend((function(){
     }
   }
 
-  function next(){
-    var model = this.get('model');
-    this.set('current',this.get('current')+1);
-    var self = this;
-    Api.getItem(model.Items[this.get('current')].iid.S,function(data){
-      self.set('currentItem',data.Item);
-      var sizes = JSON.parse(data.Item.imageSIZES.S);
-      self.set('imgURL',sizes.IPhone.url);
-    });
-  }
-
   function showroom(){
     console.log('showroom');
     this.transitionToRoute('/showroom/'+FB.getUserID());
   }
 
+  function backBtnClick(){
+    var text = this.get('backBtnText');
+    switch(text){
+    case 'back':
+      this.transitionToRoute('showroom');
+      break;
+    case 'home':
+      this.transitionToRoute('login');
+      break;
+    }
+  }
+
+
   function leftBtnClick(){
     var text = this.get('leftBtnText');
-    var currentItem = this.get('currentItem');
-    var iid = currentItem.id.S;
 
     switch(text){
-    case 'trash':
-      console.log('trash');
-      next.apply(this);
-      break;
     case 'share':
       console.log('share');
       var imageURL = this.get('imgURL');
@@ -121,8 +134,6 @@ App.ItemController = Ember.ObjectController.extend((function(){
           }
         }
       );
-
-
       break;
     }
   }
@@ -131,16 +142,12 @@ App.ItemController = Ember.ObjectController.extend((function(){
     var text = this.get('midBtnText');
     switch(text){
     case 'info':
-      this.set('leftBtnText', 'share');
-      this.set('rightBtnText', 'buy');
       this.set('midBtnText', 'exit');
-      this.transitionToRoute('discovery.description');
+      this.transitionToRoute('item.description');
       break;
     case 'exit':
-      this.set('leftBtnText', 'trash');
-      this.set('rightBtnText', 'keep');
       this.set('midBtnText', 'info');
-      this.transitionToRoute('discovery');
+      this.transitionToRoute('item');
       break;
     }
   }
@@ -148,25 +155,12 @@ App.ItemController = Ember.ObjectController.extend((function(){
   function rightBtnClick(){
     var text = this.get('rightBtnText');
     var self = this;
-    var currentItem = this.get('currentItem');
-    var iid = currentItem.id.S;
+    var item = this.get('model').Item;
+    var iid = item.id.S;
     var uid = FB.getUserID();
-    // var clickUrl = currentItem.clickUrl.S;
-    var pageUrl = currentItem.pageUrl.S;
+    var pageUrl = item.pageUrl.S;
     console.log(currentItem);
     switch(text){
-    case 'keep':
-      console.log('keep');
-      var body = {
-        keep:{
-          Action:'PUT'
-        , Value:{S:(new Date()).toISOString()}
-        }
-      };
-      Api.postUserItem(uid,iid,body,function(){
-        next.apply(self);
-      });
-      break;
     case 'buy':
       console.log('buy');
       var r = confirm('Go to the retailer web site?');
@@ -180,14 +174,14 @@ App.ItemController = Ember.ObjectController.extend((function(){
   }
 
   return {
-    leftBtnText:leftBtnText
+    backBtnText:backBtnText
+  , leftBtnText:leftBtnText
   , midBtnText:midBtnText
   , rightBtnText:rightBtnText
+  , backBtnURL:backBtnURL.property('backBtnText')
   , leftBtnURL:leftBtnURL.property('leftBtnText')
   , midBtnURL:midBtnURL.property('midBtnText')
   , rightBtnURL:rightBtnURL.property('rightBtnText')
-  , current:current
-  , currentItem:currentItem
   , imgURL:imgURL
   , images:images
   , actions:{
@@ -195,6 +189,8 @@ App.ItemController = Ember.ObjectController.extend((function(){
     , leftBtnClick:leftBtnClick
     , midBtnClick:midBtnClick
     , rightBtnClick:rightBtnClick
+    , backBtnClick:backBtnClick
+    , imgClick:imgClick
     }
   };
 })());

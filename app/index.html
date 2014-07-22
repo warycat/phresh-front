@@ -83,7 +83,7 @@
 
   <div>
     <div id="sampleImageContainer">
-      <img {{bind-attr src=imgURL}} id="sampleImageTop" {{action info_img}} />
+      <img {{bind-attr src=imgURL}} id="sampleImageTop" {{action imgClick}} />
     </div>
   </div>
 
@@ -142,7 +142,7 @@
 
   <div>
     <div id="sampleImageContainer">
-      <img {{bind-attr src=imgURL}} id="sampleImageTop" {{action info_img}} />
+      <img {{bind-attr src=imgURL}} id="sampleImageTop" {{action imgClick}} />
     </div>
   </div>
 
@@ -152,11 +152,7 @@
 
 
   <div>
-    <img src="images/icons/backarrow.png" class="backArrow" />
-  </div>
-
-  <div>
-    <img src="images/icons/delete.png" class="deleteIcon" />
+    <img {{bind-attr src=backBtnURL}} class="backArrow" {{action backBtnClick}} />
   </div>
 
 
