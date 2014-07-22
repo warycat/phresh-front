@@ -1,6 +1,6 @@
 var Api = (function(){
-//  var url = 'http://node.whatisphresh.com';
-  var url = 'http://dev.whatisphresh.com:3000';
+  var url = 'http://node.whatisphresh.com';
+  // var url = 'http://dev.whatisphresh.com:3000';
 
   function putUser(user, done){
     return $.ajax({type:'PUT', url:url + '/users', data:user}).done(done);
