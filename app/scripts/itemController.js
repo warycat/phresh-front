@@ -30,7 +30,7 @@ App.ItemController = Ember.ObjectController.extend((function(){
     case 'back':
       return 'images/icons/backarrow.png';
     case 'home':
-      return 'images/icons/backarrow.png';
+      return 'images/icons/home_button.png';
     }
   }
 
@@ -171,6 +171,9 @@ App.ItemController = Ember.ObjectController.extend((function(){
       }
       break;
     }
+  }
+  function imgClick(){
+    console.log('img click');
   }
 
   return {

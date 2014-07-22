@@ -162,9 +162,9 @@
 
 
   <div>
-    <div id="description" class="cardDescription">BrandedName
-      <p></p>Description
-      <p></p>Price ($ + price - not priceLabel)</p>
+    <div id="description" class="cardDescription" {{action exit}}>{{controllers.item.model.Item.brandedName.S}}
+      <p></p>{{{controllers.item.model.Item.description.S}}}
+      <p></p>${{controllers.item.model.Item.price.N}}</p>
     </div>
   </div>
 

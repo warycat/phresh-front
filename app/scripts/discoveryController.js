@@ -216,6 +216,7 @@ App.DiscoveryController = Ember.ObjectController.extend((function(){
     , leftBtnClick:leftBtnClick
     , midBtnClick:midBtnClick
     , rightBtnClick:rightBtnClick
+    , imgClick:imgClick
     }
   };
 })());
