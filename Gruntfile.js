@@ -162,7 +162,7 @@ module.exports = function (grunt) {
     // Automatically inject Bower components into the HTML file
     bowerInstall: {
       app: {
-        src: ['<%= config.app %>/index.html'],
+        src: ['<%= config.app %>/{index,admin}.html'],
         exclude: ['bower_components/bootstrap/dist/js/bootstrap.js']
       }
     },
@@ -189,7 +189,7 @@ module.exports = function (grunt) {
       options: {
         dest: '<%= config.dist %>'
       },
-      html: '<%= config.app %>/index.html'
+      html: '<%= config.app %>/{index,admin}.html'
     },
 
     // Performs rewrites based on rev and the useminPrepare configuration
