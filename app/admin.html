@@ -350,91 +350,98 @@
         {{textarea class='form-control' rows=3 value=jsonString}}
       </div>
     </div>
-    <div class="form-group">
+    <div {{bind-attr class=idClass}}>
       <label for="inputEmail3" class="col-sm-2 control-label">id</label>
       <div class="col-sm-10">
       {{input type='text' class='form-control' placeholder='id' value=id}}
       </div>
     </div>
 
-    <div class="form-group">
+    <div {{bind-attr class=SRCClass}}>
+      <label for="inputEmail3" class="col-sm-2 control-label">SRC</label>
+      <div class="col-sm-10">
+      {{input type='text' class='form-control' placeholder='SRC' value='m1'}}
+      </div>
+    </div>
+
+    <div {{bind-attr class=brandedNameClass}}>
       <label for="inputEmail3" class="col-sm-2 control-label">brandedName</label>
       <div class="col-sm-10">
       {{input type='text' class='form-control' placeholder='brandedName' value=brandedName}}
       </div>
     </div>
 
-    <div class="form-group">
+    <div {{bind-attr class=unbrandedNameClass}}>
       <label for="inputEmail3" class="col-sm-2 control-label">unbrandedName</label>
       <div class="col-sm-10">
       {{input type='text' class='form-control' placeholder='unbrandedName' value=unbrandedName}}
       </div>
     </div>
 
-    <div class="form-group">
+    <div {{bind-attr class=brandIDClass}}>
       <label for="inputEmail3" class="col-sm-2 control-label">brandID</label>
       <div class="col-sm-10">
       {{input type='text' class='form-control' placeholder='brandID' value=brandID}}
       </div>
     </div>
 
-    <div class="form-group">
+    <div {{bind-attr class=brandNAMEClass}}>
       <label for="inputEmail3" class="col-sm-2 control-label">brandNAME</label>
       <div class="col-sm-10">
       {{input type='text' class='form-control' placeholder='brandNAME' value=brandNAME}}
       </div>
     </div>
 
-    <div class="form-group">
+    <div {{bind-attr class=retailerIDClass}}>
       <label for="inputEmail3" class="col-sm-2 control-label">retailerID</label>
       <div class="col-sm-10">
       {{input type='text' class='form-control' placeholder='retailerID' value=retailerID}}
       </div>
     </div>
 
-    <div class="form-group">
+    <div {{bind-attr class=retailerNAMEClass}}>
       <label for="inputEmail3" class="col-sm-2 control-label">retailerNAME</label>
       <div class="col-sm-10">
       {{input type='text' class='form-control' placeholder='retailerNAME' value=retailerNAME}}
       </div>
     </div>
 
-    <div class="form-group">
+    <div {{bind-attr class=descriptionClass}}>
       <label for="inputEmail3" class="col-sm-2 control-label">description</label>
       <div class="col-sm-10">
       {{textarea type='text' class='form-control' placeholder='description' value=description}}
       </div>
     </div>
 
-    <div class="form-group">
+    <div {{bind-attr class=priceClass}}>
       <label for="inputEmail3" class="col-sm-2 control-label">price</label>
       <div class="col-sm-10">
-      {{input type='number' class='form-control' placeholder='price' value=price}}
+      {{input type='text' class='form-control' placeholder='price' value=price}}
       </div>
     </div>
 
-    <div class="form-group">
+    <div {{bind-attr class=salePriceClass}}>
       <label for="inputEmail3" class="col-sm-2 control-label">salePrice</label>
       <div class="col-sm-10">
-      {{input type='number' class='form-control' placeholder='salePrice' value=salePrice}}
+      {{input type='text' class='form-control' placeholder='salePrice' value=salePrice}}
       </div>
     </div>
 
-    <div class="form-group">
+    <div {{bind-attr class=imageIDClass}}>
       <label for="inputEmail3" class="col-sm-2 control-label">imageID</label>
       <div class="col-sm-10">
       {{input type='text' class='form-control' placeholder='imageID' value=imageID}}
       </div>
     </div>
 
-    <div class="form-group">
+    <div {{bind-attr class=imageURLClass}}>
       <label for="inputEmail3" class="col-sm-2 control-label">imageURL</label>
       <div class="col-sm-10">
       {{input type='text' class='form-control' placeholder='imageURL' value=imageURL}}
       </div>
     </div>
 
-    <div class="form-group">
+    <div {{bind-attr class=pageUrlClass}}>
       <label for="inputEmail3" class="col-sm-2 control-label">pageUrl</label>
       <div class="col-sm-10">
       {{input type='text' class='form-control' placeholder='pageUrl' value=pageUrl}}
@@ -453,6 +460,7 @@
 
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
+  <script src="../bower_components/async/lib/async.js"></script>
   <script src="../bower_components/jquery/dist/jquery.js"></script>
   <script src="../bower_components/handlebars/handlebars.js"></script>
   <script src="../bower_components/ember/ember.js"></script>
@@ -466,8 +474,8 @@
   <script src="../bower_components/outlayer/item.js"></script>
   <script src="../bower_components/outlayer/outlayer.js"></script>
   <script src="../bower_components/masonry/masonry.js"></script>
-  <script src="../bower_components/async/lib/async.js"></script>
   <script src="../bower_components/underscore/underscore.js"></script>
+  <script src="../bower_components/validator-js/validator.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 

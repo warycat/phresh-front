@@ -38,11 +38,11 @@ var Api = (function(){
     return $.ajax({type:'GET', url:url + '/items/' }).done(done);
   }
 
-  function postItem(id,body,gender,done){
+  function postItem(id,body,done){
     return $.ajax({type:'POST', url:url + '/items/' + id, data:body}).done(done);
   }
 
-  function deleteItem(id,gender,done){
+  function deleteItem(id,done){
     return $.ajax({type:'DELETE', url:url + '/items/' + id}).done(done);
   }
 
