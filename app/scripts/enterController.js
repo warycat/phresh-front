@@ -19,6 +19,8 @@ App.EnterController = Ember.ObjectController.extend((function(){
   var imageID = '';
   var imageURL = '';
   var pageUrl = '';
+  var tagInput = '';
+  var tags = Ember.ArrayController.create();
 
   function jsonString(key, value){
     if(value){
@@ -90,29 +92,41 @@ App.EnterController = Ember.ObjectController.extend((function(){
     var imageID = this.get('imageID');
     var imageURL = this.get('imageURL');
     var pageUrl = this.get('pageUrl');
+    var tags = this.get('tags').map(function(item){return item.tag + '';});
 
-    var allValid = this.get('idIsValid') && this.get('SRCIsValid') && this.get('brandedNameIsValid') && this.get('unbrandedName') && this.get('brandIDIsValid') && this.get('brandNAMEIsValid') && this.get('retailerIDIsValid') && this.get('retailerNAMEIsValid') && this.get('descriptionIsValid') && this.get('priceIsValid') && this.get('salePriceIsValid') && this.get('imageIDIsValid') && this.get('imageURLIsValid') && this.get('pageUrlIsValid');
+    var allValid = this.get('idIsValid') && this.get('SRCIsValid') && this.get('brandedNameIsValid') && this.get('unbrandedName') && this.get('brandIDIsValid') && this.get('brandNAMEIsValid') && this.get('retailerIDIsValid') && this.get('retailerNAMEIsValid') && this.get('descriptionIsValid') && this.get('priceIsValid') && this.get('salePriceIsValid') && this.get('imageIDIsValid') && this.get('imageURLIsValid') && this.get('pageUrlIsValid') && (tags.length > 0);
     if(allValid){
-      alert('good');
       var item = {
-        id:{S:id}
-      , SRC:{S:SRC}
-      , brandedName:{S:brandedName}
-      , unbrandedName:{S:unbrandedName}
-      , brandID:{S:brandID}
-      , brandNAME:{S:brandNAME}
-      , retailerID:{S:retailerID}
-      , retailerNAME:{S:retailerNAME}
-      , description:{S:description}
-      , price:{N:price}
-      , salePrice:{N:salePrice}
-      , imageID:{S:imageID}
-      , imageURL:{S:imageURL}
-      , pageUrl:{S:pageUrl}
+        id:{S:id + ''}
+      , SRC:{S:SRC + ''}
+      , brandedName:{S:brandedName + ''}
+      , unbrandedName:{S:unbrandedName + ''}
+      , brandID:{S:brandID + ''}
+      , brandNAME:{S:brandNAME + ''}
+      , retailerID:{S:retailerID + ''}
+      , retailerNAME:{S:retailerNAME + ''}
+      , description:{S:description + ''}
+      , price:{N:price + ''}
+      , imageID:{S:imageID + ''}
+      , imageURL:{S:imageURL + ''}
+      , pageUrl:{S:pageUrl + ''}
+      , tags:{SS:tags}
       };
+      if(salePrice){
+        item.salePrice = {N:salePrice + ''};
+      }
       console.log(item);
+      Api.putItem(item,function(data){
+        console.log(data);
+        $.each(tags,function(index,tag){
+          Api.putListItem(tag,id,function(response){
+            console.log(response);
+            alert('Sweet!');
+          });
+        });
+      });
     }else{
-      alert('bad');
+      alert('bad input data');
     }
   }
 
@@ -231,6 +245,20 @@ App.EnterController = Ember.ObjectController.extend((function(){
     return this.get('pageUrlIsValid') ? 'form-group' : 'form-group has-error';
   }
 
+  function addTag(tag){
+    if(!tag){
+      tag = this.get('tagInput');
+    }
+    if(tag !== ''){
+      this.tags.addObject({tag:tag});
+    }
+    return;
+  }
+
+  function deleteTag(tag){
+    this.tags.removeObject(this.tags.find(function(item){return item.tag === tag;}));
+  }
+
   return {
     id:id
   , SRC:SRC
@@ -246,6 +274,8 @@ App.EnterController = Ember.ObjectController.extend((function(){
   , imageID:imageID
   , imageURL:imageURL
   , pageUrl:pageUrl
+  , tagInput:tagInput
+  , tags:tags
   , idIsValid:idIsValid.property('id')
   , SRCIsValid:SRCIsValid.property('SRC')
   , brandedNameIsValid:brandedNameIsValid.property('brandedName')
@@ -277,6 +307,8 @@ App.EnterController = Ember.ObjectController.extend((function(){
   , jsonString:jsonString.property('id','SRC','brandedName','unbrandedName','brandID','brandNAME','retailerID','retailerNAME','description','price','salePrice','imageID','imageURL','pageUrl')
   , actions:{
       submit:submit
+    , addTag:addTag
+    , deleteTag:deleteTag
     }
   };
 })());
