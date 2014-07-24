@@ -21,6 +21,7 @@ App.EnterController = Ember.ObjectController.extend((function(){
   var pageUrl = '';
   var tagInput = '';
   var tags = Ember.ArrayController.create();
+  var sizes = Ember.ArrayController.create();
 
   function jsonString(key, value){
     if(value){
@@ -93,6 +94,7 @@ App.EnterController = Ember.ObjectController.extend((function(){
     var imageURL = this.get('imageURL');
     var pageUrl = this.get('pageUrl');
     var tags = this.get('tags').map(function(item){return item.tag + '';});
+    var sizes = this.get('sizes').map(function(item){return item.size + '';});
 
     var allValid = this.get('idIsValid') && this.get('SRCIsValid') && this.get('brandedNameIsValid') && this.get('unbrandedName') && this.get('brandIDIsValid') && this.get('brandNAMEIsValid') && this.get('retailerIDIsValid') && this.get('retailerNAMEIsValid') && this.get('descriptionIsValid') && this.get('priceIsValid') && this.get('salePriceIsValid') && this.get('imageIDIsValid') && this.get('imageURLIsValid') && this.get('pageUrlIsValid') && (tags.length > 0);
     if(allValid){
@@ -111,6 +113,7 @@ App.EnterController = Ember.ObjectController.extend((function(){
       , imageURL:{S:imageURL + ''}
       , pageUrl:{S:pageUrl + ''}
       , tags:{SS:tags}
+      , sizes:{SS:sizes}
       };
       if(salePrice){
         item.salePrice = {N:salePrice + ''};
@@ -121,7 +124,11 @@ App.EnterController = Ember.ObjectController.extend((function(){
         $.each(tags,function(index,tag){
           Api.putListItem(tag,id,function(response){
             console.log(response);
-            alert('Sweet!');
+          });
+        });
+        $.each(sizes,function(index,size){
+          Api.putListItem(size,id,function(response){
+            console.log(response);
           });
         });
       });
@@ -252,11 +259,20 @@ App.EnterController = Ember.ObjectController.extend((function(){
     if(tag !== ''){
       this.tags.addObject({tag:tag});
     }
-    return;
   }
 
   function deleteTag(tag){
     this.tags.removeObject(this.tags.find(function(item){return item.tag === tag;}));
+  }
+
+  function addSize(size){
+    if(size !== ''){
+      this.sizes.addObject({size:size});
+    }
+  }
+
+  function deleteSize(size){
+    this.sizes.removeObject(this.sizes.find(function(item){return item.size === size;}));
   }
 
   return {
@@ -276,6 +292,7 @@ App.EnterController = Ember.ObjectController.extend((function(){
   , pageUrl:pageUrl
   , tagInput:tagInput
   , tags:tags
+  , sizes:sizes
   , idIsValid:idIsValid.property('id')
   , SRCIsValid:SRCIsValid.property('SRC')
   , brandedNameIsValid:brandedNameIsValid.property('brandedName')
@@ -309,6 +326,8 @@ App.EnterController = Ember.ObjectController.extend((function(){
       submit:submit
     , addTag:addTag
     , deleteTag:deleteTag
+    , addSize:addSize
+    , deleteSize:deleteSize
     }
   };
 })());
