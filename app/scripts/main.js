@@ -34,6 +34,8 @@ App.Router.map(function () {
   this.resource('ss');
   this.resource('api');
   this.resource('enter');
+  this.resource('item');
+  this.resource('items');
 });
 
 
