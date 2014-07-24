@@ -167,7 +167,7 @@ App.EnterController = Ember.ObjectController.extend((function(){
   }
 
   function retailerNAMEIsValid(){
-    return validator.isAlphanumeric(this.get('retailerNAME'));
+    return !validator.isNull(this.get('retailerNAME'));
   }
 
   function descriptionIsValid(){
