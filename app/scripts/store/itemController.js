@@ -3,10 +3,15 @@ App.ItemRoute = Ember.Route.extend({
     return Api.getItem(params.iid);
   }
 , setupController:function(controller, model){
-    console.log(model);
     controller.set('model',model);
-    var sizes = JSON.parse(model.Item.imageSIZES.S);
-    controller.set('imgURL',sizes.Original.url);
+    switch(model.Item.SRC.S){
+    case 'm1':
+      controller.set('imgURL',model.Item.imageURL.S);
+      break;
+    default:
+      var sizes = JSON.parse(model.Item.imageSIZES.S);
+      controller.set('imgURL',sizes.Original.url);
+    }
     if(App.me){
       controller.set('backBtnText','back');
     }else{

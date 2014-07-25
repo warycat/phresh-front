@@ -7,9 +7,9 @@ App.DiscoveryRoute = Ember.Route.extend({
   }
 , model: function(params){
     if(params.gender !== 'male'){
-      return Api.getListItems('all-womens');
+      return Api.getListItems('m1');
     }else{
-      return Api.getListItems('all-mens');
+      return Api.getListItems('m1');
     }
   }
 , setupController:function(controller, model){
@@ -18,8 +18,15 @@ App.DiscoveryRoute = Ember.Route.extend({
     if(controller.get('imgURL') === ''){
       Api.getItem(model.Items[0].iid.S,function(data){
         controller.set('currentItem',data.Item);
-        var sizes = JSON.parse(data.Item.imageSIZES.S);
-        controller.set('imgURL',sizes.Original.url);
+        switch(data.Item.SRC.S){
+        case 'm1':
+          controller.set('imgURL',data.Item.imageURL.S);
+          break;
+        default:
+          console.log(data.Item.SRC.S);
+          var sizes = JSON.parse(data.Item.imageSIZES.S);
+          controller.set('imgURL',sizes.Original.url);
+        }
       });
     }
   }
@@ -76,8 +83,15 @@ App.DiscoveryController = Ember.ObjectController.extend((function(){
     var self = this;
     Api.getItem(model.Items[this.get('current')].iid.S,function(data){
       self.set('currentItem',data.Item);
-      var sizes = JSON.parse(data.Item.imageSIZES.S);
-      self.set('imgURL',sizes.IPhone.url);
+      switch(data.Item.SRC.S){
+      case 'm1':
+        self.set('imgURL',data.Item.imageURL.S);
+        break;
+      default:
+        console.log(data.Item.SRC.S);
+        var sizes = JSON.parse(data.Item.imageSIZES.S);
+        self.set('imgURL',sizes.IPhone.url);
+      }
     });
   }
 

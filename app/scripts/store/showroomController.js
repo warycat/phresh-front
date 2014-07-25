@@ -8,10 +8,14 @@ App.ShowroomRoute = Ember.Route.extend({
     controller.items = model.Items;
     $.each(model.Items,function(index,item){
       Api.getItem(item.iid.S,function(data){
-        var sizes = JSON.parse(data.Item.imageSIZES.S);
-        console.log(sizes);
-
-        $('#'+item.iid.S).attr('src',sizes.Original.url);
+        switch(data.Item.SRC.S){
+        case 'm1':
+          $('#'+item.iid.S).attr('src',data.Item.imageURL.S);
+          break;
+        default:
+          var sizes = JSON.parse(data.Item.imageSIZES.S);
+          $('#'+item.iid.S).attr('src',sizes.Original.url);
+        }
       });
     });
   }

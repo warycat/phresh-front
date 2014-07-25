@@ -1,6 +1,11 @@
+
 document.ontouchmove = function(event){
   if(window.location.hash.indexOf('showroom') === -1){
     event.preventDefault();
+  }
+  if(window.location.hash.indexOf('discovery') !== -1){
+
+    console.log(event.touches[0].pageX);
   }
 };
 
