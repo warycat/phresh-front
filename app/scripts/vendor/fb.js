@@ -7,12 +7,12 @@ function statusChangeCallback(response) {
   if (response.status === 'connected') {
     FB.api('/me', function (response) {
       App.me = response;
-      window.location = "/index.html#/discovery/" + response.gender;
+      window.location = "index.html#/discovery/" + response.gender;
     });
   } else if (response.status === 'not_authorized') {
-    window.location = "/index.html#/login";
+    window.location = "index.html#/login";
   } else {
-    window.location = "/index.html#/login";
+    window.location = "index.html#/login";
   }
 
 }
