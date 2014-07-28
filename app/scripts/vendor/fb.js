@@ -2,7 +2,7 @@
 function statusChangeCallback(response) {
   console.log('statusChangeCallback');
 
-  if(window.location.pathname === '/admin.html')return;
+  if(window.location.pathname.indexOf('admin.html') !== -1)return;
   if(window.location.hash.indexOf('item') !== -1) return;
   if (response.status === 'connected') {
     FB.api('/me', function (response) {
