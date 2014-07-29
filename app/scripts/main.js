@@ -1,14 +1,3 @@
-
-document.ontouchmove = function(event){
-  if(window.location.hash.indexOf('showroom') === -1){
-    event.preventDefault();
-  }
-  if(window.location.hash.indexOf('discovery') !== -1){
-
-    console.log(event.touches[0].pageX);
-  }
-};
-
 $.ajaxSetup({
   contentType : 'application/json',
   processData : false
@@ -20,28 +9,7 @@ $.ajaxPrefilter( function(options) {
   }
 });
 
-var App = Ember.Application.create({
-  LOG_TRANSITIONS: true
-});
 
-App.Router.map(function () {
-	this.resource('index',{path:'/'});
-  this.resource('login');
-  this.resource('discovery', {path: '/discovery/:gender'}, function(){
-    this.route('description');
-  });
-  this.resource('showroom', {path:'/showroom/:uid'});
-  this.resource('item',{path:'/item/:iid'},function(){
-    this.route('description');
-  });
-  this.resource('landing');
-
-  this.resource('ss');
-  this.resource('api');
-  this.resource('enter');
-  this.resource('item');
-  this.resource('items');
-});
 
 
 
